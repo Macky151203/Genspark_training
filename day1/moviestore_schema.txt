@@ -1,0 +1,25 @@
+Movie-
+	movie_id, title
+
+Format-
+	format_id, movie_id, type(dvd,vcd,etc)
+
+Category-
+	category_id, movie_id, type
+
+Customer-
+	cust_id, name, phone_no, membership_type
+
+Customer_fav-
+	fav_id, cust_id, favourite
+
+Rented_movies-
+	rented_id, cust_id, movie_id, start_date, end_date
+
+
+
+
+
+
+	
+	
