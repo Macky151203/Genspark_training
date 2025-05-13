@@ -35,30 +35,34 @@ create table summary_table (
 );
  
 do $$ 
-declare cust_rec record;
+declare 
+	cr cursor for select customer_id, count(*) as rental_count from rental group by customer_id;
+	cust_rec record;
+
 begin
-    for cust_rec in 
-        select customer_id, count(*) as rental_count 
-        from rental group by customer_id
+    for cust_rec in cr
     loop
         insert into summary_table (customer_id, rental_count) 
         values (cust_rec.customer_id, cust_rec.rental_count);
     end loop;
 end $$;
+
+select * from summary_table;
  
 --2.Using a cursor, print the titles of films in the 'Comedy' category rented more than 10 times.
 do $$ 
-declare film_rec record;
-begin
-    for film_rec in 
-        select f.title from film f
+declare 
+	cr cursor for select f.title from film f
         join film_category fc on f.film_id = fc.film_id
         join category c on fc.category_id = c.category_id
         join inventory i on f.film_id = i.film_id
         join rental r on i.inventory_id = r.inventory_id
         where c.name = 'Comedy'
         group by f.title
-        having count(r.rental_id) > 10
+        having count(r.rental_id) > 10;
+	film_rec record;
+begin
+    for film_rec in cr
     loop
         raise notice '%', film_rec.title;
     end loop;
@@ -71,13 +75,14 @@ create table report_table (
 );
  
 do $$ 
-declare store_rec record;
-begin
-    for store_rec in 
-        select s.store_id, count(distinct i.film_id) as film_count
+declare 
+	cr cursor for select s.store_id, count(distinct i.film_id) as film_count
         from store s
         join inventory i on s.store_id = i.store_id
-        group by s.store_id
+        group by s.store_id;
+	store_rec record;
+begin
+    for store_rec in cr
     loop
         insert into report_table (store_id, film_count) 
         values (store_rec.store_id, store_rec.film_count);
@@ -95,13 +100,14 @@ create table inactive_customers (
 );
  
 do $$ 
-declare cust_rec record;
-begin
-    for cust_rec in 
-        select customer_id, first_name, last_name, email 
+declare 
+	cr cursor for select customer_id, first_name, last_name, email 
         from customer
         where customer_id not in 
-            (select distinct customer_id from rental where rental_date >= now() - interval '6 months')
+            (select distinct customer_id from rental where rental_date >= now() - interval '6 months');
+	cust_rec record;
+begin
+    for cust_rec in cr
     loop
         insert into inactive_customers (customer_id, first_name, last_name, email) 
         values (cust_rec.customer_id, cust_rec.first_name, cust_rec.last_name, cust_rec.email);
