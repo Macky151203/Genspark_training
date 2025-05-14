@@ -1,0 +1,50 @@
+cmd terminal1-
+
+initdb -D "D:/pri"
+
+to start server- pg_ctl -D D:\pri -o "-p 5433" -l d:\pri\logfile start
+
+creating role- psql -p 5433 -d postgres -c "CREATE ROLE replicator with REPLICATION LOGIN PASSWORD 'repl_pass';"
+
+to create replica- pg_basebackup -D d:\sec -Fp -Xs -P -R -h 127.0.0.1 -U replicator -p 5433
+
+to enter postgres- psql -p 5433 -d postgres
+
+cmd terminal2-
+
+starting secondary server- pg_ctl -D D:\sec -o "-p 5435" -l d:\sec\logfile start
+
+psql -p 5435 -d postgres
+
+Primary server-
+
+CREATE TABLE rental_log (
+    log_id SERIAL PRIMARY KEY,
+    rental_time TIMESTAMP,
+    customer_id INT,
+    film_id INT,
+    amount NUMERIC,
+    logged_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE OR REPLACE PROCEDURE sp_add_rental_log(
+    p_customer_id INT,
+    p_film_id INT,
+    p_amount NUMERIC
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO rental_log (rental_time, customer_id, film_id, amount)
+    VALUES (CURRENT_TIMESTAMP, p_customer_id, p_film_id, p_amount);
+EXCEPTION WHEN OTHERS THEN
+    RAISE NOTICE 'Error occurred: %', SQLERRM;
+END;
+$$;
+
+CALL sp_add_rental_log(1, 100, 4.99);
+
+Secondary server-
+
+SELECT * FROM rental_logs;
+
