@@ -69,6 +69,5 @@
         {
             Console.WriteLine("Invalid input.");
         }
-
     }
 }
