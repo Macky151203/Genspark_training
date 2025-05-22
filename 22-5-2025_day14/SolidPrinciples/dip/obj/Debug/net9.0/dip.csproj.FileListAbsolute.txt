@@ -1,0 +1,15 @@
+C:\Users\VC\Desktop\genspark_training\sp\dip\bin\Debug\net9.0\dip.exe
+C:\Users\VC\Desktop\genspark_training\sp\dip\bin\Debug\net9.0\dip.deps.json
+C:\Users\VC\Desktop\genspark_training\sp\dip\bin\Debug\net9.0\dip.runtimeconfig.json
+C:\Users\VC\Desktop\genspark_training\sp\dip\bin\Debug\net9.0\dip.dll
+C:\Users\VC\Desktop\genspark_training\sp\dip\bin\Debug\net9.0\dip.pdb
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.AssemblyInfoInputs.cache
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.AssemblyInfo.cs
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.csproj.CoreCompileInputs.cache
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.sourcelink.json
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.dll
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\refint\dip.dll
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.pdb
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\dip.genruntimeconfig.cache
+C:\Users\VC\Desktop\genspark_training\sp\dip\obj\Debug\net9.0\ref\dip.dll

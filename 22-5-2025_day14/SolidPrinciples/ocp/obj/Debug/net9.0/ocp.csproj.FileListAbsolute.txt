@@ -1,0 +1,15 @@
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.AssemblyInfoInputs.cache
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.AssemblyInfo.cs
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.csproj.CoreCompileInputs.cache
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.sourcelink.json
+C:\Users\VC\Desktop\genspark_training\sp\ocp\bin\Debug\net9.0\ocp.exe
+C:\Users\VC\Desktop\genspark_training\sp\ocp\bin\Debug\net9.0\ocp.deps.json
+C:\Users\VC\Desktop\genspark_training\sp\ocp\bin\Debug\net9.0\ocp.runtimeconfig.json
+C:\Users\VC\Desktop\genspark_training\sp\ocp\bin\Debug\net9.0\ocp.dll
+C:\Users\VC\Desktop\genspark_training\sp\ocp\bin\Debug\net9.0\ocp.pdb
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.dll
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\refint\ocp.dll
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.pdb
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ocp.genruntimeconfig.cache
+C:\Users\VC\Desktop\genspark_training\sp\ocp\obj\Debug\net9.0\ref\ocp.dll
