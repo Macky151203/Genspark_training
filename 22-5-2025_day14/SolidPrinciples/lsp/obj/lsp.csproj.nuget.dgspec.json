@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VC\\Desktop\\genspark_training\\sp\\lsp\\lsp.csproj": {}
+    "C:\\Users\\VC\\Desktop\\genspark_training\\22-5-2025_day14\\SolidPrinciples\\lsp\\lsp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VC\\Desktop\\genspark_training\\sp\\lsp\\lsp.csproj": {
+    "C:\\Users\\VC\\Desktop\\genspark_training\\22-5-2025_day14\\SolidPrinciples\\lsp\\lsp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VC\\Desktop\\genspark_training\\sp\\lsp\\lsp.csproj",
+        "projectUniqueName": "C:\\Users\\VC\\Desktop\\genspark_training\\22-5-2025_day14\\SolidPrinciples\\lsp\\lsp.csproj",
         "projectName": "lsp",
-        "projectPath": "C:\\Users\\VC\\Desktop\\genspark_training\\sp\\lsp\\lsp.csproj",
+        "projectPath": "C:\\Users\\VC\\Desktop\\genspark_training\\22-5-2025_day14\\SolidPrinciples\\lsp\\lsp.csproj",
         "packagesPath": "C:\\Users\\VC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VC\\Desktop\\genspark_training\\sp\\lsp\\obj\\",
+        "outputPath": "C:\\Users\\VC\\Desktop\\genspark_training\\22-5-2025_day14\\SolidPrinciples\\lsp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

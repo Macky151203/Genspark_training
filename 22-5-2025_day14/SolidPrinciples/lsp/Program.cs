@@ -1,30 +1,22 @@
 ﻿interface IStudent
 {
-    void Attendclass();
-}
-
-interface IOnlineStudent : IStudent
-{
-    void AttendOnlineClass();
+    void AttendClass();
 }
 
 class Student : IStudent
 {
-    public void Attendclass()
+    public virtual void AttendClass()
     {
         Console.WriteLine("Attending class");
     }
 }
 
-class OnlineStudent : IOnlineStudent
+class OnlineStudent : Student
 {
-    public void Attendclass()
+    public override void  AttendClass()
     {
-        Console.WriteLine("Attending class");
-    }
-    public void AttendOnlineClass()
-    {
-        Console.WriteLine("Attending online class");
+        base.AttendClass();
+        Console.WriteLine("in online mode");
     }
 }
 
@@ -33,11 +25,12 @@ class Program
     static void Main(string[] args)
     {
         // LSP
-        IStudent student = new Student();
-        student.Attendclass();
+        IStudent student1 = new Student();
+        IStudent student2 = new OnlineStudent();
 
-        // IOnlineStudent onlineStudent = new OnlineStudent();
-        // onlineStudent.Attendclass();
-        // onlineStudent.AttendOnlineClass();
+        student1.AttendClass();
+        student2.AttendClass();
+        
+        
     }
 }

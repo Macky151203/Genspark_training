@@ -1,23 +1,35 @@
-﻿using Srp.Services;
-using Srp.Models;
-using Srp.Repositories;
+﻿public class StudentReport
+{
+    public string? StudentName { get; set; }
+    public string? ReportContent { get; private set; }
+
+    public void GenerateReport()
+    {
+        ReportContent = $"Report for {StudentName}";
+        Console.WriteLine("Report generated successfully.");
+    }
+}
+
+public class ReportSaver
+{
+    public void SaveToFile(StudentReport report)
+    {
+        Console.WriteLine($"Saving report to file: {report.ReportContent}");
+        
+    }
+}
 
 class Program
 {
     static void Main(string[] args)
     {
         // Single Responsibility Principle
+        StudentReport report = new StudentReport { StudentName = "abc" };
+        report.GenerateReport();
 
-        IRepository<Student> studentRepository = new Repository<Student>();
-        StudentService studentService = new StudentService(studentRepository);
+        ReportSaver saver = new ReportSaver();
+        saver.SaveToFile(report);
 
-        studentService.AddStudent("Alice", 20);
-        studentService.AddStudent("Bob", 22);
-
-        var students = studentService.GetAllStudents();
-        foreach (var student in students)
-        {
-            Console.WriteLine($"{student.Id}: {student.Name}, Age: {student.Age}");
-        }
+        
     }
 }

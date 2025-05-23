@@ -1,6 +1,6 @@
 ﻿public class Customer
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public int Amount { get; set; }
 }
 
@@ -13,7 +13,7 @@ class GoldPriceCal : IPrice
 {
     public double GetPrice(Customer customer) 
     {
-        return customer.Amount * 0.9;
+        return customer.Amount * 0.8;
     }
 }
 
@@ -21,7 +21,7 @@ class SilverPriceCal : IPrice
 {
     public double GetPrice(Customer customer) 
     {
-        return customer.Amount * 0.8;
+        return customer.Amount * 0.9;
     }
 }
 
