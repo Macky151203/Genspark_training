@@ -3,60 +3,52 @@ namespace FirstApi.Services;
 using FirstApi.Interfaces;
 using FirstApi.Models;
 using FirstApi.Models.DTOs.DoctorSpecialities;
+using FirstApi.Misc;
 
 
 using FirstApi.Interfaces;
 public class DoctorService : IDoctorService
 {
+    DoctorMapper _doctorMapper;
+    SpecialityMapper _specialityMapper;
     private readonly IRepository<int, Doctor> _doctorRepository;
     private readonly IRepository<int, Speciality> _specialityRepository;
     private readonly IRepository<int, DoctorSpeciality> _doctorSpecialityRepository;
 
+    private readonly IOtherContextFunctionities _otherContextFunctionities;
+
     public DoctorService(
         IRepository<int, Doctor> doctorRepository,
         IRepository<int, Speciality> specialityRepository,
-        IRepository<int, DoctorSpeciality> doctorSpecialityRepository)
+        IRepository<int, DoctorSpeciality> doctorSpecialityRepository,
+        IOtherContextFunctionities otherContextFunctionities
+        )
     {
         _doctorRepository = doctorRepository;
         _specialityRepository = specialityRepository;
         _doctorSpecialityRepository = doctorSpecialityRepository;
+        _doctorMapper = new DoctorMapper();
+        _specialityMapper = new SpecialityMapper();
+        _otherContextFunctionities = otherContextFunctionities;
     }
 
     public async Task<IEnumerable<Doctor>> GetAllDoctors()
     {
         return await _doctorRepository.GetAll();
     }
-    public async Task<Doctor> GetDoctByName(string name)
+    public async Task<ICollection<DoctorsByNameResponseDto>> GetDoctByName(string name)
     {
-        var allDoctors = await _doctorRepository.GetAll();
-        return allDoctors.FirstOrDefault(d => d.Name == name)
-            ?? throw new Exception("Doctor not found");
+        // var allDoctors = await _doctorRepository.GetAll();
+        // return allDoctors.FirstOrDefault(d => d.Name == name)
+        //     ?? throw new Exception("Doctor not found");
+        var result = await _otherContextFunctionities.GetDoctorsByName(name);
+        
+        return result;
     }
-    public async Task<ICollection<Doctor>> GetDoctorsBySpeciality(string speciality)
-    {
-        var allSpecialities = await _specialityRepository.GetAll();
-        var spec = allSpecialities.FirstOrDefault(s => s.Name == speciality);
-        if (spec == null)
-            throw new Exception("Speciality not found");
-
-        var allDoctorSpecialities = await _doctorSpecialityRepository.GetAll();
-        var doctorIds = allDoctorSpecialities
-            .Where(ds => ds.SpecialityId == spec.Id)
-            .Select(ds => ds.DoctorId)
-            .ToList();
-
-        var allDoctors = await _doctorRepository.GetAll();
-        return allDoctors.Where(d => doctorIds.Contains(d.Id)).ToList();
-    }
+    
     public async Task<Doctor> AddDoctor(DoctorAddRequestDto doctorDto)
     {
-        var doctor = new Doctor
-        {
-            Name = doctorDto.Name,
-            YearsOfExperience = doctorDto.YearsOfExperience,
-            Status = "Active",
-            DoctorSpecialities = new List<DoctorSpeciality>()
-        };
+        var doctor = _doctorMapper.MapDoctorAddRequestDto(doctorDto);
         //Console.WriteLine($"Name: {doctor.Name}, YearsOfExperience: {doctor.YearsOfExperience}, Status: {doctor.Status}, DoctorSpecialities count: {doctor.DoctorSpecialities.Count}");
 
         var addedDoctor = await _doctorRepository.Add(doctor);
@@ -71,20 +63,22 @@ public class DoctorService : IDoctorService
 
                 if (speciality == null)
                 {
-                    speciality = new Speciality { Name = specDto.Name, Status = "Active" };
+                    speciality = _specialityMapper.MapSpecialityAddRequestDto(specDto);
                     speciality = await _specialityRepository.Add(speciality);
                 }
 
-                var doctorSpeciality = new DoctorSpeciality
-                {
-                    DoctorId = addedDoctor.Id,
-                    SpecialityId = speciality.Id
-                };
+                var doctorSpeciality = _specialityMapper.MapDoctorSpeciality(addedDoctor.Id, speciality.Id);
                 await _doctorSpecialityRepository.Add(doctorSpeciality);
             }
         }
 
         return addedDoctor;
     }
+    public async Task<ICollection<DoctorsBySpecialityResponseDto>> GetDoctorsBySpeciality(string speciality)
+    {
+        var result = await _otherContextFunctionities.GetDoctorsBySpeciality(speciality);
+        return result;
+    }
+
 
 }
