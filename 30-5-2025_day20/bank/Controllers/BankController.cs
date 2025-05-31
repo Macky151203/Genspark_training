@@ -2,6 +2,7 @@ using Bank.Contexts;
 using Bank.Interfaces;
 using Bank.Models;
 using Microsoft.AspNetCore.Mvc;
+using Bank.Models.DTOs;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -40,9 +41,19 @@ public class BankController : ControllerBase
     }
 
     [HttpPost("create-account")]
-    public async Task<IActionResult> CreateAccount([FromBody] BankAccount account)
+    public async Task<IActionResult> CreateAccount([FromBody] AccountCreationDto account)
     {
-        var createdAccount = await _bankService.CreateAccountAsync(account);
-        return CreatedAtAction(nameof(GetBalance), new { accountId = createdAccount.Id }, createdAccount);
+        BankAccount newaccount= new BankAccount
+        {
+            Id=0,
+            AccountHolderName = account.AccountHolderName,
+            AccountNumber = Guid.NewGuid().ToString("N").Substring(0, 10), 
+            AadharNumber = account.AadharNumber,
+            MobileNumber = account.MobileNumber,
+            AccountType = account.AccountType,
+            CreatedAt = DateTime.UtcNow
+        };
+        var createdAccount = await _bankService.CreateAccountAsync(newaccount);
+        return Created(" ",createdAccount);
     }
 }

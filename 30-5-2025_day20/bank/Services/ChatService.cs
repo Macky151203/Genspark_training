@@ -24,11 +24,8 @@ public class ChatService : IChatService
     {
         try
         {
-        
             chatHistory.Add(new ChatMessage ( ChatRole.User, prompt ));
-
-
-            Console.WriteLine("AI Response:");
+            // Console.WriteLine("AI Response:");
             var response = "";
             await foreach (ChatResponseUpdate item in
                 _chatClient.GetStreamingResponseAsync(chatHistory))
