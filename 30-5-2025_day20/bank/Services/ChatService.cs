@@ -24,6 +24,7 @@ public class ChatService : IChatService
     {
         try
         {
+        
             chatHistory.Add(new ChatMessage ( ChatRole.User, prompt ));
 
 
