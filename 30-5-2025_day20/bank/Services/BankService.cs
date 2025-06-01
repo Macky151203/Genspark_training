@@ -12,11 +12,16 @@ public class BankService : IBankService
     {
         _bankRepository = bankRepository;
     }
+    
+    public async Task<List<BankAccount>> GetAllAccountsAsync()
+    {
+        return await _bankRepository.GetAllAccountsAsync();
+    }
 
     public async Task<decimal> GetBalanceAsync(string accountNumber)
     {
         var account = await _bankRepository.GetAccountByNumberAsync(accountNumber);
-        if(account == null)
+        if (account == null)
             throw new InvalidOperationException("Account not found.");
         return account.Balance;
     }

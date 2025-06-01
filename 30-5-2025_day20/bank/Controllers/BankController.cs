@@ -15,6 +15,13 @@ public class BankController : ControllerBase
         _bankService = bankService;
     }
 
+    [HttpGet("allaccounts")]
+    public async Task<IActionResult> GetAllAccounts()
+    {
+        var accounts = await _bankService.GetAllAccountsAsync();
+        return Ok(accounts);
+    }
+
     [HttpGet("balance/{accountNumber}")]
     public async Task<IActionResult> GetBalance(string accountNumber)
     {
@@ -23,7 +30,7 @@ public class BankController : ControllerBase
     }
 
     [HttpPost("deposit")]
-    public async Task<IActionResult> Deposit([FromBody] Transaction transaction)
+    public async Task<IActionResult> Deposit([FromBody] TransactionDto transaction)
     {
         var result = await _bankService.DepositAsync(transaction.BankAccountId, transaction.Amount);
         if (result)
@@ -32,7 +39,7 @@ public class BankController : ControllerBase
     }
 
     [HttpPost("withdraw")]
-    public async Task<IActionResult> Withdraw([FromBody] Transaction transaction)
+    public async Task<IActionResult> Withdraw([FromBody] TransactionDto transaction)
     {
         var result = await _bankService.WithdrawAsync(transaction.BankAccountId, transaction.Amount);
         if (result)

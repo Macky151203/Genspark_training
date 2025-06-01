@@ -6,4 +6,5 @@ public interface IBankRepository
     public Task<BankAccount?> GetAccountByNumberAsync(string accountNumber);
     public Task AddTransactionAsync(Transaction transaction);
     public Task<BankAccount> AddAccountAsync(BankAccount account);
+    public Task<List<BankAccount>> GetAllAccountsAsync();
 }

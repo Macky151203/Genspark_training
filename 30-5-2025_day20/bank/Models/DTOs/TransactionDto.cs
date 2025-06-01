@@ -1,14 +1,7 @@
-// namespace Bank.Models.DTOs;
-// public class AccountCreationDto
-// {
-//     public string AccountNumber { get; set; }
-//     public string AccountHolderName { get; set; }
-//     public decimal InitialDeposit { get; set; }
+namespace Bank.Models.DTOs;
+public class TransactionDto
+{
+    public decimal Amount { get; set; }
+    public string BankAccountId { get; set; } 
 
-//     public AccountCreationDto(string accountNumber, string accountHolderName, decimal initialDeposit)
-//     {
-//         AccountNumber = accountNumber;
-//         AccountHolderName = accountHolderName;
-//         InitialDeposit = initialDeposit;
-//     }
-// }
+}

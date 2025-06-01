@@ -14,6 +14,10 @@ public class BankRepositories : IBankRepository
         _bankContext = bankContext;
     }
 
+    public async Task<List<BankAccount>> GetAllAccountsAsync()
+    {
+        return await _bankContext.BankAccounts.ToListAsync();
+    }
     public async Task<BankAccount?> GetAccountByNumberAsync(string accountNumber)
     {
         return await _bankContext.BankAccounts

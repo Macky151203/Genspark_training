@@ -7,4 +7,5 @@ public interface IBankService
     public Task<bool> DepositAsync(string accountId, decimal amount);
     public Task<bool> WithdrawAsync(string accountId, decimal amount);
     public Task<BankAccount> CreateAccountAsync(BankAccount account);
+    public Task<List<BankAccount>> GetAllAccountsAsync();
 }
