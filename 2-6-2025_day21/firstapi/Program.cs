@@ -37,7 +37,7 @@ builder.Services.AddTransient<IRepository<string, Appointment>, AppointmentRepos
 builder.Services.AddTransient<IRepository<int, DoctorSpeciality>, DoctorSpecialityRepository>();
 builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 
-
+builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IOtherContextFunctionities, OtherFuncinalitiesImplementation>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
