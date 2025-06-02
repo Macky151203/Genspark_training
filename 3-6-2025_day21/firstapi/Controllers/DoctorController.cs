@@ -5,6 +5,7 @@ using FirstApi.Models.DTOs.DoctorSpecialities;
 using FirstApi.Services;
 using FirstApi.Repositories;
 using FirstApi.Contexts;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -17,7 +18,9 @@ public class DoctorController : ControllerBase
         _doctorService = doctorService;
     }
 
+
     [HttpGet("GetAllDoctors")]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<Doctor>>> GetAllDoctors()
     {
         try

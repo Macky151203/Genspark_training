@@ -65,6 +65,7 @@ public class DoctorService : IDoctorService
         });
         user.Password = encryptedData.EncryptedData;
         user.HashKey = encryptedData.HashKey;
+        user.Role = "Doctor";
         user = await _userRepository.Add(user);
         var doctor = _doctorMapper.MapDoctorAddRequestDto(doctorDto);
 

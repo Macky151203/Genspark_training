@@ -6,7 +6,9 @@ using FirstApi.Models;
 using FirstApi.Services;
 using Microsoft.EntityFrameworkCore;
 using FirstApi.Misc;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +41,22 @@ builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IOtherContextFunctionities, OtherFuncinalitiesImplementation>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
+builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
+                    };
+                });
 
 builder.Services.AddAutoMapper(typeof(User));
 
@@ -56,7 +74,8 @@ if (app.Environment.IsDevelopment())
 }
 
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 
 
 app.MapControllers();
