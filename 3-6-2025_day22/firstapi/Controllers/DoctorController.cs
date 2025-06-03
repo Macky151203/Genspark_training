@@ -33,6 +33,20 @@ public class DoctorController : ControllerBase
             return NotFound(e.Message);
         }
     }
+    [Authorize(Policy = "ExperiencedDoctorOnly")]
+    [HttpDelete("DeleteAppointment/{id}")]
+    public async Task<ActionResult> DeleteAppointment(string id)
+    {
+        try
+        {
+            await _doctorService.DeleteApppointment(id);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
+    }
 
     [HttpGet("GetDoctorByName/{name}")]
     public async Task<ActionResult<Doctor>> GetDoctorByName(string name)
