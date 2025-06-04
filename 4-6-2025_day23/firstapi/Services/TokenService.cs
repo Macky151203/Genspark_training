@@ -21,7 +21,6 @@ using Microsoft.IdentityModel.Tokens;
             {
                 new Claim(ClaimTypes.NameIdentifier,user.Username),
                 new Claim(ClaimTypes.Role,user.Role)
-                
             };
             var creds = new SigningCredentials(_securityKey, SecurityAlgorithms.HmacSha256Signature);
 
