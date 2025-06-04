@@ -32,13 +32,6 @@ public class AuthenticationController : ControllerBase
 
     }
 
-    [HttpGet("github-login")]
-    public IActionResult GitHubLogin()
-    {
-        return Challenge(
-            new AuthenticationProperties { RedirectUri = "/signin-github" },
-            GitHubAuthenticationDefaults.AuthenticationScheme
-        );
-    }
+    
     
 }

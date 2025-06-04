@@ -22,6 +22,7 @@ public class AuthController : ControllerBase
     [HttpGet("google-login")]
     public IActionResult GoogleLogin()
     {
+        //google oauth url is being returned here
         var clientId = _config["Authentication:Google:ClientId"];
         var redirectUri = "http://localhost:5029/api/auth/google-callback";
         var scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile";
@@ -37,6 +38,8 @@ public class AuthController : ControllerBase
         return Redirect(authUrl);
     }
 
+    //upon account selection, Google redirects to this endpoint with a code(the redirect url that we have given in console along with the code)
+
     [HttpGet("google-callback")]
     public async Task<IActionResult> GoogleCallback([FromQuery] string code)
     {
@@ -46,7 +49,7 @@ public class AuthController : ControllerBase
 
         var client = _httpClientFactory.CreateClient();
 
-        // Step 1: Exchange code for access token
+        //using the code, we will exchange it for an access token
         var tokenResponse = await client.PostAsync("https://oauth2.googleapis.com/token", new FormUrlEncodedContent(new Dictionary<string, string>
         {
             ["code"] = code,
@@ -62,7 +65,7 @@ public class AuthController : ControllerBase
         var tokenData = JsonSerializer.Deserialize<JsonElement>(await tokenResponse.Content.ReadAsStringAsync());
         var accessToken = tokenData.GetProperty("access_token").GetString();
 
-        // Step 2: Get user info
+        // Get user info
         var userRequest = new HttpRequestMessage(HttpMethod.Get, "https://www.googleapis.com/oauth2/v2/userinfo");
         userRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
 
@@ -76,7 +79,6 @@ public class AuthController : ControllerBase
         var email = user.GetProperty("email").GetString();
         var name = user.GetProperty("name").GetString();
         Console.WriteLine($"User Email: {email}, Name: {name}");
-
 
 
         return Ok(new
