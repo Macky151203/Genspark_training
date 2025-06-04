@@ -14,7 +14,7 @@ public class OtherFuncinalitiesImplementation : IOtherContextFunctionities
         _clinicContext = clinicContext;
     }
 
-    public async Task<ICollection<DoctorsBySpecialityResponseDto>> GetDoctorsBySpeciality(string specilaity)
+    public virtual async Task<ICollection<DoctorsBySpecialityResponseDto>> GetDoctorsBySpeciality(string specilaity)
     {
         var result = await _clinicContext.GetDoctorsBySpeciality(specilaity);
         return result;

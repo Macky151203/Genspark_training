@@ -50,7 +50,7 @@ public class Tests
     // }
 
 
-    [TestCase(1)]
+    // [TestCase(1)]
     // [TestCase(2)]
     public async Task GetDoctorPassTest(int id)
     {

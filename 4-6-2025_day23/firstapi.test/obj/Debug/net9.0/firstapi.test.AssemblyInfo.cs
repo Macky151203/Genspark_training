@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("firstapi.test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75f19d9f7faf7e69104380d2add65d59d6bbfe10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e860f7c1944827e69d353e401ee58aff854f8c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("firstapi.test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("firstapi.test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

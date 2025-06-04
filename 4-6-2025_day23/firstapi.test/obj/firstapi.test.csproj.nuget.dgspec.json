@@ -137,13 +137,25 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AspNet.Security.OAuth.GitHub": {
+              "target": "Package",
+              "version": "[9.4.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OAuth": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",

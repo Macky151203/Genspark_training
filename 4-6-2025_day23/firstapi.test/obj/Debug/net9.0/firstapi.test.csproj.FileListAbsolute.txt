@@ -276,3 +276,5 @@
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/4-6-2025_day23/firstapi.test/obj/Debug/net9.0/firstapi.A4D465E4.Up2Date
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/4-6-2025_day23/firstapi.test/obj/Debug/net9.0/firstapi.test.genruntimeconfig.cache
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/4-6-2025_day23/firstapi.test/obj/Debug/net9.0/ref/firstapi.test.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/4-6-2025_day23/firstapi.test/bin/Debug/net9.0/AspNet.Security.OAuth.GitHub.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/4-6-2025_day23/firstapi.test/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.Google.dll
