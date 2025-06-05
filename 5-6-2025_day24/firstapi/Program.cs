@@ -47,6 +47,7 @@ builder.Services.AddTransient<IRepository<string, Appointment>, AppointmentRepos
 builder.Services.AddTransient<IRepository<int, DoctorSpeciality>, DoctorSpecialityRepository>();
 builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 
+#region 
 builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IOtherContextFunctionities, OtherFuncinalitiesImplementation>();
@@ -56,7 +57,7 @@ builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddTransient<IAppointmentService, AppointmentService>();
 builder.Services.AddTransient<IFileService, FileService>();
 
-
+#endregion
 
 
 
@@ -88,6 +89,21 @@ builder.Services.AddScoped<IAuthorizationHandler, ExperiencedDoctorHandler>();
 
 builder.Services.AddAutoMapper(typeof(User));
 
+
+
+#region CORS
+builder.Services.AddCors(options=>{
+    options.AddDefaultPolicy(policy=>{
+        policy.WithOrigins("http://127.0.0.1:5500")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+#endregion
+
+builder.Services.AddSignalR();
+
 builder.Services.AddDbContext<ClinicContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -104,6 +120,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors();
+app.MapHub<NotificationHub>("/notificationhub");
 
 
 app.MapControllers();
