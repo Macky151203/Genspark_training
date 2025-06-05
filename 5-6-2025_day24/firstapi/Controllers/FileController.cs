@@ -1,42 +1,54 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using FirstApi.Interfaces;
-using FirstApi.Services;
+using Microsoft.AspNetCore.SignalR;
+using FirstApi.Misc;
 
 [ApiController]
 [Route("api/[controller]")]
 public class FileController : ControllerBase
 {
-    private readonly string _basePath = "local_filestorage";
-    private readonly IFileService fs;
+    private readonly IWebHostEnvironment _env;
+    private readonly IHubContext<NotificationHub> _hubContext;
 
-    public FileController(IFileService fileService)
+    public FileController(IWebHostEnvironment env, IHubContext<NotificationHub> hubContext)
     {
-        fs = fileService;
-        if (!Directory.Exists(_basePath))
-            Directory.CreateDirectory(_basePath);
+        _env = env;
+        _hubContext = hubContext;
     }
 
-    [HttpPost("create")]
-    public IActionResult CreateFile(string fileName, [FromBody] string content)
+    [HttpPost("upload")]
+    [Authorize(Roles = "Doctor")]
+    public async Task<IActionResult> UploadDocument(IFormFile file)
     {
-        var path = Path.Combine(_basePath, fileName);
-        if (System.IO.File.Exists(path))
-            return Conflict("File already exists.");
-        fs.CreateFile(path, content);
-        return Ok("File created.");
+        if (file == null || file.Length == 0)
+            return BadRequest("File not selected");
+
+        var uploadPath = Path.Combine(_env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"), "uploads");
+        Directory.CreateDirectory(uploadPath);
+
+        var filePath = Path.Combine(uploadPath, file.FileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        
+        await _hubContext.Clients.All.SendAsync("Doctor", "Uploaded new document");
+        return Ok(new { Message = "File uploaded", FileName = file.FileName });
     }
 
-    
-    [HttpGet("read")]
-    public IActionResult ReadFile(string fileName)
+    [HttpGet("download/{fileName}")]
+    [Authorize(Roles="Doctor,Patient")]
+    public IActionResult DownloadDocument(string fileName)
     {
-        var path = Path.Combine(_basePath, fileName);
-        if (!System.IO.File.Exists(path))
-            return NotFound("File not found.");
-        var content = fs.ReadFile(path);
-        return Ok(content);
-    }
+        var uploadPath = Path.Combine(_env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"), "uploads");
+        var filePath = Path.Combine(uploadPath, fileName);
 
-    
+        if (!System.IO.File.Exists(filePath))
+            return NotFound("File not found");
+
+        var bytes = System.IO.File.ReadAllBytes(filePath);
+        return File(bytes, "application/octet-stream", fileName);
+    }
 }

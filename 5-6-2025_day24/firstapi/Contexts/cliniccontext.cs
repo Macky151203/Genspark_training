@@ -14,6 +14,9 @@ public class ClinicContext : DbContext
     public DbSet<Speciality> specialities { get; set; }
     public DbSet<Appointment> appointments { get; set; }
 
+    // public DbSet<Hr> hr{ get; set; }
+    // public DbSet<Employee> employee{ get; set; }
+
     public DbSet<User> Users { get; set; }
 
     public DbSet<DoctorsBySpecialityResponseDto> DoctorsBySpeciality { get; set; }

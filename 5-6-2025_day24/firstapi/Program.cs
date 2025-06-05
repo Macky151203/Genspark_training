@@ -31,6 +31,43 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<CustomExceptionFilter>();
 });
+
+
+// builder.Services.AddSwaggerGen(options =>
+// {
+//     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+//     {
+//         Title = "Your API",
+//         Version = "v1"
+//     });
+
+//     // 🔐 Add JWT Auth to Swagger
+//     options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+//     {
+//         Name = "Authorization",
+//         Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+//         Scheme = "Bearer",
+//         BearerFormat = "JWT",
+//         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+//         Description = "Enter 'Bearer' followed by your JWT token.\nExample: `Bearer abcdef12345`"
+//     });
+
+//     options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+//     {
+//         {
+//             new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+//             {
+//                 Reference = new Microsoft.OpenApi.Models.OpenApiReference
+//                 {
+//                     Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+//                     Id = "Bearer"
+//                 }
+//             },
+//             Array.Empty<string>()
+//         }
+//     });
+// });
+
 // builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 // builder.Services.AddScoped<DoctorService>();
 // builder.Services.AddScoped<IPatientRepository, PatientRepository>();
@@ -56,33 +93,68 @@ builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddTransient<IAppointmentService, AppointmentService>();
 builder.Services.AddTransient<IFileService, FileService>();
+builder.Services.AddTransient<NotificationHub>();
 
 #endregion
 
 
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Your API",
+        Version = "v1"
+    });
+
+    // 🔐 Add JWT Auth to Swagger
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Enter 'Bearer' followed by your JWT token.\nExample: `Bearer abcdef12345`"
+    });
+
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 
 
 
 //jwt auth
-// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//                 .AddJwtBearer(options =>
-//                 {
-//                     options.TokenValidationParameters = new TokenValidationParameters
-//                     {
-//                         ValidateAudience = false,
-//                         ValidateIssuer = false,
-//                         ValidateLifetime = true,
-//                         ValidateIssuerSigningKey = true,
-//                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
-//                     };
-//                 });
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
+                    };
+                });
 
-// builder.Services.AddAuthorization(options =>
-// {
-//     options.AddPolicy("ExperiencedDoctorOnly", policy =>
-//         policy.Requirements.Add(new ExperiencedDoctorRequirement(3)));
-// });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ExperiencedDoctorOnly", policy =>
+        policy.Requirements.Add(new ExperiencedDoctorRequirement(3)));
+});
 
 
 builder.Services.AddScoped<IAuthorizationHandler, ExperiencedDoctorHandler>();
@@ -127,5 +199,11 @@ app.MapHub<NotificationHub>("/notificationhub");
 
 app.MapControllers();
 app.Run();
+
+
+
+
+
+// doctor- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJrYW5lQGdtYWlsLmNvbSIsInJvbGUiOiJEb2N0b3IiLCJuYmYiOjE3NDkxMjAyNzMsImV4cCI6MTc0OTIwNjY3MywiaWF0IjoxNzQ5MTIwMjczfQ.mv_yXQlKeDUhRQw2GM5n5Bf9uKN_Nm-Man2Dzkyzrew
 
 
