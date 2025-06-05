@@ -33,40 +33,7 @@ builder.Services.AddControllers(options =>
 });
 
 
-// builder.Services.AddSwaggerGen(options =>
-// {
-//     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-//     {
-//         Title = "Your API",
-//         Version = "v1"
-//     });
 
-//     // 🔐 Add JWT Auth to Swagger
-//     options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-//     {
-//         Name = "Authorization",
-//         Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-//         Scheme = "Bearer",
-//         BearerFormat = "JWT",
-//         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-//         Description = "Enter 'Bearer' followed by your JWT token.\nExample: `Bearer abcdef12345`"
-//     });
-
-//     options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-//     {
-//         {
-//             new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-//             {
-//                 Reference = new Microsoft.OpenApi.Models.OpenApiReference
-//                 {
-//                     Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-//                     Id = "Bearer"
-//                 }
-//             },
-//             Array.Empty<string>()
-//         }
-//     });
-// });
 
 // builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 // builder.Services.AddScoped<DoctorService>();
@@ -93,7 +60,6 @@ builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddTransient<IAppointmentService, AppointmentService>();
 builder.Services.AddTransient<IFileService, FileService>();
-builder.Services.AddTransient<NotificationHub>();
 
 #endregion
 

@@ -34,7 +34,7 @@ public class FileController : ControllerBase
         }
 
         
-        await _hubContext.Clients.All.SendAsync("Doctor", "Uploaded new document");
+        await _hubContext.Clients.All.SendAsync("ReceiveMessage","Doctor", "Uploaded new document");
         return Ok(new { Message = "File uploaded", FileName = file.FileName });
     }
 

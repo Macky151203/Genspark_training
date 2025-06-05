@@ -1,43 +1,74 @@
+<!DOCTYPE html>
 <html>
-  <body>
-      <h2>SignalR Demo</h2>
-      <input type="text" id="user" placeholder="username"/>
-       <input type="text" id="message" placeholder="Message"/>
-       <button onclick="sendMessage()">Send</button>
-       <div id="msgs">
+<head>
+    <title>SignalR File Upload</title>
+</head>
+<body>
+    <h2>SignalR Demo</h2>
 
-       </div>
-      <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
-        <script>
-            const connection = new signalR.HubConnectionBuilder()
-                                .withUrl("http://localhost:5029/notificationhub",{
-                                    withCredentials:true
-                                })
-                                .withAutomaticReconnect()
-                                .build();
-            connection.on("ReceiveMessage",(user,message)=>{
-                console.log(`${user} - says - ${message}`)
-                const placeHolder = document.getElementById("msgs");
-                const content = document.createElement("p")
-                content.innerHTML = `${user} - says - ${message}`;
-                placeHolder.append(content);
-            });
+    <input type="text" id="user" placeholder="username" />
+    <input type="text" id="message" placeholder="Message" />
+    <button onclick="sendMessage()">Send</button>
 
-            connection.start().then(()=>{
-                connection.invoke("SendMessage","Ramu","Hello World");
+    <div>
+        <input type="file" id="fileInput" />
+        <button id="uploadBtn">Upload</button>
+    </div>
+
+    <div id="msgs"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5029/notificationhub", {
+                withCredentials: true
             })
-            .catch(err=>{
-                console.log("sinalR connection Failed")
-            })
-            function sendMessage(){
-                var user = document.getElementById("user").value;
-                var message = document.getElementById("message").value;
-                connection.invoke("SendMessage",user,message)
-                         .catch(err=>{
-                            console.error(err);
-                         })
+            .withAutomaticReconnect()
+            .build();
 
+        connection.on("ReceiveMessage", (user, message) => {
+            const placeHolder = document.getElementById("msgs");
+            const content = document.createElement("p");
+            content.innerHTML = `${user} - ${message}`;
+            placeHolder.append(content);
+        });
+
+        connection.start().then(() => {
+            connection.invoke("SendMessage", "Ramu", "Hello World");
+        }).catch(err => {
+            console.log("SignalR connection failed", err);
+        });
+
+        document.getElementById("uploadBtn").addEventListener("click", async () => {
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            if (!file) return alert("Please select a file");
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("http://localhost:5029/api/file/upload", {
+                    method: "POST",
+                    headers: {
+                        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJrYW5lQGdtYWlsLmNvbSIsInJvbGUiOiJEb2N0b3IiLCJuYmYiOjE3NDkxMjAyNzMsImV4cCI6MTc0OTIwNjY3MywiaWF0IjoxNzQ5MTIwMjczfQ.mv_yXQlKeDUhRQw2GM5n5Bf9uKN_Nm-Man2Dzkyzrew`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                console.log("Upload response:", data);
+            } catch (err) {
+                console.error("Upload error:", err);
             }
-        </script>
-  </body>
+        });
+
+        function sendMessage() {
+            const user = document.getElementById("user").value;
+            const message = document.getElementById("message").value;
+            connection.invoke("SendMessage", user, message)
+                .catch(err => console.error("SendMessage failed:", err));
+        }
+    </script>
+</body>
 </html>
