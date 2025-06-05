@@ -6,7 +6,7 @@ public class Doctor
 {
     public int Id { get; set; }
     
-    [NameValidation(ErrorMessage = "Ivanlid name....")]
+    
     public string Name { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
     public float YearsOfExperience { get; set; }

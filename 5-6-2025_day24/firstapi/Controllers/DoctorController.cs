@@ -79,10 +79,14 @@ public class DoctorController : ControllerBase
     [HttpPost("AddDoctor")]
     public async Task<ActionResult<Doctor>> AddDoctor([FromBody] DoctorAddRequestDto doctorDto)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
         try
         {
             var doctor = await _doctorService.AddDoctor(doctorDto);
-            return Created("",doctor);
+            return Created("", doctor);
         }
         catch (Exception e)
         {
