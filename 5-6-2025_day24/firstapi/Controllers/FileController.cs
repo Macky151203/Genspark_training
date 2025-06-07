@@ -32,7 +32,7 @@ public class FileController : ControllerBase
         {
             await file.CopyToAsync(stream);
         }
-
+        // Console.WriteLine("File uploaded");
         
         await _hubContext.Clients.All.SendAsync("ReceiveMessage","Doctor", "Uploaded new document");
         return Ok(new { Message = "File uploaded", FileName = file.FileName });

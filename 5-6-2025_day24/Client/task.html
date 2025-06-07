@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SignalR File Upload</title>
+</head>
+
+<body>
+    <h2>SignalR Demo</h2>
+
+    <input type="text" id="user" placeholder="username" />
+    <input type="text" id="message" placeholder="Message" />
+    <button onclick="sendMessage()">Send</button>
+
+    <form id="uploadForm">
+        <input type="file" id="fileInput" />
+        <button type="submit" id="uploadBtn">Upload</button>
+    </form>
+
+    <div id="msgs"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5029/notificationhub", {
+                withCredentials: true
+            })
+            .withAutomaticReconnect()
+            .build();
+
+        connection.on("ReceiveMessage", (user, message) => {
+            const placeHolder = document.getElementById("msgs");
+            const content = document.createElement("p");
+            content.innerHTML = `${user} - ${message}`;
+            placeHolder.append(content);
+        });
+
+        connection.start().then(() => {
+            connection.invoke("SendMessage", "Ramu", "Hello World");
+        }).catch(err => {
+            console.log("SignalR connection failed", err);
+        });
+
+        document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            if (!file) return alert("Please select a file");
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("http://localhost:5029/api/file/upload", {
+                    method: "POST",
+                    headers: {
+                        Authorization: `Bearer eyJuYW1laWQiOiJrYW5lQGdtYWlsLmNvbSIsInJvbGUiOiJEb2N0b3IiLCJuYmYiOjE3NDkxMjAyNzMsImV4cCI6MTc0OTIwNjY3MywiaWF0IjoxNzQ5MTIwMjczfQ.mv_yXQlKeDUhRQw2GM5n5Bf9uKN_Nm-Man2Dzkyzrew`
+                    },
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error("Upload failed");
+                }
+
+                const data = await response.json();
+                console.log("Upload successful:", data);
+            } catch (err) {
+                console.error("Upload error:", err);
+            }
+        });
+
+
+
+        function sendMessage() {
+            const user = document.getElementById("user").value;
+            const message = document.getElementById("message").value;
+            connection.invoke("SendMessage", user, message)
+                .catch(err => console.error("SendMessage failed:", err));
+        }
+    </script>
+</body>
+
+</html>
