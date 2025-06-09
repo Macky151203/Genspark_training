@@ -36,6 +36,7 @@ public class TicketService : ITicketService
             Quantity = ticketDto.Quantity,
             CustomerEmail = username ?? string.Empty,
             BookingDate = DateTime.UtcNow,
+            Total= ticketDto.Quantity * curevent.Price,
             IsCancelled = false
         };
         return await _ticketRepository.Add(newTicket);

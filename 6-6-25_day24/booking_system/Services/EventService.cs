@@ -67,9 +67,27 @@ public class EventService : IEventService
 
     public async Task<Event?> UpdateEvent(string eventName, EventDto eventDto)
     {
-        //make an event and return
-        // return await _eventRepository.Update(eventName, eventDto);
-        throw new NotImplementedException("UpdateEvent method is not implemented yet.");
+        var existingEvent = await _eventRepository.Get(eventName);
+        if (existingEvent == null)
+        {
+            throw new NotImplementedException($"Event '{eventName}' does not exist.");
+        }
+
+        var existingCategory = await _categoryRepository.Get(eventDto.CategoryName);
+        if (existingCategory == null)
+        {
+            throw new ArgumentException($"Category '{eventDto.CategoryName}' does not exist.");
+        }
+
+        existingEvent.Title = eventDto.Title;
+        existingEvent.Description = eventDto.Description;
+        existingEvent.Date = eventDto.Date;
+        existingEvent.CategoryId = existingCategory.Id;
+        existingEvent.Price = eventDto.Price;
+        existingEvent.CreatorEmail = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+
+
+        return await _eventRepository.Update(eventName,existingEvent);
     }
 
     public async Task<Event> DeleteEvent(string eventName)

@@ -6,6 +6,8 @@ public class Ticket
     public int EventId { get; set; }
     public int Quantity { get; set; }
 
+    public int Total { get; set; } 
+
     public string CustomerEmail { get; set; } = string.Empty; // FK to Customer.Email
     public bool IsCancelled { get; set; }
 
