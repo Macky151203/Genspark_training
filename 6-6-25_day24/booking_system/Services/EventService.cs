@@ -29,6 +29,7 @@ public class EventService : IEventService
     public async Task<Event> CreateEvent(EventDto eventDto)
     {
         //make an event and return
+        
         return await _eventRepository.Add(eventDto);
     }
 

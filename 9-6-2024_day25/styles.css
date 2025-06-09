@@ -254,4 +254,7 @@ a {
   .testimonial p {
     font-size: 14px;
   }
+  .nav-links {
+    display: none;
+  }
 }
