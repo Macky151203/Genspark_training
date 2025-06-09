@@ -5,6 +5,6 @@ public class Category
 
     public string Name { get; set; }
 
-    // Navigation property: Category has many events (1:N)
+
     public ICollection<Event>? Events { get; set; }
 }

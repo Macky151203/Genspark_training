@@ -34,6 +34,7 @@ builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 builder.Services.AddTransient<IRepository<string, Admin>, AdminRepository>();
 builder.Services.AddTransient<IRepository<string, Customer>, CustomerRepository>();
 builder.Services.AddTransient<IRepository<string, Event>, EventRepository>();
+builder.Services.AddTransient<IRepository<string, Category>, CategoryRepository>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
 builder.Services.AddTransient<IAdminService, AdminService>();
 builder.Services.AddTransient<IEventService, EventService>();
