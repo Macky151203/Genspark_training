@@ -1,0 +1,9 @@
+namespace BookingSystem.Models.DTOs;
+
+public class TicketDto
+{
+    public string EventName { get; set; }
+    public int Quantity { get; set; }
+
+    public DateTime BookingDate { get; set; }
+}

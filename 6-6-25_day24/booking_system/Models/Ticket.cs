@@ -7,10 +7,10 @@ public class Ticket
     public int Quantity { get; set; }
 
     public string CustomerEmail { get; set; } = string.Empty; // FK to Customer.Email
+    public bool IsCancelled { get; set; }
 
     public DateTime BookingDate { get; set; }
 
-    public bool IsCancelled { get; set; }
     public Event? Event { get; set; }
     public Customer? User { get; set; }
 }
