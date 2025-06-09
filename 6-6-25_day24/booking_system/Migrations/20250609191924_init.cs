@@ -30,9 +30,9 @@ namespace booking_system.Migrations
                 columns: table => new
                 {
                     Email = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
                     Role = table.Column<string>(type: "text", nullable: false),
-                    Password = table.Column<byte[]>(type: "bytea", nullable: true),
-                    HashKey = table.Column<byte[]>(type: "bytea", nullable: true)
+                    Password = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,14 +87,14 @@ namespace booking_system.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CategoryId = table.Column<int>(type: "integer", nullable: false),
-                    CreatedById = table.Column<string>(type: "text", nullable: false)
+                    CreatorEmail = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Events", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Events_Admins_CreatedById",
-                        column: x => x.CreatedById,
+                        name: "FK_Events_Admins_CreatorEmail",
+                        column: x => x.CreatorEmail,
                         principalTable: "Admins",
                         principalColumn: "Email",
                         onDelete: ReferentialAction.Restrict);
@@ -140,9 +140,9 @@ namespace booking_system.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Events_CreatedById",
+                name: "IX_Events_CreatorEmail",
                 table: "Events",
-                column: "CreatedById");
+                column: "CreatorEmail");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_CustomerEmail",

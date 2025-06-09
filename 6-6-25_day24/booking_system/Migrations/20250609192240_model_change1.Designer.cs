@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace booking_system.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20250608140013_user_model_change")]
-    partial class user_model_change
+    [Migration("20250609192240_model_change1")]
+    partial class model_change1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,6 +98,9 @@ namespace booking_system.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
@@ -131,6 +134,9 @@ namespace booking_system.Migrations
 
                     b.Property<bool>("IsCancelled")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

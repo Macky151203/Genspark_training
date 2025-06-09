@@ -4,16 +4,20 @@ using BookingSystem.Models;
 using BookingSystem.Repositories;
 using BookingSystem.Interfaces;
 using BookingSystem.Models.DTOs;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 public class EventService : IEventService
 {
     private readonly IRepository<string, Event> _eventRepository;
     private readonly IRepository<string, Category> _categoryRepository;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public EventService(IRepository<string, Event> eventRepository, IRepository<string, Category> categoryRepository)
+    public EventService(IRepository<string, Event> eventRepository, IRepository<string, Category> categoryRepository, IHttpContextAccessor httpContextAccessor)
     {
         _eventRepository = eventRepository;
         _categoryRepository = categoryRepository;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<IEnumerable<Event>> GetAllEvents()
@@ -28,15 +32,44 @@ public class EventService : IEventService
 
     public async Task<Event> CreateEvent(EventDto eventDto)
     {
-        //make an event and return
-        
-        return await _eventRepository.Add(eventDto);
+        var existingCategory = await _categoryRepository.Get(eventDto.CategoryName);
+        string? username = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (existingCategory == null)
+        {
+            var newCategory = new Category { Name = eventDto.CategoryName };
+            newCategory = await _categoryRepository.Add(newCategory);
+            var newEvent = new Event
+            {
+                Title = eventDto.Title,
+                Description = eventDto.Description,
+                Date = eventDto.Date,
+                CategoryId = newCategory.Id,
+                CreatorEmail = username ?? string.Empty,
+                Price = eventDto.Price
+            };
+            return await _eventRepository.Add(newEvent);
+        }
+
+        var newEvent2 = new Event
+        {
+            Title = eventDto.Title,
+            Description = eventDto.Description,
+            Date = eventDto.Date,
+            CategoryId = existingCategory.Id,
+            CreatorEmail = username ?? string.Empty,
+            Price = eventDto.Price
+
+        };
+        return await _eventRepository.Add(newEvent2);
+
+
     }
 
     public async Task<Event?> UpdateEvent(string eventName, EventDto eventDto)
     {
         //make an event and return
-        return await _eventRepository.Update(eventName, eventDto);
+        // return await _eventRepository.Update(eventName, eventDto);
+        throw new NotImplementedException("UpdateEvent method is not implemented yet.");
     }
 
     public async Task<Event> DeleteEvent(string eventName)
@@ -45,10 +78,18 @@ public class EventService : IEventService
     }
     public async Task<IEnumerable<Event>> GetEventsByCategoryAsync(string category)
     {
-        return null;
+        var existingCategory = await _categoryRepository.Get(category);
+        if (existingCategory == null)
+        {
+            throw new ArgumentException($"Category '{category}' does not exist.");
+        }
+        var categoryid= existingCategory.Id;
+        var allEvents = await _eventRepository.GetAll();
+        return allEvents.Where(e => e.CategoryId == categoryid);
     }
     public async Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate)
     {
-        return null;
+        var allEvents = await _eventRepository.GetAll();
+        return allEvents.Where(e => e.Date >= startDate && e.Date <= endDate);
     }
 }

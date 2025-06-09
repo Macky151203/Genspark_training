@@ -16,7 +16,7 @@ public class CategoryRepository : Repository<string, Category>
     {
         var events = await _bookingdbcontext.Categories.SingleOrDefaultAsync(c => c.Name == key);
 
-        return events ?? throw new Exception("No Customer with the given ID");
+        return events ;
     }
 
     public override async Task<IEnumerable<Category>> GetAll()

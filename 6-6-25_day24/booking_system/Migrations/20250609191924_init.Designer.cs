@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace booking_system.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20250606105915_changed_model")]
-    partial class changed_model
+    [Migration("20250609191924_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,7 +87,7 @@ namespace booking_system.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CreatedById")
+                    b.Property<string>("CreatorEmail")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -106,7 +106,7 @@ namespace booking_system.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("CreatorEmail");
 
                     b.ToTable("Events");
                 });
@@ -146,15 +146,13 @@ namespace booking_system.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<byte[]>("HashKey")
-                        .HasColumnType("bytea");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<byte[]>("Password")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -197,7 +195,7 @@ namespace booking_system.Migrations
 
                     b.HasOne("BookingSystem.Models.Admin", "CreatedBy")
                         .WithMany("CreatedEvents")
-                        .HasForeignKey("CreatedById")
+                        .HasForeignKey("CreatorEmail")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

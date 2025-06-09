@@ -42,6 +42,7 @@ builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddSingleton<ITokenCacheService, InMemoryTokenCacheService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
+builder.Services.AddHttpContextAccessor();
 
 //jwt auth
 builder.Services.AddSwaggerGen(options =>
