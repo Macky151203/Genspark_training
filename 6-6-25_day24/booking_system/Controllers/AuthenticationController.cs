@@ -27,38 +27,43 @@ public class AuthenticationController : ControllerBase
         try
         {
             var result = await _authenticationService.Login(loginRequest);
+            _logger.LogInformation("User {Username} logged in successfully", loginRequest.Username);
+
             return Ok(result);
         }
         catch (Exception e)
         {
-            _logger.LogError(e.Message);
+            _logger.LogError(e, "Login failed for user {Username}", loginRequest.Username);
+
             return Unauthorized(e.Message);
         }
 
     }
     [HttpPost("logout")]
     [Authorize]
-    public async Task<IActionResult> Logout(string email,string token)
+    public async Task<IActionResult> Logout(string email, string token)
     {
         try
         {
             if (string.IsNullOrEmpty(email))
             {
+                _logger.LogWarning("Logout attempted with empty email");
+
                 return BadRequest("User not authenticated");
             }
-            await _authenticationService.Logout(email,token);
+            await _authenticationService.Logout(email, token);
             return Ok("Logged out successfully");
         }
         catch (Exception e)
         {
-            _logger.LogError(e.Message);
+            _logger.LogError(e, "Logout failed for user {Email}", email);
             return Unauthorized(e.Message);
         }
     }
 
     [HttpPost("refresh")]
     [Authorize]
-    public async Task<ActionResult<UserLoginResponse>> RefreshToken(string email,string refreshToken)
+    public async Task<ActionResult<UserLoginResponse>> RefreshToken(string email, string refreshToken)
     {
         try
         {
@@ -75,7 +80,7 @@ public class AuthenticationController : ControllerBase
         }
         catch (Exception e)
         {
-            _logger.LogError(e.Message);
+            _logger.LogError(e, "Refresh token failed for user {Email}", email);
             return Unauthorized(e.Message);
         }
     }

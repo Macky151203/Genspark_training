@@ -12,10 +12,12 @@ namespace BookingSystem.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
+        private readonly ILogger<AuthenticationController> _logger;
 
-        public CustomerController(ICustomerService customerService)
+        public CustomerController(ICustomerService customerService, ILogger<AuthenticationController> logger)
         {
             _customerService = customerService;
+            _logger = logger;
         }
 
         [HttpPost("register")]
@@ -24,8 +26,10 @@ namespace BookingSystem.Controllers
             var customer = await _customerService.RegisterCustomer(customerDto);
             if (customer == null)
             {
+                _logger.LogError("Failed to register customer with email {Email}", customerDto.Email);
                 return BadRequest("Failed to register customer.");
             }
+            _logger.LogInformation("Customer {Email} registered successfully", customer.Email);
             return CreatedAtAction(nameof(GetCustomerByEmail), new { email = customer.Email }, customer);
         }
 
@@ -39,6 +43,7 @@ namespace BookingSystem.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Failed to retrieve customer with email {Email}", email);
                 return NotFound(ex.Message);
             }
         }
@@ -54,6 +59,7 @@ namespace BookingSystem.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Failed to retrieve all customers");
                 return BadRequest(ex.Message);
             }
         }

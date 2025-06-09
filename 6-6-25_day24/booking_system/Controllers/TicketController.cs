@@ -15,10 +15,12 @@ using System.Collections.Generic;
 public class TicketController : ControllerBase
 {
     private readonly ITicketService _ticketService;
+    private readonly ILogger<AuthenticationController> _logger;
 
-    public TicketController(ITicketService ticketService)
+    public TicketController(ITicketService ticketService, ILogger<AuthenticationController> logger)
     {
         _ticketService = ticketService;
+        _logger = logger;
     }
 
     [HttpPost("book")]
@@ -32,6 +34,7 @@ public class TicketController : ControllerBase
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "Error booking ticket for event {EventName}", ticketDto.EventName);
             return BadRequest(ex.Message);
         }
     }
@@ -39,12 +42,21 @@ public class TicketController : ControllerBase
     [Authorize(Roles = "Customer")]
     public async Task<ActionResult<Ticket>> GetTicketById(int id)
     {
-        var ticket = await _ticketService.GetTicketById(id);
-        if (ticket == null)
+        try
         {
-            return NotFound();
+            var ticket = await _ticketService.GetTicketById(id);
+            if (ticket == null)
+            {
+                _logger.LogWarning("Ticket with ID {Id} not found", id);
+                return NotFound();
+            }
+            return Ok(ticket);
         }
-        return Ok(ticket);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving ticket with ID {Id}", id);
+            return NotFound(ex.Message);
+        }
     }
     [HttpDelete("{id}/cancel")]
     [Authorize(Roles = "Customer")]
@@ -57,6 +69,7 @@ public class TicketController : ControllerBase
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "Error canceling ticket with ID {Id}", id);
             return NotFound(ex.Message);
         }
     }

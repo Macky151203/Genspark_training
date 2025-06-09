@@ -136,3 +136,12 @@
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.AspNetCore.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Extensions.Hosting.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Extensions.Logging.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Formatting.Compact.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Settings.Configuration.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.Console.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.Debug.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.File.dll

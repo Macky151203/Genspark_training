@@ -8,9 +8,18 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BookingSystem.Misc;
+using Serilog;
 
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
 
 
 // builder.Services.AddOpenApi();
@@ -115,6 +124,7 @@ app.UseMiddleware<TokenValidationMiddleware>();
 
 
 app.MapControllers();
+app.UseSerilogRequestLogging();
 app.Run();
 
 
