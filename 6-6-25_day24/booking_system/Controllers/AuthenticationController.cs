@@ -36,6 +36,49 @@ public class AuthenticationController : ControllerBase
         }
 
     }
+    [HttpPost("logout")]
+    [Authorize]
+    public async Task<IActionResult> Logout(string email,string token)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return BadRequest("User not authenticated");
+            }
+            await _authenticationService.Logout(email,token);
+            return Ok("Logged out successfully");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            return Unauthorized(e.Message);
+        }
+    }
+
+    [HttpPost("refresh")]
+    [Authorize]
+    public async Task<ActionResult<UserLoginResponse>> RefreshToken(string email,string refreshToken)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return BadRequest("User not authenticated");
+            }
+            if (string.IsNullOrEmpty(refreshToken))
+            {
+                return BadRequest("Refresh token is required");
+            }
+            var result = await _authenticationService.RefreshToken(email, refreshToken);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+            return Unauthorized(e.Message);
+        }
+    }
 
 
 

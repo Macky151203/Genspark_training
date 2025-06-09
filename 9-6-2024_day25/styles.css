@@ -1,0 +1,236 @@
+/* Fonts and Reset */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: #F5F5F5; /* Background fill */
+  color: #333333; /* Primary Gray for headings */
+}
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #333333; /* Ensure all headings use Primary Gray */
+}
+p {
+  margin: 8px 0;
+  color: #666666; /* Medium Gray for body text */
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* Utilities */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.calendar, .stethoscope, .plus {
+  color: #333333; /* Icon stroke matches primary gray in grayscale mode */
+}
+.primary-btn, .outline-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.primary-btn {
+  background-color: #CCCCCC; /* Light Gray for filled buttons */
+  border: none;
+  color: #333333;
+}
+.primary-btn:hover {
+  background-color: #E0E0E0; /* Accent Gray on hover */
+}
+.outline-btn {
+  border: 1px solid #666666; /* Medium Gray border */
+  background-color: transparent;
+  margin-left: 8px;
+  color: #333333;
+}
+.outline-btn:hover {
+  background-color: #E0E0E0; /* Accent Gray on hover */
+}
+
+/* Header */
+.header {
+  background-color: #FFFFFF;
+  padding: 16px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo h1 {
+  margin-left: 8px;
+  font-size: 20px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #E0E0E0; /* Accent Gray for background fill */
+  padding: 64px 0;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.hero-text {
+  max-width: 500px;
+}
+.hero-text h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+.hero-text p {
+  margin: 16px 0;
+}
+.hero-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  position: relative;
+  top: 64px;
+}
+
+/* Services Section */
+.services-section {
+  padding: 64px 24px;
+  text-align: center;
+}
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: #FFFFFF;
+  padding: 24px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.card .icon {
+  font-size: 32px;
+  color: #333333;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  background-color: #E0E0E0; /* Accent Gray */
+  padding: 32px 24px;
+  text-align: center;
+}
+.testimonial-heading{
+    margin-bottom: 10px;
+
+}
+.testimonial {
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 600px;
+}
+.testimonial .icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+/* Clinic Hours */
+.hours-section {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 24px;
+  background-color: #FFFFFF;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.clinic-hours h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333333;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+  .testimonial {
+    padding: 16px;
+  }
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .primary-btn, .outline-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 24px;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+  .testimonial p {
+    font-size: 14px;
+  }
+}

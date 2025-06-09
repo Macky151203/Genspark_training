@@ -1,19 +1,23 @@
 namespace BookingSystem.Services;
+
 using System.Security.Cryptography;
 using System.Text;
 using BookingSystem.Interfaces;
 using BookingSystem.Models;
+using BCrypt.Net;
 public class EncryptionService : IEncryptionService
 {
+
     public async Task<EncryptModel> EncryptData(EncryptModel data)
     {
-        HMACSHA256 hMACSHA256;
-        if (data.HashKey != null)
-            hMACSHA256 = new HMACSHA256(data.HashKey);
-        else
-            hMACSHA256 = new HMACSHA256();
-        data.EncryptedData = hMACSHA256.ComputeHash(Encoding.UTF8.GetBytes(data.Data));
-        data.HashKey = hMACSHA256.Key;
-        return data;
+        string hashedPassword = BCrypt.HashPassword(data.Data);
+        data.EncryptedData = hashedPassword;
+        return await Task.FromResult(data);
     }
+
+    public bool VerifyPassword(string password, string hashedPassword)
+    {
+        return BCrypt.Verify(password, hashedPassword);
+    }
+
 }

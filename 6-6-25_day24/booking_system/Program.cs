@@ -7,6 +7,7 @@ using BookingSystem.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BookingSystem.Misc;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,10 +33,13 @@ builder.Services.AddDbContext<BookingDbContext>(options =>
 builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 builder.Services.AddTransient<IRepository<string, Admin>, AdminRepository>();
 builder.Services.AddTransient<IRepository<string, Customer>, CustomerRepository>();
+builder.Services.AddTransient<IRepository<string, Event>, EventRepository>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
 builder.Services.AddTransient<IAdminService, AdminService>();
+builder.Services.AddTransient<IEventService, EventService>();
 builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddSingleton<ITokenCacheService, InMemoryTokenCacheService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 
 //jwt auth
@@ -102,11 +106,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+//middleware
+app.UseMiddleware<TokenValidationMiddleware>();
+
 
 app.MapControllers();
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+

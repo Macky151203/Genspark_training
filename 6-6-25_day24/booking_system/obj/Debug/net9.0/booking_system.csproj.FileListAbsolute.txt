@@ -135,3 +135,4 @@
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/BCrypt.Net-Next.dll

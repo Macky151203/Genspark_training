@@ -32,8 +32,7 @@ public class CustomerService : ICustomerService
                 Name = customerDto.Name,
                 Email = customerDto.Email,
                 Password = encrypteddata.EncryptedData,
-                Role = "Customer",
-                HashKey = encrypteddata.HashKey
+                Role = "Customer"
             };
 
             user = await _userRepository.Add(user);

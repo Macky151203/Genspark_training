@@ -7,8 +7,7 @@ public class User
     public string Name { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;  // "Admin" or "Customer"
 
-    public byte[]? Password { get; set; }
-    public byte[]? HashKey { get; set; }
+    public string Password { get; set; }
 
     // Navigational properties
     public Admin? Admin { get; set; }

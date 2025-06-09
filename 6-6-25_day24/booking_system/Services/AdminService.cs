@@ -32,8 +32,7 @@ public class AdminService : IAdminService
                 Name = adminDto.Name,
                 Email = adminDto.Email,
                 Password = encrypteddata.EncryptedData,
-                Role = "Admin",
-                HashKey = encrypteddata.HashKey
+                Role = "Admin"
             };
 
             user = await _userRepository.Add(user);
