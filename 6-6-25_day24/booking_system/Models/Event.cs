@@ -11,6 +11,7 @@ public class Event
     public int Price { get; set; }
 
     public int CategoryId { get; set; }
+    public bool IsCancelled { get; set; }
 
     public string CreatorEmail { get; set; } = string.Empty; // FK to Admin.Email
     public Admin? CreatedBy { get; set; }

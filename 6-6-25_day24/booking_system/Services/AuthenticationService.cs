@@ -140,7 +140,7 @@ public class AuthenticationService : IAuthenticationService
         await Task.CompletedTask;
     }
 
-    public async Task<UserLoginResponse> RefreshToken(string email, string refreshToken)
+    public async Task<UserLoginResponse> RefreshToken(string email, string refreshToken,string token)
     {
         if (!refreshTokens.TryGetValue(email, out var storedToken) || storedToken != refreshToken)
         {
@@ -156,6 +156,9 @@ public class AuthenticationService : IAuthenticationService
 
         var newToken = await _tokenService.GenerateToken(dbUser);
         var newRefreshToken = Guid.NewGuid().ToString();
+
+        _tokenCacheService.RemoveToken(token);
+        _tokenCacheService.StoreToken(newToken);
 
         refreshTokens[email] = newRefreshToken;
 

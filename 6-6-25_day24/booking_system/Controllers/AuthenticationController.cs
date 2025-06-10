@@ -63,7 +63,7 @@ public class AuthenticationController : ControllerBase
 
     [HttpPost("refresh")]
     [Authorize]
-    public async Task<ActionResult<UserLoginResponse>> RefreshToken(string email, string refreshToken)
+    public async Task<ActionResult<UserLoginResponse>> RefreshToken(string email, string refreshToken, string token)
     {
         try
         {
@@ -75,7 +75,7 @@ public class AuthenticationController : ControllerBase
             {
                 return BadRequest("Refresh token is required");
             }
-            var result = await _authenticationService.RefreshToken(email, refreshToken);
+            var result = await _authenticationService.RefreshToken(email, refreshToken, token);
             return Ok(result);
         }
         catch (Exception e)

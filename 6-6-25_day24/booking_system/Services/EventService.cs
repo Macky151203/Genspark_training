@@ -45,7 +45,8 @@ public class EventService : IEventService
                 Date = eventDto.Date,
                 CategoryId = newCategory.Id,
                 CreatorEmail = username ?? string.Empty,
-                Price = eventDto.Price
+                Price = eventDto.Price,
+                IsCancelled = false
             };
             return await _eventRepository.Add(newEvent);
         }
@@ -57,7 +58,8 @@ public class EventService : IEventService
             Date = eventDto.Date,
             CategoryId = existingCategory.Id,
             CreatorEmail = username ?? string.Empty,
-            Price = eventDto.Price
+            Price = eventDto.Price,
+            IsCancelled = false
 
         };
         return await _eventRepository.Add(newEvent2);
@@ -103,7 +105,7 @@ public class EventService : IEventService
         }
         var categoryid= existingCategory.Id;
         var allEvents = await _eventRepository.GetAll();
-        return allEvents.Where(e => e.CategoryId == categoryid);
+        return allEvents.Where(e => e.CategoryId == categoryid).ToList();
     }
     public async Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate)
     {

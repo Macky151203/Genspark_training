@@ -55,6 +55,21 @@ builder.Services.AddSingleton<ITokenCacheService, InMemoryTokenCacheService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddHttpContextAccessor();
 
+
+//signalr
+builder.Services.AddSignalR();
+
+#region CORS
+builder.Services.AddCors(options=>{
+    options.AddDefaultPolicy(policy=>{
+        policy.WithOrigins("http://127.0.0.1:5500")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+#endregion
+
 //jwt auth
 builder.Services.AddSwaggerGen(options =>
 {
@@ -118,13 +133,15 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors();
 
 //middleware
 app.UseMiddleware<TokenValidationMiddleware>();
-
-
-app.MapControllers();
 app.UseSerilogRequestLogging();
+app.MapControllers();
+
+
+app.MapHub<EventHub>("/eventhub");
 app.Run();
 
 

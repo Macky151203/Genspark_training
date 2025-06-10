@@ -145,3 +145,10 @@
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.Console.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.Debug.dll
 /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Serilog.Sinks.File.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/PdfSharpCore.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/ICSharpCode.SharpZipLib.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/SixLabors.Fonts.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/SixLabors.ImageSharp.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/de/PdfSharpCore.resources.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/bin/Debug/net9.0/System.Net.WebSockets.WebSocketProtocol.dll

@@ -95,6 +95,9 @@ namespace booking_system.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("Price")
                         .HasColumnType("integer");
 

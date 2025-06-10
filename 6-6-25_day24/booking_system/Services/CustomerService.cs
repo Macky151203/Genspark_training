@@ -31,7 +31,7 @@ public class CustomerService : ICustomerService
             {
                 Name = customerDto.Name,
                 Email = customerDto.Email,
-                Password = encrypteddata.EncryptedData,
+                Password = encrypteddata.EncryptedData??"",
                 Role = "Customer"
             };
 
