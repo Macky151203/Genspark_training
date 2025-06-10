@@ -1,0 +1,1189 @@
+2025-06-11 00:02:51.476 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-11 00:02:51.488 +05:30 [INF] CORS policy execution failed.
+2025-06-11 00:02:51.488 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 00:02:51.489 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 00:02:51.501 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 00:02:51.605 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 00:02:51.938 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-11 00:02:51.938 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 00:02:51.940 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 438.6096ms
+2025-06-11 00:02:51.940 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 00:02:51.940 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 450.8706 ms
+2025-06-11 00:02:51.941 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 464.2966ms
+2025-06-11 00:03:07.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 00:03:07.479 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:03:07.479 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 00:03:07.548 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 00:03:07.549 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 00:03:07.550 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 00:03:07.550 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 70.4487ms
+2025-06-11 00:03:07.550 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:03:07.550 +05:30 [INF] HTTP GET /api/Admin responded 200 in 71.1950 ms
+2025-06-11 00:03:07.550 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 75.2915ms
+2025-06-11 00:03:42.132 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication/refresh?email=admin1%40gmail.com&refreshToken=3c9e5a55-9ff9-4fc7-8348-5a91bb0047e9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbjFAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzQ5NTgwMzcxLCJleHAiOjE3NDk2NjY3NzEsImlhdCI6MTc0OTU4MDM3MX0.I2_Jqr7sdG3SCTc_n4BtgFKhubhYEpPCBzhdskB2xDc - null 0
+2025-06-11 00:03:42.138 +05:30 [INF] CORS policy execution failed.
+2025-06-11 00:03:42.138 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 00:03:42.138 +05:30 [INF] Executing endpoint 'AuthenticationController.RefreshToken (booking_system)'
+2025-06-11 00:03:42.144 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] RefreshToken(System.String, System.String, System.String) on controller AuthenticationController (booking_system).
+2025-06-11 00:03:42.160 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 00:03:42.161 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 00:03:42.161 +05:30 [INF] Executed action AuthenticationController.RefreshToken (booking_system) in 17.0903ms
+2025-06-11 00:03:42.161 +05:30 [INF] Executed endpoint 'AuthenticationController.RefreshToken (booking_system)'
+2025-06-11 00:03:42.161 +05:30 [INF] HTTP POST /api/Authentication/refresh responded 200 in 23.2224 ms
+2025-06-11 00:03:42.161 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication/refresh?email=admin1%40gmail.com&refreshToken=3c9e5a55-9ff9-4fc7-8348-5a91bb0047e9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbjFAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzQ5NTgwMzcxLCJleHAiOjE3NDk2NjY3NzEsImlhdCI6MTc0OTU4MDM3MX0.I2_Jqr7sdG3SCTc_n4BtgFKhubhYEpPCBzhdskB2xDc - 200 null application/json; charset=utf-8 28.8657ms
+2025-06-11 00:03:54.771 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 00:03:54.772 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:03:54.772 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 00:03:54.775 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 00:03:54.776 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 00:03:54.777 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 00:03:54.777 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 4.6033ms
+2025-06-11 00:03:54.777 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:03:54.777 +05:30 [INF] HTTP GET /api/Admin responded 200 in 5.2372 ms
+2025-06-11 00:03:54.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 6.0659ms
+2025-06-11 00:03:57.315 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-11 00:03:57.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 1.0476ms
+2025-06-11 00:03:57.375 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 00:03:57.393 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.4585ms
+2025-06-11 00:04:11.338 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 00:04:11.339 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:04:11.339 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 00:04:11.341 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 00:04:11.342 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 00:04:11.343 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 00:04:11.344 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 4.8532ms
+2025-06-11 00:04:11.345 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:04:11.345 +05:30 [INF] HTTP GET /api/Admin responded 200 in 5.9851 ms
+2025-06-11 00:04:11.345 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 7.1758ms
+2025-06-11 00:07:00.780 +05:30 [INF] Application is shutting down...
+2025-06-11 00:07:06.458 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-11 00:07:06.584 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-11 00:07:06.586 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 00:07:06.586 +05:30 [INF] Hosting environment: Development
+2025-06-11 00:07:06.586 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-11 00:07:10.899 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-11 00:07:10.993 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 94.7513ms
+2025-06-11 00:07:11.050 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 00:07:11.185 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.638ms
+2025-06-11 00:07:26.807 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 00:07:26.811 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 00:07:26.892 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:07:26.904 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 00:07:28.051 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 00:07:28.160 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 00:07:28.214 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 00:07:28.242 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1334.751ms
+2025-06-11 00:07:28.242 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 00:07:28.244 +05:30 [INF] HTTP GET /api/Admin responded 200 in 1352.9571 ms
+2025-06-11 00:07:28.253 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 1446.3451ms
+2025-06-11 01:03:15.560 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 01:03:15.563 +05:30 [INF] CORS policy execution successful.
+2025-06-11 01:03:15.565 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 4.8905ms
+2025-06-11 01:03:15.567 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 01:03:15.569 +05:30 [INF] CORS policy execution successful.
+2025-06-11 01:03:15.570 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-11 01:03:15.579 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-11 01:03:15.579 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 9.3878 ms
+2025-06-11 01:03:15.579 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 12.8216ms
+2025-06-11 01:03:15.583 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=bumEf56Uu2_fNr53anKA-g - null null
+2025-06-11 01:03:15.583 +05:30 [INF] CORS policy execution successful.
+2025-06-11 01:03:15.583 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-11 01:03:18.069 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-11 01:03:18.069 +05:30 [INF] HTTP GET /eventhub responded 101 in 2485.9706 ms
+2025-06-11 01:03:18.073 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=bumEf56Uu2_fNr53anKA-g - 101 null null 2489.6845ms
+2025-06-11 01:03:33.355 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 01:03:33.359 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:03:33.361 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:03:33.418 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:03:33.428 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:03:33.439 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:03:33.440 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 78.9552ms
+2025-06-11 01:03:33.440 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:03:33.440 +05:30 [INF] HTTP GET /api/Admin responded 200 in 81.0077 ms
+2025-06-11 01:03:33.441 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 85.4682ms
+2025-06-11 01:03:42.102 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-11 01:03:42.103 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 0.8384ms
+2025-06-11 01:03:42.303 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 01:03:42.317 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.1432ms
+2025-06-11 01:03:57.407 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-11 01:03:57.408 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:03:57.408 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:03:57.408 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:03:57.418 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:03:57.568 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:03:57.920 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-11 01:03:57.920 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 01:03:57.921 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 503.0614ms
+2025-06-11 01:03:57.921 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:03:57.921 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 512.9067 ms
+2025-06-11 01:03:57.921 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 514.7613ms
+2025-06-11 01:04:12.247 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 01:04:12.249 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:04:12.250 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:04:12.257 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:04:12.259 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:04:12.260 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:04:12.260 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 10.3702ms
+2025-06-11 01:04:12.260 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:04:12.260 +05:30 [INF] HTTP GET /api/Admin responded 200 in 11.0110 ms
+2025-06-11 01:04:12.261 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 13.5446ms
+2025-06-11 01:04:13.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 01:04:13.743 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.1711ms
+2025-06-11 01:07:24.174 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:07:24.175 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:07:24.179 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:07:24.179 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 5.2123ms
+2025-06-11 01:08:07.730 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:08:07.733 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/6/2025 10:44:33 AM', Current time (UTC): '6/10/2025 7:38:07 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-11 01:08:07.747 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/6/2025 10:44:33 AM', Current time (UTC): '6/10/2025 7:38:07 PM'.
+2025-06-11 01:08:07.748 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:08:07.749 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:08:07.749 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 18.8357ms
+2025-06-11 01:08:09.517 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:08:09.533 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/6/2025 10:44:33 AM', Current time (UTC): '6/10/2025 7:38:09 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-11 01:08:09.582 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/6/2025 10:44:33 AM', Current time (UTC): '6/10/2025 7:38:09 PM'.
+2025-06-11 01:08:09.582 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:08:09.582 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:08:09.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 65.6829ms
+2025-06-11 01:08:15.821 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:08:15.822 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:08:15.822 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:08:15.824 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:08:15.825 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:08:15.826 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:08:15.826 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 4.0416ms
+2025-06-11 01:08:15.826 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:08:15.826 +05:30 [INF] HTTP GET /api/admin responded 200 in 4.4692 ms
+2025-06-11 01:08:15.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 5.2408ms
+2025-06-11 01:09:25.154 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:09:25.155 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:09:25.155 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:09:25.167 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:09:25.168 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:09:25.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:09:25.169 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 13.6666ms
+2025-06-11 01:09:25.169 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:09:25.169 +05:30 [INF] HTTP GET /api/admin responded 200 in 14.1172 ms
+2025-06-11 01:09:25.169 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 15.1226ms
+2025-06-11 01:10:04.331 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-11 01:10:04.332 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:10:04.332 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:10:04.332 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:10:04.332 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:10:04.339 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:10:04.605 +05:30 [INF] User admin2@gmail.com logged in successfully
+2025-06-11 01:10:04.605 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 01:10:04.606 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 273.0922ms
+2025-06-11 01:10:04.606 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:10:04.606 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 273.5954 ms
+2025-06-11 01:10:04.606 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 274.728ms
+2025-06-11 01:10:09.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 01:10:09.418 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.856ms
+2025-06-11 01:11:06.627 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:11:06.628 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-06-11 01:11:06.628 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-06-11 01:11:06.629 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:11:06.629 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:11:06.629 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 1.741ms
+2025-06-11 01:11:13.690 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:11:13.690 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-06-11 01:11:13.691 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-06-11 01:11:13.691 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:11:13.691 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:11:13.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 0.9115ms
+2025-06-11 01:12:37.174 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:12:37.175 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-06-11 01:12:37.175 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-06-11 01:12:37.175 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:12:37.176 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:12:37.176 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 1.6666ms
+2025-06-11 01:12:53.586 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:12:53.587 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:12:53.587 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:12:53.588 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:12:53.589 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:12:53.589 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:12:53.589 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1.895ms
+2025-06-11 01:12:53.589 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:12:53.589 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.3069 ms
+2025-06-11 01:12:53.590 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 3.3675ms
+2025-06-11 01:13:59.641 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:13:59.641 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:13:59.642 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:13:59.643 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:13:59.643 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:13:59.644 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:13:59.644 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 2.1167ms
+2025-06-11 01:13:59.644 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:13:59.644 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.5274 ms
+2025-06-11 01:13:59.644 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 3.2241ms
+2025-06-11 01:15:17.769 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:15:17.770 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:15:17.770 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:15:17.785 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:15:17.786 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:15:17.786 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:15:17.786 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 16.5691ms
+2025-06-11 01:15:17.787 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:15:17.787 +05:30 [INF] HTTP GET /api/admin responded 200 in 17.0851 ms
+2025-06-11 01:15:17.787 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 18.4433ms
+2025-06-11 01:15:51.133 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-11 01:15:51.135 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:15:51.135 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:15:51.136 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:15:51.136 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:15:51.139 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:15:51.295 +05:30 [INF] User admin2@gmail.com logged in successfully
+2025-06-11 01:15:51.295 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 01:15:51.296 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 159.589ms
+2025-06-11 01:15:51.296 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:15:51.296 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 160.2693 ms
+2025-06-11 01:15:51.296 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 162.8242ms
+2025-06-11 01:17:11.448 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:17:11.449 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:17:11.450 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:17:11.451 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:17:11.451 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:17:11.452 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:17:11.452 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 2.1989ms
+2025-06-11 01:17:11.452 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:17:11.452 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.5949 ms
+2025-06-11 01:17:11.452 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 4.1458ms
+2025-06-11 01:17:42.836 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-11 01:17:42.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 1.0499ms
+2025-06-11 01:17:42.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 01:17:42.917 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.7207ms
+2025-06-11 01:20:20.280 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/admin/register - application/json 78
+2025-06-11 01:20:20.281 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-11 01:20:20.284 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:20:20.527 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-11 01:20:20.557 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Admins" ("Email", "Id", "Name")
+VALUES (@p0, @p1, @p2);
+2025-06-11 01:20:20.560 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-11 01:20:20.577 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 293.1756ms
+2025-06-11 01:20:20.577 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-11 01:20:20.577 +05:30 [INF] HTTP POST /api/admin/register responded 201 in 296.4999 ms
+2025-06-11 01:20:20.577 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/admin/register - 201 null application/json; charset=utf-8 297.3575ms
+2025-06-11 01:20:26.356 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:20:26.378 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:20:26.378 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:20:26.425 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:20:26.436 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:20:26.437 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:20:26.438 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 52.9932ms
+2025-06-11 01:20:26.438 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:20:26.438 +05:30 [INF] HTTP GET /api/admin responded 200 in 60.0414 ms
+2025-06-11 01:20:26.438 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 82.6225ms
+2025-06-11 01:26:00.045 +05:30 [INF] Application is shutting down...
+2025-06-11 01:39:04.122 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-11 01:39:04.253 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-11 01:39:04.255 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 01:39:04.255 +05:30 [INF] Hosting environment: Development
+2025-06-11 01:39:04.255 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-11 01:39:13.122 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-11 01:39:13.232 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 113.0874ms
+2025-06-11 01:39:13.422 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-11 01:39:13.581 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 160.003ms
+2025-06-11 01:39:38.871 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Customer/register - application/json 86
+2025-06-11 01:39:38.884 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 01:39:38.931 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:39:38.939 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:39:38.945 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-11 01:39:38.969 +05:30 [INF] Route matched with {action = "RegisterCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] RegisterCustomer(BookingSystem.Models.DTOs.CustomerDto) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:39:40.385 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-11 01:39:40.432 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Email", "Id", "Name")
+VALUES (@p0, @p1, @p2);
+2025-06-11 01:39:40.434 +05:30 [INF] Customer customer2@gamil.com registered successfully
+2025-06-11 01:39:40.441 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-11 01:39:40.481 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system) in 1507.9657ms
+2025-06-11 01:39:40.482 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-11 01:39:40.485 +05:30 [INF] HTTP POST /api/Customer/register responded 201 in 1540.6297 ms
+2025-06-11 01:39:40.494 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Customer/register - 201 null application/json; charset=utf-8 1622.7512ms
+2025-06-11 01:40:10.733 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 66
+2025-06-11 01:40:10.736 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:40:10.736 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:40:10.736 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:40:10.742 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:40:11.080 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:40:11.085 +05:30 [ERR] Login failed for user customer2@gmail.com
+System.Exception: No User with the given ID
+   at BookingSystem.Repositories.UserRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/UserRepository.cs:line 18
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/AuthenticationService.cs:line 91
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-11 01:40:11.099 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-11 01:40:11.100 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 356.9056ms
+2025-06-11 01:40:11.100 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:40:11.100 +05:30 [INF] HTTP POST /api/Authentication responded 401 in 363.4653 ms
+2025-06-11 01:40:11.100 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 401 null text/plain; charset=utf-8 367.808ms
+2025-06-11 01:40:58.875 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 66
+2025-06-11 01:40:58.879 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:40:58.879 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:40:58.879 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:40:58.879 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:40:58.904 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:40:59.210 +05:30 [INF] User customer2@gamil.com logged in successfully
+2025-06-11 01:40:59.211 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 01:40:59.212 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 332.2784ms
+2025-06-11 01:40:59.212 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:40:59.212 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 332.7835 ms
+2025-06-11 01:40:59.212 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 336.9641ms
+2025-06-11 01:41:14.327 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-11 01:41:14.371 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:41:14.374 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-11 01:41:14.374 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 403 0 null 46.3655ms
+2025-06-11 01:41:23.917 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Customer - null null
+2025-06-11 01:41:23.920 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:41:23.922 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:41:23.936 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:41:23.939 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:41:23.940 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 17.607ms
+2025-06-11 01:41:23.940 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:41:23.940 +05:30 [INF] HTTP GET /api/Customer responded 200 in 20.8305 ms
+2025-06-11 01:41:23.941 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Customer - 200 null application/json; charset=utf-8 23.6622ms
+2025-06-11 01:42:07.095 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:42:07.100 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:42:07.103 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:42:07.152 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:42:07.161 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:42:07.168 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:42:07.169 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 66.1432ms
+2025-06-11 01:42:07.170 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:42:07.170 +05:30 [INF] HTTP GET /api/admin responded 200 in 70.2781 ms
+2025-06-11 01:42:07.170 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 74.7322ms
+2025-06-11 01:43:07.338 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - null null
+2025-06-11 01:43:07.339 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:07.342 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:43:07.355 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:43:07.356 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-06-11 01:43:07.356 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 13.7984ms
+2025-06-11 01:43:07.356 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:07.356 +05:30 [INF] HTTP GET /api/admin/register responded 404 in 17.4980 ms
+2025-06-11 01:43:07.356 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - 404 null text/plain; charset=utf-8 18.4876ms
+2025-06-11 01:43:22.583 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin/email1 - null null
+2025-06-11 01:43:22.583 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:22.584 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:43:22.587 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:43:22.587 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-06-11 01:43:22.587 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 3.3917ms
+2025-06-11 01:43:22.587 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:22.587 +05:30 [INF] HTTP GET /api/Admin/email1 responded 404 in 3.8035 ms
+2025-06-11 01:43:22.587 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin/email1 - 404 null text/plain; charset=utf-8 4.4206ms
+2025-06-11 01:43:29.625 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin/admin1 - null null
+2025-06-11 01:43:29.626 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:29.626 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:43:29.627 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:43:29.628 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-11 01:43:29.628 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 2.0589ms
+2025-06-11 01:43:29.628 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:29.628 +05:30 [INF] HTTP GET /api/Admin/admin1 responded 200 in 2.5793 ms
+2025-06-11 01:43:29.629 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin/admin1 - 200 null application/json; charset=utf-8 3.3829ms
+2025-06-11 01:43:50.814 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - null null
+2025-06-11 01:43:50.815 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:50.815 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:43:50.817 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:43:50.818 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-06-11 01:43:50.818 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 2.7977ms
+2025-06-11 01:43:50.818 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:43:50.818 +05:30 [INF] HTTP GET /api/admin/register responded 404 in 3.3185 ms
+2025-06-11 01:43:50.819 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - 404 null text/plain; charset=utf-8 4.3794ms
+2025-06-11 01:44:21.855 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin/register/admin1 - null null
+2025-06-11 01:44:21.856 +05:30 [INF] HTTP GET /api/admin/register/admin1 responded 404 in 0.0751 ms
+2025-06-11 01:44:21.856 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin/register/admin1 - 404 0 null 1.319ms
+2025-06-11 01:44:21.858 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5136/api/admin/register/admin1, Response status code: 404
+2025-06-11 01:44:49.570 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - null null
+2025-06-11 01:44:49.571 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:44:49.571 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:44:49.583 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:44:49.583 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-06-11 01:44:49.583 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 12.4974ms
+2025-06-11 01:44:49.583 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:44:49.584 +05:30 [INF] HTTP GET /api/admin/register responded 404 in 12.9705 ms
+2025-06-11 01:44:49.584 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin/register?email=admin1 - 404 null text/plain; charset=utf-8 13.7121ms
+2025-06-11 01:44:55.961 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - null null
+2025-06-11 01:44:55.962 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:44:55.962 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:44:55.964 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:44:55.965 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:44:55.966 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:44:55.966 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 4.0933ms
+2025-06-11 01:44:55.966 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:44:55.967 +05:30 [INF] HTTP GET /api/admin responded 200 in 4.8338 ms
+2025-06-11 01:44:55.967 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - 200 null application/json; charset=utf-8 5.5745ms
+2025-06-11 01:45:10.167 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin/admin1 - null null
+2025-06-11 01:45:10.169 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:45:10.169 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:45:10.190 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 01:45:10.191 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-11 01:45:10.211 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 22.722ms
+2025-06-11 01:45:10.211 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 01:45:10.211 +05:30 [INF] HTTP GET /api/Admin/admin1 responded 200 in 42.1028 ms
+2025-06-11 01:45:10.213 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin/admin1 - 200 null application/json; charset=utf-8 45.397ms
+2025-06-11 01:45:17.730 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - null null
+2025-06-11 01:45:17.730 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:17.731 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:45:17.732 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:45:17.733 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:45:17.734 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:45:17.734 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 3.2947ms
+2025-06-11 01:45:17.734 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:17.734 +05:30 [INF] HTTP GET /api/admin responded 200 in 3.9439 ms
+2025-06-11 01:45:17.735 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - 200 null application/json; charset=utf-8 4.7632ms
+2025-06-11 01:45:38.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - null null
+2025-06-11 01:45:38.417 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:38.417 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:45:38.418 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:45:38.418 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:45:38.419 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:45:38.419 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1.8685ms
+2025-06-11 01:45:38.419 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:38.419 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.3765 ms
+2025-06-11 01:45:38.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=admin1 - 200 null application/json; charset=utf-8 3.0109ms
+2025-06-11 01:45:47.233 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:45:47.234 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:47.234 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:45:47.236 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:45:47.237 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:45:47.238 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:45:47.238 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 3.8564ms
+2025-06-11 01:45:47.238 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:45:47.239 +05:30 [INF] HTTP GET /api/admin responded 200 in 4.5337 ms
+2025-06-11 01:45:47.239 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 5.7452ms
+2025-06-11 01:46:01.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 01:46:01.433 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:01.433 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:46:01.435 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:46:01.436 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:46:01.437 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:46:01.437 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 3.494ms
+2025-06-11 01:46:01.437 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:01.437 +05:30 [INF] HTTP GET /api/admin responded 200 in 4.0927 ms
+2025-06-11 01:46:01.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 5.1862ms
+2025-06-11 01:46:28.124 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=man@gmail.com - null null
+2025-06-11 01:46:28.125 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:28.125 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:46:28.126 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:46:28.127 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:46:28.127 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:46:28.127 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 2.1068ms
+2025-06-11 01:46:28.128 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:28.128 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.6925 ms
+2025-06-11 01:46:28.128 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=man@gmail.com - 200 null application/json; charset=utf-8 3.5773ms
+2025-06-11 01:46:50.798 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=man - null null
+2025-06-11 01:46:50.798 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:50.798 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:46:50.799 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:46:50.801 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:46:50.801 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:46:50.802 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 3.2472ms
+2025-06-11 01:46:50.802 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:46:50.802 +05:30 [INF] HTTP GET /api/admin responded 200 in 3.6646 ms
+2025-06-11 01:46:50.802 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=man - 200 null application/json; charset=utf-8 4.3355ms
+2025-06-11 01:46:58.059 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=man - null null
+2025-06-11 01:46:58.062 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:46:58.069 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:46:58.069 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=man - 401 0 null 9.6259ms
+2025-06-11 01:47:03.261 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=man - null null
+2025-06-11 01:47:03.261 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 01:47:03.262 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:47:03.262 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=man - 401 0 null 0.8911ms
+2025-06-11 01:47:47.118 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin?email=man - null null
+2025-06-11 01:47:47.119 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:47:47.119 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 01:47:47.120 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 01:47:47.121 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 01:47:47.121 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:47:47.121 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1.9349ms
+2025-06-11 01:47:47.122 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 01:47:47.122 +05:30 [INF] HTTP GET /api/admin responded 200 in 2.3385 ms
+2025-06-11 01:47:47.122 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin?email=man - 200 null application/json; charset=utf-8 3.3236ms
+2025-06-11 01:49:37.115 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-11 01:49:37.117 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:49:37.117 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:49:37.120 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:49:37.120 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:49:37.120 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 3.0822ms
+2025-06-11 01:49:37.120 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:49:37.120 +05:30 [INF] HTTP GET /api/customer responded 200 in 3.4618 ms
+2025-06-11 01:49:37.120 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 5.0996ms
+2025-06-11 01:49:50.320 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 66
+2025-06-11 01:49:50.322 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:49:50.322 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:49:50.322 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:49:50.322 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-11 01:49:50.341 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-11 01:49:50.486 +05:30 [INF] User customer2@gamil.com logged in successfully
+2025-06-11 01:49:50.486 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-11 01:49:50.486 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 163.5813ms
+2025-06-11 01:49:50.486 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-11 01:49:50.486 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 164.4052 ms
+2025-06-11 01:49:50.486 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 166.1191ms
+2025-06-11 01:51:55.613 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Customer - null null
+2025-06-11 01:51:55.615 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:51:55.615 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:51:55.617 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:51:55.617 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:51:55.618 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 2.5209ms
+2025-06-11 01:51:55.618 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:51:55.618 +05:30 [INF] HTTP GET /api/Customer responded 200 in 3.1345 ms
+2025-06-11 01:51:55.619 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Customer - 200 null application/json; charset=utf-8 5.455ms
+2025-06-11 01:52:03.489 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Events - null null
+2025-06-11 01:52:03.490 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 01:52:03.493 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 01:52:03.508 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 01:52:03.541 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:52:03.545 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 51.9043ms
+2025-06-11 01:52:03.545 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 01:52:03.545 +05:30 [INF] HTTP GET /api/Events responded 200 in 55.6659 ms
+2025-06-11 01:52:03.545 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Events - 200 null application/json; charset=utf-8 56.6214ms
+2025-06-11 01:52:25.172 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Ticket/book - application/json 89
+2025-06-11 01:52:25.173 +05:30 [INF] CORS policy execution failed.
+2025-06-11 01:52:25.173 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-11 01:52:25.173 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-11 01:52:25.178 +05:30 [INF] Route matched with {action = "BookTicket", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] BookTicket(BookingSystem.Models.DTOs.TicketDto) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-11 01:52:25.205 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 01:52:25.274 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("BookingDate", "CustomerEmail", "EventId", "IsCancelled", "Quantity", "Total")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-11 01:52:25.564 +05:30 [INF] Executing FileContentResult, sending file with download name 'Ticket_9.pdf' ...
+2025-06-11 01:52:25.577 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.BookTicket (booking_system) in 398.7812ms
+2025-06-11 01:52:25.577 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-11 01:52:25.577 +05:30 [INF] HTTP POST /api/Ticket/book responded 200 in 404.1661 ms
+2025-06-11 01:52:25.578 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Ticket/book - 200 72962 application/pdf 406.0602ms
+2025-06-11 01:53:59.347 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-11 01:53:59.348 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:53:59.349 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:53:59.350 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:53:59.350 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:53:59.350 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.7197ms
+2025-06-11 01:53:59.351 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:53:59.351 +05:30 [INF] HTTP GET /api/customer responded 200 in 2.3087 ms
+2025-06-11 01:53:59.351 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 4.0031ms
+2025-06-11 01:54:06.911 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/customer/register - application/json 86
+2025-06-11 01:54:06.912 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-11 01:54:06.912 +05:30 [INF] Route matched with {action = "RegisterCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] RegisterCustomer(BookingSystem.Models.DTOs.CustomerDto) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:54:07.052 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-11 01:54:07.054 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Email", "Id", "Name")
+VALUES (@p0, @p1, @p2);
+2025-06-11 01:54:07.054 +05:30 [INF] Customer customer3@gamil.com registered successfully
+2025-06-11 01:54:07.054 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-11 01:54:07.055 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system) in 143.0664ms
+2025-06-11 01:54:07.055 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-11 01:54:07.055 +05:30 [INF] HTTP POST /api/customer/register responded 201 in 143.4102 ms
+2025-06-11 01:54:07.055 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/customer/register - 201 null application/json; charset=utf-8 143.8215ms
+2025-06-11 01:54:13.315 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-11 01:54:13.315 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:54:13.315 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:54:13.316 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:54:13.317 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:54:13.317 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.3694ms
+2025-06-11 01:54:13.317 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:54:13.317 +05:30 [INF] HTTP GET /api/customer responded 200 in 1.7543 ms
+2025-06-11 01:54:13.317 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 2.496ms
+2025-06-11 01:55:25.707 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - null null
+2025-06-11 01:55:25.708 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Customer)
+2025-06-11 01:55:25.708 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 01:55:25.708 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - 401 0 null 0.9573ms
+2025-06-11 01:55:44.640 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - null null
+2025-06-11 01:55:44.641 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:55:44.641 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:55:44.656 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:55:44.656 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:55:44.657 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 15.6956ms
+2025-06-11 01:55:44.657 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:55:44.657 +05:30 [INF] HTTP GET /api/customer responded 200 in 16.1078 ms
+2025-06-11 01:55:44.657 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - 200 null application/json; charset=utf-8 17.0041ms
+2025-06-11 01:55:59.307 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer?name=rat - null null
+2025-06-11 01:55:59.309 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:55:59.309 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:55:59.310 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:55:59.310 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:55:59.311 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.6444ms
+2025-06-11 01:55:59.311 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:55:59.311 +05:30 [INF] HTTP GET /api/customer responded 200 in 2.0728 ms
+2025-06-11 01:55:59.311 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer?name=rat - 200 null application/json; charset=utf-8 3.5384ms
+2025-06-11 01:56:02.096 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer?name=rat - null null
+2025-06-11 01:56:02.097 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:56:02.097 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:56:02.098 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:56:02.098 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:56:02.098 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.5236ms
+2025-06-11 01:56:02.098 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:56:02.099 +05:30 [INF] HTTP GET /api/customer responded 200 in 1.9823 ms
+2025-06-11 01:56:02.099 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer?name=rat - 200 null application/json; charset=utf-8 2.7143ms
+2025-06-11 01:56:09.088 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - null null
+2025-06-11 01:56:09.089 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:56:09.089 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:56:09.090 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:56:09.091 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:56:09.091 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.8933ms
+2025-06-11 01:56:09.091 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:56:09.091 +05:30 [INF] HTTP GET /api/customer responded 200 in 2.3888 ms
+2025-06-11 01:56:09.091 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer?email=rat - 200 null application/json; charset=utf-8 3.7032ms
+2025-06-11 01:58:06.604 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-11 01:58:06.605 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:58:06.605 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 01:58:06.606 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+2025-06-11 01:58:06.607 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:58:06.607 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 1.4401ms
+2025-06-11 01:58:06.607 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-11 01:58:06.607 +05:30 [INF] HTTP GET /api/customer responded 200 in 1.9162 ms
+2025-06-11 01:58:06.607 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 3.4525ms
+2025-06-11 01:59:28.091 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-11 01:59:28.093 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 01:59:28.093 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 01:59:28.096 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 01:59:28.096 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 01:59:28.097 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 3.8388ms
+2025-06-11 01:59:28.097 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 01:59:28.097 +05:30 [INF] HTTP GET /api/events responded 200 in 4.4376 ms
+2025-06-11 01:59:28.097 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 6.3043ms
+2025-06-11 02:03:08.252 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-11 02:03:08.254 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 02:03:08.254 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:03:08.268 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 02:03:08.268 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 02:03:08.268 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 14.4174ms
+2025-06-11 02:03:08.269 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 02:03:08.269 +05:30 [INF] HTTP GET /api/events responded 200 in 14.9528 ms
+2025-06-11 02:03:08.269 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 16.4666ms
+2025-06-11 02:04:10.866 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:04:10.867 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:04:10.869 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 2.8638ms
+2025-06-11 02:04:10.877 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:04:10.877 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:04:10.878 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-11 02:04:10.892 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-11 02:04:10.893 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 15.4275 ms
+2025-06-11 02:04:10.894 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 16.6136ms
+2025-06-11 02:04:10.920 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=z3_cYFrnGPqkramwqcIKsA - null null
+2025-06-11 02:04:10.921 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:04:10.922 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-11 02:04:16.808 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-11 02:04:16.808 +05:30 [INF] HTTP GET /eventhub responded 101 in 5885.9182 ms
+2025-06-11 02:04:16.808 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=z3_cYFrnGPqkramwqcIKsA - 101 null null 5887.4474ms
+2025-06-11 02:06:17.552 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:06:17.555 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:06:17.557 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 5.3963ms
+2025-06-11 02:06:17.561 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:06:17.562 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:06:17.562 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-11 02:06:17.564 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-11 02:06:17.564 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 1.8638 ms
+2025-06-11 02:06:17.565 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 3.5766ms
+2025-06-11 02:06:17.609 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=TnOMAgHoSLDX0dVwHu7Q_Q - null null
+2025-06-11 02:06:17.610 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:06:17.611 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-11 02:06:50.626 +05:30 [INF] Application is shutting down...
+2025-06-11 02:06:50.629 +05:30 [INF] Connection id "0HND8BALKLN6C", Request id "0HND8BALKLN6C:00000003": the application aborted the connection.
+2025-06-11 02:06:50.632 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-11 02:06:50.632 +05:30 [INF] HTTP GET /eventhub responded 101 in 33020.8964 ms
+2025-06-11 02:06:50.632 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=TnOMAgHoSLDX0dVwHu7Q_Q - 101 null null 33022.5236ms
+2025-06-11 02:09:08.064 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-11 02:09:08.190 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-11 02:09:08.192 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 02:09:08.192 +05:30 [INF] Hosting environment: Development
+2025-06-11 02:09:08.192 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-11 02:09:13.858 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:09:13.904 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 02:09:13.932 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:09:13.938 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 82.5229ms
+2025-06-11 02:09:13.951 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-11 02:09:13.954 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:09:13.958 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-11 02:09:13.967 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-11 02:09:13.969 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 11.2091 ms
+2025-06-11 02:09:13.970 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 19.6048ms
+2025-06-11 02:09:13.971 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=27zd8GmjRg6m1oiZMjnQtA - null null
+2025-06-11 02:09:13.977 +05:30 [INF] CORS policy execution successful.
+2025-06-11 02:09:13.977 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-11 02:09:21.009 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/events - application/json 138
+2025-06-11 02:09:21.071 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-11 02:09:21.092 +05:30 [INF] Route matched with {action = "CreateEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] CreateEvent(BookingSystem.Models.DTOs.EventDto) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:09:22.413 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:09:22.622 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Events" ("CategoryId", "CreatorEmail", "Date", "Description", "IsCancelled", "Price", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2025-06-11 02:09:22.643 +05:30 [INF] Event thuglife created successfully
+2025-06-11 02:09:22.661 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-11 02:09:22.694 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.CreateEvent (booking_system) in 1598.8582ms
+2025-06-11 02:09:22.695 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-11 02:09:22.696 +05:30 [INF] HTTP POST /api/events responded 201 in 1624.3043 ms
+2025-06-11 02:09:22.705 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/events - 201 null application/json; charset=utf-8 1695.8788ms
+2025-06-11 02:09:41.292 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/events - application/json 136
+2025-06-11 02:09:41.295 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-11 02:09:41.296 +05:30 [INF] Route matched with {action = "CreateEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] CreateEvent(BookingSystem.Models.DTOs.EventDto) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:09:41.318 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:09:41.321 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Events" ("CategoryId", "CreatorEmail", "Date", "Description", "IsCancelled", "Price", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2025-06-11 02:09:41.322 +05:30 [INF] Event Vikram created successfully
+2025-06-11 02:09:41.323 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-11 02:09:41.324 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.CreateEvent (booking_system) in 28.5132ms
+2025-06-11 02:09:41.325 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-11 02:09:41.325 +05:30 [INF] HTTP POST /api/events responded 201 in 29.5911 ms
+2025-06-11 02:09:41.325 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/events - 201 null application/json; charset=utf-8 33.4077ms
+2025-06-11 02:11:26.221 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events?eventName=Eminem - null null
+2025-06-11 02:11:26.223 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 02:11:26.228 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:11:26.304 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 02:11:26.307 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 02:11:26.308 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 80.3945ms
+2025-06-11 02:11:26.309 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-11 02:11:26.309 +05:30 [INF] HTTP GET /api/events responded 200 in 86.1577 ms
+2025-06-11 02:11:26.309 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events?eventName=Eminem - 200 null application/json; charset=utf-8 88.4208ms
+2025-06-11 02:11:37.224 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Events/Eminem - null null
+2025-06-11 02:11:37.225 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:11:37.231 +05:30 [INF] Route matched with {action = "GetEventByName", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventByName(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:11:37.242 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:11:37.244 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-11 02:11:37.244 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByName (booking_system) in 13.1122ms
+2025-06-11 02:11:37.244 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:11:37.244 +05:30 [INF] HTTP GET /api/Events/Eminem responded 200 in 19.4568 ms
+2025-06-11 02:11:37.244 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Events/Eminem - 200 null application/json; charset=utf-8 20.7094ms
+2025-06-11 02:12:53.938 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/events?eventName=Eminem - null null
+2025-06-11 02:12:53.939 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:12:53.939 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:12:53.940 +05:30 [INF] HTTP DELETE /api/events responded 405 in 0.2897 ms
+2025-06-11 02:12:53.940 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/events?eventName=Eminem - 405 0 null 2.1934ms
+2025-06-11 02:13:14.401 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - null null
+2025-06-11 02:13:14.402 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:13:14.402 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:13:14.402 +05:30 [INF] HTTP DELETE /api/Events responded 405 in 0.2983 ms
+2025-06-11 02:13:14.403 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - 405 0 null 1.7259ms
+2025-06-11 02:13:19.534 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - null null
+2025-06-11 02:13:19.534 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:13:19.535 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:13:19.535 +05:30 [INF] HTTP DELETE /api/Events responded 405 in 0.3253 ms
+2025-06-11 02:13:19.536 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - 405 0 null 1.5187ms
+2025-06-11 02:14:21.703 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/Events/{Eminem} - null null
+2025-06-11 02:14:21.708 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:14:21.712 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:14:21.719 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:14:21.720 +05:30 [ERR] Error deleting event with name {Eminem}
+System.Exception: No Customer with the given ID
+   at BookingSystem.Repositories.EventRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/EventRepository.cs:line 19
+   at BookingSystem.Repositories.Repository`2.Delete(K key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/Repository.cs:line 28
+   at BookingSystem.Services.EventService.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/EventService.cs:line 97
+   at BookingSystem.Controllers.EventsController.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/EventsController.cs:line 110
+2025-06-11 02:14:21.741 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-11 02:14:21.741 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 29.3095ms
+2025-06-11 02:14:21.741 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:14:21.742 +05:30 [INF] HTTP DELETE /api/Events/{Eminem} responded 400 in 33.1348 ms
+2025-06-11 02:14:21.742 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/Events/{Eminem} - 400 null text/plain; charset=utf-8 38.7613ms
+2025-06-11 02:15:10.989 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/Events/?eventName=Eminem - null null
+2025-06-11 02:15:10.990 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:15:10.990 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:15:10.990 +05:30 [INF] HTTP DELETE /api/Events/ responded 405 in 0.2160 ms
+2025-06-11 02:15:10.990 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/Events/?eventName=Eminem - 405 0 null 1.3611ms
+2025-06-11 02:15:16.756 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - null null
+2025-06-11 02:15:16.757 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:15:16.757 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-11 02:15:16.757 +05:30 [INF] HTTP DELETE /api/Events responded 405 in 0.1755 ms
+2025-06-11 02:15:16.757 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/Events?eventName=Eminem - 405 0 null 0.8338ms
+2025-06-11 02:16:22.757 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/events/{Eminem} - null null
+2025-06-11 02:16:22.759 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:16:22.759 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:16:22.776 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:16:22.776 +05:30 [ERR] Error deleting event with name {Eminem}
+System.Exception: No Customer with the given ID
+   at BookingSystem.Repositories.EventRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/EventRepository.cs:line 19
+   at BookingSystem.Repositories.Repository`2.Delete(K key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/Repository.cs:line 28
+   at BookingSystem.Services.EventService.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/EventService.cs:line 97
+   at BookingSystem.Controllers.EventsController.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/EventsController.cs:line 110
+2025-06-11 02:16:22.777 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-11 02:16:22.778 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 18.7839ms
+2025-06-11 02:16:22.778 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:16:22.778 +05:30 [INF] HTTP DELETE /api/events/{Eminem} responded 400 in 19.2678 ms
+2025-06-11 02:16:22.778 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/events/{Eminem} - 400 null text/plain; charset=utf-8 20.9088ms
+2025-06-11 02:16:42.274 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/events/Eminem - null null
+2025-06-11 02:16:42.275 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:16:42.275 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:16:42.277 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:16:42.289 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Events"
+WHERE "Id" = @p0;
+2025-06-11 02:16:42.293 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-11 02:16:42.293 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 17.8589ms
+2025-06-11 02:16:42.293 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-11 02:16:42.293 +05:30 [INF] HTTP DELETE /api/events/Eminem responded 200 in 18.4705 ms
+2025-06-11 02:16:42.294 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/events/Eminem - 200 null application/json; charset=utf-8 19.5577ms
+2025-06-11 02:17:19.810 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin/man - null null
+2025-06-11 02:17:19.811 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 02:17:19.814 +05:30 [INF] Route matched with {action = "GetAdminByEmail", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByEmail(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 02:17:19.825 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:17:19.837 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-11 02:17:19.838 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system) in 24.2728ms
+2025-06-11 02:17:19.839 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByEmail (booking_system)'
+2025-06-11 02:17:19.839 +05:30 [INF] HTTP GET /api/admin/man responded 200 in 27.4263 ms
+2025-06-11 02:17:19.839 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin/man - 200 null application/json; charset=utf-8 28.4975ms
+2025-06-11 02:17:34.490 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/Eminem - null null
+2025-06-11 02:17:34.491 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:17:34.491 +05:30 [INF] Route matched with {action = "GetEventByName", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventByName(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:17:34.493 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:17:34.493 +05:30 [ERR] Error retrieving event with name Eminem
+System.Exception: No Customer with the given ID
+   at BookingSystem.Repositories.EventRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/EventRepository.cs:line 19
+   at BookingSystem.Services.EventService.GetEventByName(String EventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/EventService.cs:line 30
+   at BookingSystem.Controllers.EventsController.GetEventByName(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/EventsController.cs:line 50
+2025-06-11 02:17:34.494 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-11 02:17:34.494 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByName (booking_system) in 2.544ms
+2025-06-11 02:17:34.494 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:17:34.494 +05:30 [INF] HTTP GET /api/events/Eminem responded 400 in 3.0197 ms
+2025-06-11 02:17:34.494 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/Eminem - 400 null text/plain; charset=utf-8 3.9024ms
+2025-06-11 02:17:44.565 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/thuglife - null null
+2025-06-11 02:17:44.565 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:17:44.565 +05:30 [INF] Route matched with {action = "GetEventByName", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventByName(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:17:44.567 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-11 02:17:44.568 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-11 02:17:44.568 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByName (booking_system) in 2.8564ms
+2025-06-11 02:17:44.569 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-11 02:17:44.569 +05:30 [INF] HTTP GET /api/events/thuglife responded 200 in 4.1434 ms
+2025-06-11 02:17:44.570 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/thuglife - 200 null application/json; charset=utf-8 4.9453ms
+2025-06-11 02:18:34.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer/rat - null null
+2025-06-11 02:18:34.246 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByEmail (booking_system)'
+2025-06-11 02:18:34.249 +05:30 [INF] Route matched with {action = "GetCustomerByEmail", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] GetCustomerByEmail(System.String) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-11 02:18:34.262 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Id", c."Name"
+FROM "Customers" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:18:34.272 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-11 02:18:34.274 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetCustomerByEmail (booking_system) in 24.5619ms
+2025-06-11 02:18:34.274 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByEmail (booking_system)'
+2025-06-11 02:18:34.274 +05:30 [INF] HTTP GET /api/customer/rat responded 200 in 28.1966 ms
+2025-06-11 02:18:34.275 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer/rat - 200 null application/json; charset=utf-8 29.3543ms
+2025-06-11 02:19:52.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - null null
+2025-06-11 02:19:52.410 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-11 02:19:52.413 +05:30 [INF] Route matched with {action = "GetEventsByCategory", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetEventsByCategory(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:19:52.417 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:19:52.418 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 02:19:52.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 02:19:52.420 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system) in 6.2573ms
+2025-06-11 02:19:52.420 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-11 02:19:52.420 +05:30 [INF] HTTP GET /api/events/category/Movie responded 200 in 9.5898 ms
+2025-06-11 02:19:52.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - 200 null application/json; charset=utf-8 10.8047ms
+2025-06-11 02:20:56.557 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/category/Concert - null null
+2025-06-11 02:20:56.558 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-11 02:20:56.558 +05:30 [INF] Route matched with {action = "GetEventsByCategory", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetEventsByCategory(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-11 02:20:56.559 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-11 02:20:56.560 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-11 02:20:56.560 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 02:20:56.561 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system) in 2.5902ms
+2025-06-11 02:20:56.561 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-11 02:20:56.561 +05:30 [INF] HTTP GET /api/events/category/Concert responded 200 in 3.0186 ms
+2025-06-11 02:20:56.561 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/category/Concert - 200 null application/json; charset=utf-8 4.3405ms
+2025-06-11 02:22:18.038 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 02:22:18.040 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-06-11 02:22:18.041 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-06-11 02:22:18.042 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-11 02:22:18.047 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-11 02:22:18.047 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 401 0 null 8.9715ms
+2025-06-11 02:22:25.478 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-11 02:22:25.479 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 02:22:25.482 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-11 02:22:25.546 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-11 02:22:25.553 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-11 02:22:25.554 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-11 02:22:25.554 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 72.337ms
+2025-06-11 02:22:25.554 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-11 02:22:25.554 +05:30 [INF] HTTP GET /api/admin responded 200 in 75.6948 ms
+2025-06-11 02:22:25.554 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 76.5745ms
+2025-06-11 02:22:57.932 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-11 02:22:57.932 +05:30 [INF] HTTP GET /eventhub responded 101 in 823942.7425 ms
+2025-06-11 02:22:57.932 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=27zd8GmjRg6m1oiZMjnQtA - 101 null null 823949.0916ms
+2025-06-11 02:23:20.322 +05:30 [INF] Application is shutting down...

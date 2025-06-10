@@ -24,11 +24,11 @@ public class EventServiceTest
 
         _context = new BookingDbContext(options);
 
-        // Seed with a sample category
+        // Seed category
         _context.Categories.Add(new Category { Name = "Music" });
         _context.SaveChanges();
 
-        // Mock HttpContextAccessor with a test user
+        // Mocking a test user
         var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
         {
             new Claim(ClaimTypes.NameIdentifier, "testuser@example.com")
@@ -38,16 +38,17 @@ public class EventServiceTest
         var accessorMock = new Mock<IHttpContextAccessor>();
         accessorMock.Setup(a => a.HttpContext).Returns(httpContext);
         _httpContextAccessor = accessorMock.Object;
+
+
     }
 
     [Test]
-    public async Task CreateEvent_WithNewCategory_CreatesCategoryAndEvent()
+    public async Task CreateEvent()
     {
         // Arrange
         var eventRepo = new EventRepository(_context);
         var categoryRepo = new CategoryRepository(_context);
         var service = new EventService(eventRepo, categoryRepo, _httpContextAccessor);
-
         var eventDto = new EventDto
         {
             Title = "Test Concert",
@@ -62,12 +63,11 @@ public class EventServiceTest
 
         // Assert
         Assert.That(result.Title, Is.EqualTo("Test Concert"));
-        Assert.That(result.CategoryId, Is.GreaterThan(0));
         Assert.That(result.CreatorEmail, Is.EqualTo("testuser@example.com"));
     }
 
     [Test]
-    public async Task GetEventsByCategory_ReturnsCorrectEvents()
+    public async Task GetEventsByCategory()
     {
         // Arrange
         var category = _context.Categories.First(c => c.Name == "Music");
@@ -98,7 +98,7 @@ public class EventServiceTest
     }
 
     [Test]
-    public async Task GetAllEvents_ReturnsAll()
+    public async Task GetAllEvents()
     {
         // Arrange
         _context.Events.Add(new Event

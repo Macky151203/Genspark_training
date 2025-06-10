@@ -108,7 +108,7 @@ public class AuthenticationService : IAuthenticationService
         }
 
         var token = await _tokenService.GenerateToken(dbUser);
-        _tokenCacheService.StoreToken(token);
+        // _tokenCacheService.StoreToken(token);
         //Console.WriteLine($"Token for {dbUser.Email}: {token}");
         var refreshToken = Guid.NewGuid().ToString();
 
@@ -157,8 +157,8 @@ public class AuthenticationService : IAuthenticationService
         var newToken = await _tokenService.GenerateToken(dbUser);
         var newRefreshToken = Guid.NewGuid().ToString();
 
-        _tokenCacheService.RemoveToken(token);
-        _tokenCacheService.StoreToken(newToken);
+        // _tokenCacheService.RemoveToken(token);
+        // _tokenCacheService.StoreToken(newToken);
 
         refreshTokens[email] = newRefreshToken;
 

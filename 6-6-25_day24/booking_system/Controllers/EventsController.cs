@@ -70,7 +70,7 @@ public class EventsController : ControllerBase
         {
             var createdEvent = await _eventService.CreateEvent(eventDto);
             _logger.LogInformation("Event {EventName} created successfully", createdEvent.Title);
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $" event name: {createdEvent.Title}");
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $"{createdEvent.Title}",$"{createdEvent.Description}",$"{eventDto.CategoryName}");
             return CreatedAtAction(nameof(GetEventByName), new { eventName = createdEvent.Title }, createdEvent);
         }
         catch (Exception ex)
@@ -108,7 +108,7 @@ public class EventsController : ControllerBase
         try
         {
             var deletedEvent = await _eventService.DeleteEvent(eventName);
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Event Cancelled", $" event name: {deletedEvent.Title}");
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Deleted Event", $"{deletedEvent.Title}",$"{deletedEvent.Description}",$"{deletedEvent.CategoryId}");
             return Ok(deletedEvent);
         }
         catch (Exception ex)

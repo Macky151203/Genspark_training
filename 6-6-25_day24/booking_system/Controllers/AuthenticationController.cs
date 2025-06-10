@@ -39,27 +39,27 @@ public class AuthenticationController : ControllerBase
         }
 
     }
-    [HttpPost("logout")]
-    [Authorize]
-    public async Task<IActionResult> Logout(string email, string token)
-    {
-        try
-        {
-            if (string.IsNullOrEmpty(email))
-            {
-                _logger.LogWarning("Logout attempted with empty email");
+    // [HttpPost("logout")]
+    // [Authorize]
+    // public async Task<IActionResult> Logout(string email, string token)
+    // {
+    //     try
+    //     {
+    //         if (string.IsNullOrEmpty(email))
+    //         {
+    //             _logger.LogWarning("Logout attempted with empty email");
 
-                return BadRequest("User not authenticated");
-            }
-            await _authenticationService.Logout(email, token);
-            return Ok("Logged out successfully");
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e, "Logout failed for user {Email}", email);
-            return Unauthorized(e.Message);
-        }
-    }
+    //             return BadRequest("User not authenticated");
+    //         }
+    //         await _authenticationService.Logout(email, token);
+    //         return Ok("Logged out successfully");
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         _logger.LogError(e, "Logout failed for user {Email}", email);
+    //         return Unauthorized(e.Message);
+    //     }
+    // }
 
     [HttpPost("refresh")]
     [Authorize]

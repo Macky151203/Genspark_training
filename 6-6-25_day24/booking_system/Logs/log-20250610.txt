@@ -4,3 +4,157 @@
 2025-06-10 22:26:20.144 +05:30 [INF] Hosting environment: Development
 2025-06-10 22:26:20.144 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
 2025-06-10 22:26:28.925 +05:30 [INF] Application is shutting down...
+2025-06-10 23:52:58.707 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:52:58.841 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:52:58.843 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:52:58.844 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:52:58.844 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:53:02.320 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-10 23:53:02.416 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 98.3429ms
+2025-06-10 23:53:02.484 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-10 23:53:02.615 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 131.7015ms
+2025-06-10 23:53:15.023 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-10 23:53:15.027 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-10 23:53:15.060 +05:30 [INF] CORS policy execution failed.
+2025-06-10 23:53:15.060 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-10 23:53:15.065 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:53:15.084 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-10 23:53:16.285 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-10 23:53:16.702 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-10 23:53:16.707 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-10 23:53:16.715 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 1628.4401ms
+2025-06-10 23:53:16.715 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:53:16.717 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 1653.0469 ms
+2025-06-10 23:53:16.726 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 1703.0169ms
+2025-06-10 23:53:31.067 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-10 23:53:31.115 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:53:31.119 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-10 23:53:31.178 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-10 23:53:31.196 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-10 23:53:31.208 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-10 23:53:31.221 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 100.9133ms
+2025-06-10 23:53:31.221 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:53:31.221 +05:30 [INF] HTTP GET /api/Admin responded 200 in 105.6174 ms
+2025-06-10 23:53:31.221 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 153.9108ms
+2025-06-10 23:53:49.265 +05:30 [INF] Application is shutting down...
+2025-06-10 23:53:53.830 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:53:53.943 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:53:53.945 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:53:53.945 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:53:53.945 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:53:58.596 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-10 23:53:58.689 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 93.8904ms
+2025-06-10 23:53:58.746 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-10 23:53:58.888 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 142.4642ms
+2025-06-10 23:54:11.611 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-10 23:54:11.614 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-10 23:54:11.690 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 401 null null 78.5114ms
+2025-06-10 23:54:41.458 +05:30 [INF] Application is shutting down...
+2025-06-10 23:56:12.155 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:56:12.289 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:56:12.291 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:56:12.291 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:56:12.291 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:56:26.290 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-10 23:56:26.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 97.3883ms
+2025-06-10 23:56:26.450 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-10 23:56:26.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.779ms
+2025-06-10 23:56:42.246 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-10 23:56:42.251 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-10 23:56:42.287 +05:30 [INF] CORS policy execution failed.
+2025-06-10 23:56:42.287 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-10 23:56:42.292 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:56:42.309 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-10 23:56:43.571 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-10 23:56:43.989 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-10 23:56:43.994 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-10 23:56:44.002 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 1689.5678ms
+2025-06-10 23:56:44.002 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:56:44.004 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 1712.7879 ms
+2025-06-10 23:56:44.013 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 1766.2931ms
+2025-06-10 23:56:58.524 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-10 23:56:58.572 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 401 null null 47.1845ms
+2025-06-10 23:57:04.382 +05:30 [INF] Application is shutting down...
+2025-06-10 23:57:14.170 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:57:14.281 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:57:14.283 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:57:14.283 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:57:14.283 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:57:21.589 +05:30 [INF] Application is shutting down...
+2025-06-10 23:58:35.378 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:58:35.505 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:58:35.507 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:58:35.508 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:58:35.508 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:58:37.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-10 23:58:37.995 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 95.2591ms
+2025-06-10 23:58:38.075 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-10 23:58:38.205 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.2162ms
+2025-06-10 23:58:51.376 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-10 23:58:51.382 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-10 23:58:51.417 +05:30 [INF] CORS policy execution failed.
+2025-06-10 23:58:51.418 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-10 23:58:51.422 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:58:51.438 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-10 23:58:52.735 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-10 23:58:53.114 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-10 23:58:53.119 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-10 23:58:53.126 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 1685.2975ms
+2025-06-10 23:58:53.127 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-10 23:58:53.129 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 1707.4797 ms
+2025-06-10 23:58:53.137 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 1760.1787ms
+2025-06-10 23:59:06.954 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-10 23:59:07.000 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:59:07.005 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-10 23:59:07.063 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-10 23:59:07.081 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-10 23:59:07.092 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-10 23:59:07.104 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 99.1876ms
+2025-06-10 23:59:07.104 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:59:07.104 +05:30 [INF] HTTP GET /api/Admin responded 200 in 104.1512 ms
+2025-06-10 23:59:07.105 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 150.6187ms
+2025-06-10 23:59:16.652 +05:30 [INF] Application is shutting down...
+2025-06-10 23:59:20.643 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-10 23:59:20.757 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-10 23:59:20.758 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 23:59:20.758 +05:30 [INF] Hosting environment: Development
+2025-06-10 23:59:20.759 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-10 23:59:22.843 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-10 23:59:22.938 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 97.8309ms
+2025-06-10 23:59:23.007 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-10 23:59:23.152 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 146.9091ms
+2025-06-10 23:59:31.454 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-10 23:59:31.458 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-10 23:59:31.537 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:59:31.550 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-10 23:59:32.687 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-10 23:59:32.781 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name"
+FROM "Admins" AS a
+2025-06-10 23:59:32.829 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-10 23:59:32.853 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1300.1329ms
+2025-06-10 23:59:32.853 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-10 23:59:32.855 +05:30 [INF] HTTP GET /api/Admin responded 200 in 1318.6617 ms
+2025-06-10 23:59:32.864 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 1409.9209ms

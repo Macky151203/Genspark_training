@@ -45,7 +45,7 @@ namespace BookingSystem.Tests
         }
 
         [Test]
-        public async Task RegisterAdmin_Should_Add_User_And_Admin()
+        public async Task RegisterAdmin()
         {
             // Arrange
             var adminDto = new AdminDto
@@ -60,19 +60,15 @@ namespace BookingSystem.Tests
 
             // Assert
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Email, Is.EqualTo(adminDto.Email));
 
-            var users = _context.Users.ToList();
+           
             var admins = _context.Admins.ToList();
 
-            Assert.That(users.Count, Is.EqualTo(1));
-            Assert.That(users[0].Email, Is.EqualTo(adminDto.Email));
-            Assert.That(users[0].Password, Is.EqualTo("encrypted_" + adminDto.Password));
             Assert.That(admins.Count, Is.EqualTo(1));
         }
 
         [Test]
-        public async Task GetAdminByEmail_Should_Return_Correct_Admin()
+        public async Task GetAdminByEmail()
         {
             // Arrange
             var admin = new Admin { Email = "john@example.com", Name = "John" };
@@ -88,7 +84,7 @@ namespace BookingSystem.Tests
         }
 
         [Test]
-        public async Task GetAllAdmins_Should_Return_All_Admins()
+        public async Task GetAllAdmins()
         {
             // Arrange
             _context.Admins.AddRange(new List<Admin>

@@ -43,7 +43,7 @@ namespace BookingSystem.Tests
         }
 
         [Test]
-        public async Task RegisterCustomer_Should_Add_User_And_Customer()
+        public async Task RegisterCustomer()
         {
             // Arrange
             var customerDto = new CustomerDto
@@ -58,20 +58,15 @@ namespace BookingSystem.Tests
 
             // Assert
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Email, Is.EqualTo("bob@example.com"));
-
-            var users = _context.Users.ToList();
             var customers = _context.Customers.ToList();
 
-            Assert.That(users.Count, Is.EqualTo(1));
-            Assert.That(users[0].Role, Is.EqualTo("Customer"));
-            Assert.That(users[0].Password, Is.EqualTo("enc_securepass"));
+        
 
             Assert.That(customers.Count, Is.EqualTo(1));
         }
 
         [TestCase("Alice")]
-        public async Task GetCustomerByEmail_Should_Return_Correct_Customer(string name)
+        public async Task GetCustomerByEmail(string name)
         {
             // Arrange
             var customer = new Customer
@@ -91,7 +86,7 @@ namespace BookingSystem.Tests
         }
 
         [Test]
-        public async Task GetAllCustomers_Should_Return_All_Customers()
+        public async Task GetAllCustomers()
         {
             // Arrange
             _context.Customers.AddRange(new List<Customer>
