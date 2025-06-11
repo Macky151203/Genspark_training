@@ -5,6 +5,6 @@ using BookingSystem.Models.DTOs ;
 public interface IAdminService
 {
     Task<Admin> RegisterAdmin(AdminDto adminDto);
-    Task<Admin> GetAdminByEmail(string email);
+    Task<Admin> GetAdminByName(string name);
     Task<IEnumerable<Admin>> GetAllAdmins();
 }

@@ -40,7 +40,8 @@ public class AdminService : IAdminService
             var admin = new Admin()
             {
                 Name = adminDto.Name,
-                Email = adminDto.Email
+                Email = adminDto.Email,
+                PhoneNumber = adminDto.PhoneNumber,
             };
             //add to user before admin
             var newadmin= await _adminRepository.Add(admin);
@@ -55,9 +56,9 @@ public class AdminService : IAdminService
         }
     }
 
-    public async Task<Admin> GetAdminByEmail(string email)
+    public async Task<Admin> GetAdminByName(string name)
     {
-        return await _adminRepository.Get(email);
+        return await _adminRepository.Get(name);
     }
 
     public async Task<IEnumerable<Admin>> GetAllAdmins()

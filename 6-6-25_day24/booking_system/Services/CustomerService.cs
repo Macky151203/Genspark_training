@@ -40,7 +40,10 @@ public class CustomerService : ICustomerService
             var customer = new Customer
             {
                 Name = customerDto.Name,
-                Email = customerDto.Email
+                Email = customerDto.Email,
+                PhoneNumber = customerDto.PhoneNumber,
+                Address = customerDto.Address
+
             };
 
             var newCustomer = await _customerRepository.Add(customer);
@@ -53,9 +56,9 @@ public class CustomerService : ICustomerService
         }
     }
 
-    public async Task<Customer> GetCustomerByEmail(string email)
+    public async Task<Customer> GetCustomerByName(string name)
     {
-        return await _customerRepository.Get(email);
+        return await _customerRepository.Get(name);
     }
 
     public async Task<IEnumerable<Customer>> GetAllCustomers()

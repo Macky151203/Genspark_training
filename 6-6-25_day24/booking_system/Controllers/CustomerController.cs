@@ -30,20 +30,20 @@ namespace BookingSystem.Controllers
                 return BadRequest("Failed to register customer.");
             }
             _logger.LogInformation("Customer {Email} registered successfully", customer.Email);
-            return CreatedAtAction(nameof(GetCustomerByEmail), new { email = customer.Email }, customer);
+            return CreatedAtAction(nameof(GetCustomerByName), new { email = customer.Email }, customer);
         }
 
         [HttpGet("{email}")]
-        public async Task<ActionResult<Customer>> GetCustomerByEmail(string email)
+        public async Task<ActionResult<Customer>> GetCustomerByName(string name)
         {
             try
             {
-                var customer = await _customerService.GetCustomerByEmail(email);
+                var customer = await _customerService.GetCustomerByName(name);
                 return Ok(customer);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Failed to retrieve customer with email {Email}", email);
+                _logger.LogError(ex, "Failed to retrieve customer with email {Email}", name);
                 return NotFound(ex.Message);
             }
         }

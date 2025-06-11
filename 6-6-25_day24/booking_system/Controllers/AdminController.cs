@@ -27,16 +27,16 @@ namespace BookingSystem.Controllers
             {
                 return BadRequest("Failed to register admin.");
             }
-            return CreatedAtAction(nameof(GetAdminByEmail), new { email = admin.Email }, admin);
+            return CreatedAtAction(nameof(GetAdminByName), new { email = admin.Email }, admin);
         }
 
        
         [HttpGet("{email}")]
-        public async Task<ActionResult<Admin>> GetAdminByEmail(string email)
+        public async Task<ActionResult<Admin>> GetAdminByName(string name)
         {
             try
             {
-                var admin = await _adminService.GetAdminByEmail(email);
+                var admin = await _adminService.GetAdminByName(name);
                 return Ok(admin);
             }
             catch (Exception ex)

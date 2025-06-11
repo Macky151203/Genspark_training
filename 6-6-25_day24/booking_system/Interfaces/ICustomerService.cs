@@ -5,6 +5,6 @@ using BookingSystem.Models.DTOs ;
 public interface ICustomerService
 {
     Task<Customer> RegisterCustomer(CustomerDto customerDto);
-    Task<Customer> GetCustomerByEmail(string email);
+    Task<Customer> GetCustomerByName(string name);
     Task<IEnumerable<Customer>> GetAllCustomers();
 }
