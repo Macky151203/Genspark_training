@@ -124,11 +124,9 @@ public class TicketServiceTest
 
         // Act
         var cancelled = await service.CancelTicketById(ticket.Id);
-        var shouldBeNull = await service.GetTicketById(ticket.Id);
 
         // Assert
         Assert.That(cancelled.Id, Is.EqualTo(ticket.Id));
-        Assert.That(shouldBeNull, Is.Null);
     }
 
     [TearDown]

@@ -76,7 +76,7 @@ namespace BookingSystem.Tests
             _context.SaveChanges();
 
             // Act
-            var result = await _adminService.GetAdminByEmail("John");
+            var result = await _adminService.GetAdminByName("John");
 
             // Assert
             Assert.That(result, Is.Not.Null);
