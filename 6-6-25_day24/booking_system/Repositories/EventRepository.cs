@@ -15,15 +15,17 @@ public class EventRepository : Repository<string, Event>
     public override async Task<Event> Get(string key)
     {
         var events = await _bookingdbcontext.Events.SingleOrDefaultAsync(c => c.Title == key);
+        if (events == null)
+            throw new Exception("No Event with the given name");
 
-        return events ?? throw new Exception("No Customer with the given ID");
+        return events ;
     }
 
     public override async Task<IEnumerable<Event>> GetAll()
     {
         var events = await _bookingdbcontext.Events.ToListAsync();
         if (!events.Any())
-            throw new Exception("No Customer in the database");
+            throw new Exception("No Events in the database");
 
         return events;
     }

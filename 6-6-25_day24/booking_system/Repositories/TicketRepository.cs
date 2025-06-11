@@ -15,15 +15,17 @@ public class TicketRepository : Repository<int, Ticket>
     public override async Task<Ticket> Get(int key)
     {
         var ticket = await _bookingdbcontext.Tickets.SingleOrDefaultAsync(a => a.Id == key);
+        if (ticket == null)
+            throw new Exception("No Ticket with the given ID");
 
-        return ticket ;
+        return ticket;
     }
 
     public override async Task<IEnumerable<Ticket>> GetAll()
     {
         var  tickets=  _bookingdbcontext.Tickets;
         if (tickets.Count()==0)
-            throw new Exception("No Admin in the database");
+            throw new Exception("No Tickets in the database");
 
         return await tickets.ToListAsync();
     }

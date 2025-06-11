@@ -33,12 +33,17 @@ namespace BookingSystem.Controllers
             return CreatedAtAction(nameof(GetCustomerByName), new { email = customer.Email }, customer);
         }
 
-        [HttpGet("{email}")]
+        [HttpGet("{name}")]
         public async Task<ActionResult<Customer>> GetCustomerByName(string name)
         {
             try
             {
                 var customer = await _customerService.GetCustomerByName(name);
+                if (customer == null)
+                {
+                    _logger.LogWarning("Customer with name {name} not found", name);
+                    return NotFound();
+                }
                 return Ok(customer);
             }
             catch (Exception ex)

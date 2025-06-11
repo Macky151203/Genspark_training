@@ -26,63 +26,68 @@ public class TicketController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPost("book")]
-    [Authorize(Roles = "Customer")]
-    public async Task<ActionResult<Ticket>> BookTicket([FromBody] TicketDto ticketDto)
+   [HttpPost("book")]
+[Authorize(Roles = "Customer")]
+public async Task<ActionResult<Ticket>> BookTicket([FromBody] TicketDto ticketDto)
+{
+    try
     {
-        try
+        var ticket = await _ticketService.BookTicket(ticketDto);
+
+        // 1. Create a PDF document
+        using var stream = new MemoryStream();
+        var document = new PdfDocument();
+        var page = document.AddPage();
+        var gfx = XGraphics.FromPdfPage(page);
+
+        // Fonts
+        var titleFont = new XFont("Verdana", 16, XFontStyle.Bold);
+        var labelFont = new XFont("Verdana", 12, XFontStyle.Bold);
+        var valueFont = new XFont("Verdana", 12, XFontStyle.Regular);
+
+        // 2. Draw border and title
+        gfx.DrawRectangle(XPens.SteelBlue, 30, 30, page.Width - 60, page.Height - 60);
+        gfx.DrawString("Event Ticket", titleFont, XBrushes.DarkBlue, new XPoint(40, 50));
+
+        // 3. Structured layout
+        int y = 90;
+        int lineHeight = 25;
+
+        void DrawRow(string label, string value)
         {
-            var ticket = await _ticketService.BookTicket(ticketDto);
-
-            // 1. Prepare ticket details text
-            var ticketContent = $"Ticket ID: {ticket.Id}\n" +
-                                $"Event Id: {ticket.EventId}\n" +
-                                $"Qty: {ticket.Quantity}\n" +
-                                $"total: {ticket.Total}\n" +
-                                $"CustomerEmail: {ticket.CustomerEmail}\n" +
-                                $"Booked At: {DateTime.UtcNow}";
-
-            // 2. Create a PDF document
-            using var stream = new MemoryStream();
-            var document = new PdfDocument();
-            var page = document.AddPage();
-            var gfx = XGraphics.FromPdfPage(page);
-            var font = new XFont("Verdana", 12, XFontStyle.Regular);
-            gfx.DrawString(ticketContent, font, XBrushes.Black,
-    new XRect(40, 40, page.Width - 80, page.Height - 80),
-    XStringFormats.TopLeft);
-
-
-            document.Save(stream, false); // false = leave stream open
-            stream.Position = 0;
-
-            var fileName = $"Ticket_{ticket.Id}.pdf";
-
-            // Optional: Save to Desktop
-            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var desktopFilePath = Path.Combine(desktopPath, fileName);
-            await System.IO.File.WriteAllBytesAsync(desktopFilePath, stream.ToArray());
-
-            // Return file to client
-            return File(stream.ToArray(), "application/pdf", fileName);
-            // 2. File path - save to desktop
-            // var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            // var fileName = $"Ticket_{ticket.Id}_{DateTime.UtcNow.Ticks}.txt";
-            // var filePath = Path.Combine(desktopPath, fileName);
-
-            // await System.IO.File.WriteAllTextAsync(filePath, ticketContent);
-
-            // var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
-
-            // // 3. Return the file as a download response
-            // return File(fileBytes, "text/plain", fileName);
+            gfx.DrawString(label, labelFont, XBrushes.Black, new XPoint(50, y));
+            gfx.DrawString(value, valueFont, XBrushes.DarkSlateGray, new XPoint(200, y));
+            y += lineHeight;
         }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error booking ticket for event {EventName}", ticketDto.EventName);
-            return BadRequest(ex.Message);
-        }
+
+        DrawRow("Ticket ID:", ticket.Id.ToString());
+        DrawRow("Event ID:", ticket.EventId.ToString());
+        DrawRow("Quantity:", ticket.Quantity.ToString());
+        DrawRow("Total Price:", $"₹ {ticket.Total}");
+        DrawRow("Customer Email:", ticket.CustomerEmail);
+        DrawRow("Booked At:", ticket.BookingDate.ToString("f"));
+
+        // 4. Save and return
+        document.Save(stream, false);
+        stream.Position = 0;
+
+        var fileName = $"Ticket_{ticket.Id}.pdf";
+
+        // Optional: Save to Desktop
+        var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        var desktopFilePath = Path.Combine(desktopPath, fileName);
+        await System.IO.File.WriteAllBytesAsync(desktopFilePath, stream.ToArray());
+
+        // Return file as download
+        return File(stream.ToArray(), "application/pdf", fileName);
     }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error booking ticket for event {EventName}", ticketDto.EventName);
+        return BadRequest(ex.Message);
+    }
+}
+
     [HttpGet("{id}")]
     [Authorize(Roles = "Customer")]
     public async Task<ActionResult<Ticket>> GetTicketById(int id)

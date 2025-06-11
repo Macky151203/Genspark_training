@@ -9,6 +9,6 @@ public interface IEventService
     Task<IEnumerable<Event>> GetAllEvents();
     Task<Event> UpdateEvent(string eventName, EventDto eventDto);
     Task<Event> DeleteEvent(string eventName);
-    Task<IEnumerable<Event>> GetEventsByCategoryAsync(string category);
+    Task<IEnumerable<EventDto>> GetEventsByCategoryAsync(string category);
     Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate);
 }

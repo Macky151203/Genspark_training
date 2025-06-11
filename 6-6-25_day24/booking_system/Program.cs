@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BookingSystem.Misc;
 using Serilog;
+using System.Threading.RateLimiting;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -28,7 +29,7 @@ builder.Services.AddSwaggerGen();
 // builder.Services.AddControllers();
 builder.Services.AddControllers().AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.WriteIndented = true;
     }); 
 
@@ -54,6 +55,22 @@ builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddSingleton<ITokenCacheService, InMemoryTokenCacheService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddHttpContextAccessor();
+
+//rate limiting
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: httpContext.User.Identity?.Name ?? httpContext.Request.Headers.Host.ToString(),
+            factory: partition => new FixedWindowRateLimiterOptions
+            {
+                AutoReplenishment = true,
+                PermitLimit = 10,
+                QueueLimit = 0,
+                Window = TimeSpan.FromMinutes(1)
+            }));
+});
+
 
 
 //signalr
@@ -134,6 +151,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors();
+app.UseRateLimiter();
 
 //middleware
 app.UseMiddleware<TokenValidationMiddleware>();

@@ -119,7 +119,7 @@ public class EventsController : ControllerBase
     }
 
     [HttpGet("category/{category}")]
-    public async Task<ActionResult<IEnumerable<Event>>> GetEventsByCategory(string category)
+    public async Task<ActionResult<IEnumerable<EventDto>>> GetEventsByCategory(string category)
     {
         try
         {

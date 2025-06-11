@@ -96,7 +96,7 @@ public class EventService : IEventService
     {
         return await _eventRepository.Delete(eventName);
     }
-    public async Task<IEnumerable<Event>> GetEventsByCategoryAsync(string category)
+    public async Task<IEnumerable<EventDto>> GetEventsByCategoryAsync(string category)
     {
         var existingCategory = await _categoryRepository.Get(category);
         if (existingCategory == null)
@@ -105,7 +105,7 @@ public class EventService : IEventService
         }
         var categoryid= existingCategory.Id;
         var allEvents = await _eventRepository.GetAll();
-        return allEvents.Where(e => e.CategoryId == categoryid).ToList();
+        return allEvents.Where(e => e.CategoryId == categoryid).OrderBy(e => e.Date).Select(e => new EventDto { Title = e.Title, Date = e.Date, Description = e.Description, Price = e.Price, CategoryName = category }).ToList();
     }
     public async Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate)
     {

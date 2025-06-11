@@ -70,7 +70,6 @@ public class AuthenticationService : IAuthenticationService
     private readonly ITokenCacheService _tokenCacheService;
     private readonly ILogger<AuthenticationService> _logger;
 
-    // A simple in-memory token store for demo (replace with Redis or DB in production)
     private static readonly ConcurrentDictionary<string, string> refreshTokens = new();
 
     public AuthenticationService(ITokenService tokenService,
@@ -95,10 +94,7 @@ public class AuthenticationService : IAuthenticationService
             throw new Exception("No such user");
         }
 
-        // var encryptedData = await _encryptionService.EncryptData(new EncryptModel
-        // {
-        //     Data = user.Password
-        // });
+    
         var encryptedData = _encryptionService.VerifyPassword(user.Password,dbUser.Password);
 
         if (encryptedData==false)
@@ -108,7 +104,6 @@ public class AuthenticationService : IAuthenticationService
         }
 
         var token = await _tokenService.GenerateToken(dbUser);
-        // _tokenCacheService.StoreToken(token);
         //Console.WriteLine($"Token for {dbUser.Email}: {token}");
         var refreshToken = Guid.NewGuid().ToString();
 
@@ -155,10 +150,7 @@ public class AuthenticationService : IAuthenticationService
         }
 
         var newToken = await _tokenService.GenerateToken(dbUser);
-        var newRefreshToken = Guid.NewGuid().ToString();
-
-        // _tokenCacheService.RemoveToken(token);
-        // _tokenCacheService.StoreToken(newToken);
+        var newRefreshToken = Guid.NewGuid().ToString();    
 
         refreshTokens[email] = newRefreshToken;
 
