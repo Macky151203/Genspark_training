@@ -1,0 +1,1610 @@
+2025-06-12 00:47:47.616 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 00:47:47.748 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 00:47:47.750 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 00:47:47.750 +05:30 [INF] Hosting environment: Development
+2025-06-12 00:47:47.750 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 00:48:05.017 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-12 00:48:05.127 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 113.4086ms
+2025-06-12 00:48:05.380 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-12 00:48:05.528 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 148.0057ms
+2025-06-12 00:48:14.022 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-12 00:48:14.026 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 00:48:14.115 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:48:14.130 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 00:48:15.356 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 00:48:15.473 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 00:48:15.531 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:48:15.562 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1427.8732ms
+2025-06-12 00:48:15.562 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:48:15.564 +05:30 [INF] HTTP GET /api/admin responded 200 in 1449.2584 ms
+2025-06-12 00:48:15.572 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 1550.0423ms
+2025-06-12 00:48:37.103 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-12 00:48:37.108 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:48:37.108 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:48:37.110 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:48:37.120 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:48:37.244 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:48:37.577 +05:30 [INF] User admin1@gmail.com logged in successfully
+2025-06-12 00:48:37.579 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 00:48:37.581 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 460.7439ms
+2025-06-12 00:48:37.582 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:48:37.582 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 472.6394 ms
+2025-06-12 00:48:37.585 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 481.9031ms
+2025-06-12 00:49:15.853 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-12 00:49:15.861 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:49:15.862 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 00:49:15.931 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 00:49:15.933 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 00:49:15.934 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:49:15.935 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 72.8829ms
+2025-06-12 00:49:15.935 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:49:15.935 +05:30 [INF] HTTP GET /api/Admin responded 200 in 73.9461 ms
+2025-06-12 00:49:15.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 81.9513ms
+2025-06-12 00:49:36.520 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-12 00:49:36.522 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:49:36.522 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:49:36.522 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:49:36.522 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:49:36.530 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:49:36.531 +05:30 [ERR] Login failed for user admin2@gamil.com
+System.Exception: No User with the given ID
+   at BookingSystem.Repositories.UserRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/UserRepository.cs:line 18
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/AuthenticationService.cs:line 36
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-12 00:49:36.551 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-12 00:49:36.551 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 29.2796ms
+2025-06-12 00:49:36.552 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:49:36.552 +05:30 [INF] HTTP POST /api/Authentication responded 401 in 29.9004 ms
+2025-06-12 00:49:36.552 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 401 null text/plain; charset=utf-8 31.669ms
+2025-06-12 00:50:06.366 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-12 00:50:06.367 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:50:06.367 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:50:06.367 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:50:06.367 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:50:06.373 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:50:06.588 +05:30 [INF] User admin2@gmail.com logged in successfully
+2025-06-12 00:50:06.588 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 00:50:06.588 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 220.3985ms
+2025-06-12 00:50:06.588 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:50:06.588 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 221.0281 ms
+2025-06-12 00:50:06.588 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 222.6325ms
+2025-06-12 00:50:20.204 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-12 00:50:20.207 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:50:20.207 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 00:50:20.209 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 00:50:20.210 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 00:50:20.211 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:50:20.212 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 4.2874ms
+2025-06-12 00:50:20.212 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:50:20.212 +05:30 [INF] HTTP GET /api/Admin responded 200 in 5.1655 ms
+2025-06-12 00:50:20.213 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 8.3787ms
+2025-06-12 00:50:41.967 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 60
+2025-06-12 00:50:41.967 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:50:41.967 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:50:41.967 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:50:41.968 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:50:41.969 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:50:42.116 +05:30 [INF] User admin3@gmail.com logged in successfully
+2025-06-12 00:50:42.116 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 00:50:42.116 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 148.5612ms
+2025-06-12 00:50:42.116 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:50:42.116 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 148.9281 ms
+2025-06-12 00:50:42.116 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 149.8471ms
+2025-06-12 00:50:54.528 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Admin - null null
+2025-06-12 00:50:54.529 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:50:54.529 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 00:50:54.530 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 00:50:54.531 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 00:50:54.531 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:50:54.531 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 2.6534ms
+2025-06-12 00:50:54.531 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:50:54.532 +05:30 [INF] HTTP GET /api/Admin responded 200 in 3.0782 ms
+2025-06-12 00:50:54.532 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Admin - 200 null application/json; charset=utf-8 3.7633ms
+2025-06-12 00:51:23.507 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 66
+2025-06-12 00:51:23.508 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:51:23.508 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:51:23.509 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:51:23.509 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:51:23.513 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:51:23.677 +05:30 [INF] User customer1@gmail.com logged in successfully
+2025-06-12 00:51:23.677 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 00:51:23.677 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 167.4866ms
+2025-06-12 00:51:23.677 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:51:23.677 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 168.2890 ms
+2025-06-12 00:51:23.677 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 169.9937ms
+2025-06-12 00:51:42.561 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Customer - null null
+2025-06-12 00:51:42.562 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:51:42.569 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 00:51:42.583 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 00:51:42.596 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:51:42.597 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 28.2617ms
+2025-06-12 00:51:42.597 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:51:42.597 +05:30 [INF] HTTP GET /api/Customer responded 200 in 35.3533 ms
+2025-06-12 00:51:42.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Customer - 200 null application/json; charset=utf-8 36.9159ms
+2025-06-12 00:52:19.322 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/Authentication - application/json 66
+2025-06-12 00:52:19.323 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:52:19.323 +05:30 [INF] Request origin http://localhost:5136 does not have permission to access the resource.
+2025-06-12 00:52:19.323 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:52:19.323 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 00:52:19.325 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 00:52:19.479 +05:30 [INF] User customer2@gamil.com logged in successfully
+2025-06-12 00:52:19.479 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 00:52:19.480 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 156.1998ms
+2025-06-12 00:52:19.480 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 00:52:19.480 +05:30 [INF] HTTP POST /api/Authentication responded 200 in 156.7385 ms
+2025-06-12 00:52:19.480 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/Authentication - 200 null application/json; charset=utf-8 158.0714ms
+2025-06-12 00:52:36.016 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/Customer - null null
+2025-06-12 00:52:36.016 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:52:36.016 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 00:52:36.018 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 00:52:36.019 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:52:36.019 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 2.4591ms
+2025-06-12 00:52:36.019 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:52:36.019 +05:30 [INF] HTTP GET /api/Customer responded 200 in 2.9248 ms
+2025-06-12 00:52:36.019 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/Customer - 200 null application/json; charset=utf-8 3.7325ms
+2025-06-12 00:53:21.015 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-12 00:53:21.016 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:53:21.016 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 00:53:21.032 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 00:53:21.033 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 00:53:21.034 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:53:21.034 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 17.5669ms
+2025-06-12 00:53:21.034 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 00:53:21.034 +05:30 [INF] HTTP GET /api/admin responded 200 in 18.1552 ms
+2025-06-12 00:53:21.034 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 19.2858ms
+2025-06-12 00:53:26.207 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-12 00:53:26.208 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:53:26.208 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 00:53:26.210 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 00:53:26.210 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:53:26.211 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 2.6404ms
+2025-06-12 00:53:26.211 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 00:53:26.211 +05:30 [INF] HTTP GET /api/customer responded 200 in 3.2293 ms
+2025-06-12 00:53:26.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 4.0753ms
+2025-06-12 00:53:34.776 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - null null
+2025-06-12 00:53:34.777 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-12 00:53:34.782 +05:30 [INF] Route matched with {action = "GetEventsByCategory", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.DTOs.EventDto]]] GetEventsByCategory(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 00:53:34.792 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 00:53:34.812 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-12 00:53:34.857 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.DTOs.EventDto, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:53:34.860 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system) in 78.363ms
+2025-06-12 00:53:34.860 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-12 00:53:34.860 +05:30 [INF] HTTP GET /api/events/category/Movie responded 200 in 83.4071 ms
+2025-06-12 00:53:34.861 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - 200 null application/json; charset=utf-8 84.3388ms
+2025-06-12 00:53:58.195 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer/rat - null null
+2025-06-12 00:53:58.196 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system)'
+2025-06-12 00:53:58.202 +05:30 [INF] Route matched with {action = "GetCustomerByName", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] GetCustomerByName(System.String) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 00:53:58.212 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 00:53:58.213 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-12 00:53:58.213 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system) in 11.5309ms
+2025-06-12 00:53:58.214 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system)'
+2025-06-12 00:53:58.214 +05:30 [INF] HTTP GET /api/customer/rat responded 200 in 17.4372 ms
+2025-06-12 00:53:58.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer/rat - 200 null application/json; charset=utf-8 19.2623ms
+2025-06-12 00:54:21.241 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/events/Nun - null null
+2025-06-12 00:54:21.243 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 00:54:21.246 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 00:54:21.258 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 00:54:21.259 +05:30 [ERR] Error deleting event with name Nun
+System.Exception: No Event with the given name
+   at BookingSystem.Repositories.EventRepository.Get(String key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/EventRepository.cs:line 19
+   at BookingSystem.Repositories.Repository`2.Delete(K key) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Repositories/Repository.cs:line 28
+   at BookingSystem.Services.EventService.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Services/EventService.cs:line 97
+   at BookingSystem.Controllers.EventsController.DeleteEvent(String eventName) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Controllers/EventsController.cs:line 110
+2025-06-12 00:54:21.260 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 00:54:21.260 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 13.6883ms
+2025-06-12 00:54:21.260 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 00:54:21.261 +05:30 [INF] HTTP DELETE /api/events/Nun responded 400 in 17.2446 ms
+2025-06-12 00:54:21.261 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/events/Nun - 400 null text/plain; charset=utf-8 19.3541ms
+2025-06-12 00:54:36.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/index.html - null null
+2025-06-12 00:54:36.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/index.html - 200 null text/html;charset=utf-8 1.4311ms
+2025-06-12 00:54:36.918 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - null null
+2025-06-12 00:54:36.932 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.632ms
+2025-06-12 00:55:02.752 +05:30 [INF] Application is shutting down...
+2025-06-12 00:55:54.767 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 00:55:54.911 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 00:55:54.913 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 00:55:54.913 +05:30 [INF] Hosting environment: Development
+2025-06-12 00:55:54.913 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 00:55:57.354 +05:30 [INF] Application is shutting down...
+2025-06-12 01:38:34.533 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:38:34.761 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:38:34.763 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:38:34.763 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:38:34.763 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:38:39.774 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:38:39.824 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:38:39.856 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:38:39.864 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 94.0632ms
+2025-06-12 01:38:39.877 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:38:39.880 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:38:39.891 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-12 01:38:39.901 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-12 01:38:39.903 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 11.8460 ms
+2025-06-12 01:38:39.905 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 28.1785ms
+2025-06-12 01:38:39.906 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=PQRe45HFIRabVFj07e_n6Q - null null
+2025-06-12 01:38:39.912 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:38:39.912 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-12 01:39:01.394 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/admin - null null
+2025-06-12 01:39:01.459 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:39:01.475 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:39:02.670 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 01:39:02.775 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 01:39:02.832 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:39:02.869 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1389.8005ms
+2025-06-12 01:39:02.869 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:39:02.870 +05:30 [INF] HTTP GET /api/v1/admin responded 200 in 1410.5653 ms
+2025-06-12 01:39:02.881 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/admin - 200 null application/json; charset=utf-8 1487.831ms
+2025-06-12 01:40:40.106 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:40:40.108 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:40:40.119 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:40:40.552 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:40:40.582 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Admins" ("Email", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:40:40.585 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-12 01:40:40.602 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 482.3704ms
+2025-06-12 01:40:40.602 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:40:40.602 +05:30 [ERR] HTTP POST /api/v1/admin/register responded 500 in 494.0439 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-06-12 01:40:40.663 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at BookingSystem.Misc.TokenValidationMiddleware.Invoke(HttpContext context, ITokenCacheService tokenCache) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Misc/TokenValidationMiddleware.cs:line 23
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-12 01:40:40.685 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 500 null text/plain; charset=utf-8 578.7988ms
+2025-06-12 01:41:04.306 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/admin/register - application/json 108
+2025-06-12 01:41:04.307 +05:30 [INF] HTTP POST /api/admin/register responded 404 in 0.0451 ms
+2025-06-12 01:41:04.307 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/admin/register - 404 0 null 1.1257ms
+2025-06-12 01:41:04.308 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5136/api/admin/register, Response status code: 404
+2025-06-12 01:41:12.392 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:41:12.393 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:41:12.393 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:41:12.609 +05:30 [ERR] Failed executing DbCommand (10ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:41:12.622 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:41:12.625 +05:30 [ERR] Failed to register admin with email admin4@gmail.com
+2025-06-12 01:41:12.626 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:41:12.627 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 233.1102ms
+2025-06-12 01:41:12.627 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:41:12.627 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 233.9296 ms
+2025-06-12 01:41:12.627 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 234.9115ms
+2025-06-12 01:41:19.322 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:41:19.323 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:41:19.323 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:41:19.464 +05:30 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:41:19.466 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:41:19.469 +05:30 [ERR] Failed to register admin with email admin4@gmail.com
+2025-06-12 01:41:19.469 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:41:19.469 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 146.3234ms
+2025-06-12 01:41:19.469 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:41:19.470 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 146.8044 ms
+2025-06-12 01:41:19.470 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 147.4274ms
+2025-06-12 01:42:32.691 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:42:32.692 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:42:32.692 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:42:32.833 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:42:32.836 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Admins" ("Email", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:42:32.836 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-12 01:42:32.837 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 145.0464ms
+2025-06-12 01:42:32.837 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:42:32.837 +05:30 [ERR] HTTP POST /api/v1/admin/register responded 500 in 145.7395 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-06-12 01:42:32.839 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at BookingSystem.Misc.TokenValidationMiddleware.Invoke(HttpContext context, ITokenCacheService tokenCache) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Misc/TokenValidationMiddleware.cs:line 23
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-12 01:42:32.840 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 500 null text/plain; charset=utf-8 149.6377ms
+2025-06-12 01:44:38.298 +05:30 [INF] Application is shutting down...
+2025-06-12 01:44:38.302 +05:30 [INF] Connection id "0HND94F0T78JB", Request id "0HND94F0T78JB:00000003": the application aborted the connection.
+2025-06-12 01:44:38.310 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-12 01:44:38.310 +05:30 [INF] HTTP GET /eventhub responded 101 in 358393.0666 ms
+2025-06-12 01:44:38.311 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=PQRe45HFIRabVFj07e_n6Q - 101 null null 358400.0286ms
+2025-06-12 01:44:47.350 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:44:47.498 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:44:47.499 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:44:47.500 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:44:47.500 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:44:52.585 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:44:52.625 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:44:52.656 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:44:52.669 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:44:54.248 +05:30 [ERR] Failed executing DbCommand (52ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:44:54.274 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:44:54.279 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:44:54.285 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:44:54.291 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1618.0985ms
+2025-06-12 01:44:54.296 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:44:54.298 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 1642.7450 ms
+2025-06-12 01:44:54.309 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 1725.8685ms
+2025-06-12 01:44:57.815 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:44:57.819 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:44:57.819 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:44:58.139 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:44:58.147 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:44:58.164 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:44:58.164 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:44:58.165 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 345.521ms
+2025-06-12 01:44:58.182 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:44:58.183 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 364.6192 ms
+2025-06-12 01:44:58.202 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 386.8998ms
+2025-06-12 01:46:06.736 +05:30 [INF] Application is shutting down...
+2025-06-12 01:46:15.813 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:46:15.946 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:46:15.948 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:46:15.948 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:46:15.948 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:46:23.584 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:46:23.621 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:46:23.657 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:46:23.674 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:46:25.080 +05:30 [ERR] Failed executing DbCommand (60ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:46:25.107 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:46:25.111 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:46:25.118 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:46:25.125 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1446.5337ms
+2025-06-12 01:46:25.131 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:46:25.133 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 1476.5693 ms
+2025-06-12 01:46:25.143 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 1561.9149ms
+2025-06-12 01:46:50.824 +05:30 [INF] Application is shutting down...
+2025-06-12 01:46:59.539 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:46:59.677 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:46:59.680 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:46:59.680 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:46:59.680 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:46:59.999 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:47:00.039 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:47:00.068 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:00.081 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:47:01.438 +05:30 [ERR] Failed executing DbCommand (56ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:47:01.465 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:47:01.469 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:47:01.475 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:47:01.480 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1396.156ms
+2025-06-12 01:47:01.485 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:01.487 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 1419.4637 ms
+2025-06-12 01:47:01.503 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 1504.9643ms
+2025-06-12 01:47:02.930 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:47:02.933 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:02.954 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:47:03.166 +05:30 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:47:03.169 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:47:03.175 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:47:03.176 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:47:03.176 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 221.68ms
+2025-06-12 01:47:03.177 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:03.177 +05:30 [INF] HTTP POST /api/v1/admin/register responded 400 in 243.5999 ms
+2025-06-12 01:47:03.178 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 400 null text/plain; charset=utf-8 248.029ms
+2025-06-12 01:47:22.385 +05:30 [INF] Application is shutting down...
+2025-06-12 01:47:31.454 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:47:31.616 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:47:31.617 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:47:31.618 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:47:31.618 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:47:39.422 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/admin/register - application/json 108
+2025-06-12 01:47:39.459 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:47:39.485 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:39.500 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:47:41.234 +05:30 [ERR] Failed executing DbCommand (61ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:47:41.261 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'BookingSystem.Contexts.BookingDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Users"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_Users"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Users
+    ConstraintName: PK_Users
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-12 01:47:41.266 +05:30 [ERR] Failed to register admin with email admin5@gmail.com
+2025-06-12 01:47:41.271 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-12 01:47:41.278 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1773.5298ms
+2025-06-12 01:47:41.283 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:47:41.285 +05:30 [INF] HTTP POST /api/admin/register responded 400 in 1800.0436 ms
+2025-06-12 01:47:41.296 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/admin/register - 400 null text/plain; charset=utf-8 1875.1062ms
+2025-06-12 01:47:59.804 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/customer/register - application/json 117
+2025-06-12 01:47:59.808 +05:30 [INF] HTTP POST /api/customer/register responded 404 in 0.0617 ms
+2025-06-12 01:47:59.808 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/customer/register - 404 0 null 4.1953ms
+2025-06-12 01:47:59.809 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5136/api/customer/register, Response status code: 404
+2025-06-12 01:48:05.535 +05:30 [INF] Application is shutting down...
+2025-06-12 01:48:30.068 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:48:30.194 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:48:30.195 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:48:30.195 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:48:30.196 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:48:44.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/admin - null null
+2025-06-12 01:48:44.349 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:48:44.446 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:48:44.462 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:48:45.668 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 01:48:45.764 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 01:48:45.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:48:45.863 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 1396.0268ms
+2025-06-12 01:48:45.868 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:48:45.870 +05:30 [INF] HTTP GET /api/admin responded 200 in 1423.9712 ms
+2025-06-12 01:48:45.880 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/admin - 200 null application/json; charset=utf-8 1583.6261ms
+2025-06-12 01:49:05.154 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-12 01:49:05.161 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:49:05.166 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:49:05.209 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 01:49:05.227 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:49:05.231 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 64.0004ms
+2025-06-12 01:49:05.231 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:49:05.232 +05:30 [INF] HTTP GET /api/customer responded 200 in 70.6025 ms
+2025-06-12 01:49:05.235 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 80.9198ms
+2025-06-12 01:49:19.382 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/customer/register - application/json 117
+2025-06-12 01:49:19.386 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:49:19.394 +05:30 [INF] Route matched with {action = "RegisterCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] RegisterCustomer(BookingSystem.Models.DTOs.CustomerDto) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:49:19.850 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:49:19.880 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Email", "Address", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-12 01:49:19.880 +05:30 [INF] Customer string registered successfully
+2025-06-12 01:49:19.882 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-12 01:49:19.898 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system) in 504.1066ms
+2025-06-12 01:49:19.898 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:49:19.898 +05:30 [ERR] HTTP POST /api/customer/register responded 500 in 512.3539 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-06-12 01:49:19.912 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at BookingSystem.Misc.TokenValidationMiddleware.Invoke(HttpContext context, ITokenCacheService tokenCache) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/Misc/TokenValidationMiddleware.cs:line 23
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-12 01:49:19.924 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/customer/register - 500 null text/plain; charset=utf-8 541.3845ms
+2025-06-12 01:50:09.868 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/customer - null null
+2025-06-12 01:50:09.872 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:50:09.873 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:50:09.878 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 01:50:09.879 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:50:09.880 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 6.977ms
+2025-06-12 01:50:09.880 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:50:09.880 +05:30 [INF] HTTP GET /api/customer responded 200 in 7.6461 ms
+2025-06-12 01:50:09.880 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/customer - 200 null application/json; charset=utf-8 12.5996ms
+2025-06-12 01:50:51.100 +05:30 [INF] Application is shutting down...
+2025-06-12 01:51:00.886 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:51:01.038 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:51:01.040 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:51:01.040 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:51:01.040 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:51:17.993 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/customer/register - application/json 128
+2025-06-12 01:51:18.037 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:51:18.073 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:51:18.090 +05:30 [INF] Route matched with {action = "RegisterCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] RegisterCustomer(BookingSystem.Models.DTOs.CustomerDto) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:51:19.626 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:51:19.686 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Email", "Address", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-12 01:51:19.688 +05:30 [INF] Customer subro@gmail.com registered successfully
+2025-06-12 01:51:19.693 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-12 01:51:19.734 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system) in 1640.4751ms
+2025-06-12 01:51:19.738 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:51:19.741 +05:30 [INF] HTTP POST /api/customer/register responded 201 in 1668.6594 ms
+2025-06-12 01:51:19.754 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/customer/register - 201 null application/json; charset=utf-8 1762.1587ms
+2025-06-12 01:52:17.101 +05:30 [INF] Application is shutting down...
+2025-06-12 01:52:27.112 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:52:27.244 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:52:27.246 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:52:27.246 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:52:27.246 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:52:32.990 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/admin/register - application/json 108
+2025-06-12 01:52:33.035 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:52:33.080 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:52:33.098 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:52:34.642 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:52:34.704 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Admins" ("Email", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:52:34.710 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-12 01:52:34.753 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1648.7555ms
+2025-06-12 01:52:34.758 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:52:34.760 +05:30 [INF] HTTP POST /api/admin/register responded 201 in 1681.2393 ms
+2025-06-12 01:52:34.775 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/admin/register - 201 null application/json; charset=utf-8 1786.3482ms
+2025-06-12 01:52:42.769 +05:30 [INF] Application is shutting down...
+2025-06-12 01:53:20.250 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:53:20.386 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:53:20.388 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:53:20.388 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:53:20.389 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:53:37.245 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - application/json 108
+2025-06-12 01:53:37.295 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:53:37.341 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:53:37.362 +05:30 [INF] Route matched with {action = "RegisterAdmin", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] RegisterAdmin(BookingSystem.Models.DTOs.AdminDto) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:53:38.916 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:53:38.997 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Admins" ("Email", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:53:39.007 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-12 01:53:39.060 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system) in 1693.2929ms
+2025-06-12 01:53:39.065 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.RegisterAdmin (booking_system)'
+2025-06-12 01:53:39.067 +05:30 [INF] HTTP POST /api/v1/admin/register responded 201 in 1726.6245 ms
+2025-06-12 01:53:39.081 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/admin/register - 201 null application/json; charset=utf-8 1838.8082ms
+2025-06-12 01:53:55.686 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/admin - null null
+2025-06-12 01:53:55.752 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:53:55.757 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:53:56.046 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 01:53:56.102 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 01:53:56.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:53:56.111 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 353.6144ms
+2025-06-12 01:53:56.111 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 01:53:56.111 +05:30 [INF] HTTP GET /api/v1/admin responded 200 in 359.0033 ms
+2025-06-12 01:53:56.112 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/admin - 200 null application/json; charset=utf-8 426.25ms
+2025-06-12 01:54:05.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/admin/admin1 - null null
+2025-06-12 01:54:05.366 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAdminByName (booking_system)'
+2025-06-12 01:54:05.373 +05:30 [INF] Route matched with {action = "GetAdminByName", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Admin]] GetAdminByName(System.String) on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 01:54:05.445 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+WHERE a."Name" = @__key_0
+LIMIT 2
+2025-06-12 01:54:05.447 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Admin'.
+2025-06-12 01:54:05.448 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAdminByName (booking_system) in 74.4982ms
+2025-06-12 01:54:05.448 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAdminByName (booking_system)'
+2025-06-12 01:54:05.448 +05:30 [INF] HTTP GET /api/v1/admin/admin1 responded 200 in 82.1103 ms
+2025-06-12 01:54:05.448 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/admin/admin1 - 200 null application/json; charset=utf-8 86.9441ms
+2025-06-12 01:54:13.417 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/customer - null null
+2025-06-12 01:54:13.419 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:54:13.422 +05:30 [INF] Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Customer]]] GetAllCustomers() on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:54:13.445 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+2025-06-12 01:54:13.455 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Customer, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:54:13.457 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system) in 34.6245ms
+2025-06-12 01:54:13.457 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetAllCustomers (booking_system)'
+2025-06-12 01:54:13.457 +05:30 [INF] HTTP GET /api/v1/customer responded 200 in 38.0334 ms
+2025-06-12 01:54:13.457 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/customer - 200 null application/json; charset=utf-8 40.201ms
+2025-06-12 01:54:33.645 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/customer/register - application/json 134
+2025-06-12 01:54:33.646 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:54:33.650 +05:30 [INF] Route matched with {action = "RegisterCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] RegisterCustomer(BookingSystem.Models.DTOs.CustomerDto) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:54:33.954 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "Name", "Password", "Role")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-12 01:54:33.962 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("Email", "Address", "Id", "Name", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-12 01:54:33.963 +05:30 [INF] Customer subrooo@gmail.com registered successfully
+2025-06-12 01:54:33.963 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-12 01:54:33.964 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system) in 313.6437ms
+2025-06-12 01:54:33.964 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.RegisterCustomer (booking_system)'
+2025-06-12 01:54:33.964 +05:30 [INF] HTTP POST /api/v1/customer/register responded 201 in 317.9003 ms
+2025-06-12 01:54:33.964 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/customer/register - 201 null application/json; charset=utf-8 319.2684ms
+2025-06-12 01:54:41.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/customer/rat - null null
+2025-06-12 01:54:41.768 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system)'
+2025-06-12 01:54:41.771 +05:30 [INF] Route matched with {action = "GetCustomerByName", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Customer]] GetCustomerByName(System.String) on controller BookingSystem.Controllers.CustomerController (booking_system).
+2025-06-12 01:54:41.794 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Email", c."Address", c."Id", c."Name", c."PhoneNumber"
+FROM "Customers" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 01:54:41.795 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Customer'.
+2025-06-12 01:54:41.795 +05:30 [INF] Executed action BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system) in 23.8428ms
+2025-06-12 01:54:41.795 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.CustomerController.GetCustomerByName (booking_system)'
+2025-06-12 01:54:41.795 +05:30 [INF] HTTP GET /api/v1/customer/rat responded 200 in 27.7195 ms
+2025-06-12 01:54:41.796 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/customer/rat - 200 null application/json; charset=utf-8 28.8826ms
+2025-06-12 01:55:14.213 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/events - null null
+2025-06-12 01:55:14.214 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-12 01:55:14.217 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:55:14.246 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-12 01:55:14.285 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:55:14.288 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 71.1104ms
+2025-06-12 01:55:14.288 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-12 01:55:14.288 +05:30 [INF] HTTP GET /api/v1/events responded 200 in 74.6957 ms
+2025-06-12 01:55:14.289 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/events - 200 null application/json; charset=utf-8 75.834ms
+2025-06-12 01:55:32.851 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/v1/api/events - application/json 133
+2025-06-12 01:55:32.852 +05:30 [INF] HTTP POST /v1/api/events responded 404 in 0.1078 ms
+2025-06-12 01:55:32.852 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/v1/api/events - 404 0 null 0.9902ms
+2025-06-12 01:55:32.854 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5136/v1/api/events, Response status code: 404
+2025-06-12 01:55:46.130 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/events - application/json 133
+2025-06-12 01:55:46.133 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-12 01:55:46.136 +05:30 [INF] Route matched with {action = "CreateEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] CreateEvent(BookingSystem.Models.DTOs.EventDto) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:55:46.154 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 01:55:46.204 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Events" ("CategoryId", "CreatorEmail", "Date", "Description", "IsCancelled", "Price", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2025-06-12 01:55:46.220 +05:30 [INF] Event Nun created successfully
+2025-06-12 01:55:46.220 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:55:46.222 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.CreateEvent (booking_system) in 85.9838ms
+2025-06-12 01:55:46.223 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-12 01:55:46.223 +05:30 [INF] HTTP POST /api/v1/events responded 201 in 89.3536 ms
+2025-06-12 01:55:46.223 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/events - 201 null application/json; charset=utf-8 92.8868ms
+2025-06-12 01:56:04.867 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/events/thuglife - null null
+2025-06-12 01:56:04.868 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-12 01:56:04.871 +05:30 [INF] Route matched with {action = "GetEventByName", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventByName(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:56:04.889 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 01:56:04.890 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:56:04.891 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByName (booking_system) in 19.0749ms
+2025-06-12 01:56:04.891 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-12 01:56:04.891 +05:30 [INF] HTTP GET /api/v1/events/thuglife responded 200 in 23.7215 ms
+2025-06-12 01:56:04.892 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/events/thuglife - 200 null application/json; charset=utf-8 25.1778ms
+2025-06-12 01:56:15.850 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/v1/events/Nun - null null
+2025-06-12 01:56:15.851 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 01:56:15.854 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:56:15.861 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 01:56:15.873 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Events"
+WHERE "Id" = @p0;
+2025-06-12 01:56:15.876 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:56:15.876 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 22.1188ms
+2025-06-12 01:56:15.876 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 01:56:15.877 +05:30 [INF] HTTP DELETE /api/v1/events/Nun responded 200 in 25.3322 ms
+2025-06-12 01:56:15.877 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/v1/events/Nun - 200 null application/json; charset=utf-8 26.6556ms
+2025-06-12 01:56:35.872 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:56:35.874 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:56:35.876 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 4.8082ms
+2025-06-12 01:56:35.879 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:56:35.880 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:56:35.880 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-12 01:56:35.890 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-12 01:56:35.890 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 9.9893 ms
+2025-06-12 01:56:35.890 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 11.0431ms
+2025-06-12 01:56:35.896 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=T9BwGqG-osz3I7JbEBcKYA - null null
+2025-06-12 01:56:35.896 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:56:35.897 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-12 01:56:57.419 +05:30 [INF] Application is shutting down...
+2025-06-12 01:56:57.422 +05:30 [INF] Connection id "0HND94NCC5M65", Request id "0HND94NCC5M65:00000003": the application aborted the connection.
+2025-06-12 01:56:57.436 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-12 01:56:57.436 +05:30 [INF] HTTP GET /eventhub responded 101 in 21539.3440 ms
+2025-06-12 01:56:57.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=T9BwGqG-osz3I7JbEBcKYA - 101 null null 21540.5923ms
+2025-06-12 01:57:06.499 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 01:57:06.697 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-12 01:57:06.700 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 01:57:06.700 +05:30 [INF] Hosting environment: Development
+2025-06-12 01:57:06.700 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system
+2025-06-12 01:57:18.304 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:57:18.341 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-12 01:57:18.371 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:57:18.378 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 75.9808ms
+2025-06-12 01:57:18.390 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-12 01:57:18.393 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:57:18.401 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-12 01:57:18.407 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-12 01:57:18.409 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 8.2182 ms
+2025-06-12 01:57:18.411 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 21.8645ms
+2025-06-12 01:57:18.411 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=u9xV-i7GZtq9Pgb12ZVOqw - null null
+2025-06-12 01:57:18.417 +05:30 [INF] CORS policy execution successful.
+2025-06-12 01:57:18.417 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-12 01:57:21.832 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/events - application/json 133
+2025-06-12 01:57:21.891 +05:30 [INF] HTTP POST /api/v1/events responded 404 in 0.1028 ms
+2025-06-12 01:57:21.891 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/events - 404 0 null 59.5348ms
+2025-06-12 01:57:21.892 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5136/api/v1/events, Response status code: 404
+2025-06-12 01:57:28.344 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/events - application/json 133
+2025-06-12 01:57:28.351 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-12 01:57:28.371 +05:30 [INF] Route matched with {action = "CreateEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] CreateEvent(BookingSystem.Models.DTOs.EventDto) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:57:29.628 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 01:57:29.826 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Events" ("CategoryId", "CreatorEmail", "Date", "Description", "IsCancelled", "Price", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2025-06-12 01:57:29.844 +05:30 [INF] Event Nun created successfully
+2025-06-12 01:57:29.859 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:57:29.890 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.CreateEvent (booking_system) in 1514.8986ms
+2025-06-12 01:57:29.890 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.CreateEvent (booking_system)'
+2025-06-12 01:57:29.891 +05:30 [INF] HTTP POST /api/events responded 201 in 1539.4468 ms
+2025-06-12 01:57:29.899 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/events - 201 null application/json; charset=utf-8 1555.0983ms
+2025-06-12 01:57:43.781 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/thuglife - null null
+2025-06-12 01:57:43.782 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-12 01:57:43.786 +05:30 [INF] Route matched with {action = "GetEventByName", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventByName(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:57:43.816 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 01:57:43.820 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:57:43.820 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByName (booking_system) in 34.1571ms
+2025-06-12 01:57:43.820 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByName (booking_system)'
+2025-06-12 01:57:43.821 +05:30 [INF] HTTP GET /api/events/thuglife responded 200 in 38.5132 ms
+2025-06-12 01:57:43.821 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/thuglife - 200 null application/json; charset=utf-8 40.6404ms
+2025-06-12 01:57:50.934 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-12 01:57:50.935 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-12 01:57:50.938 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:57:51.020 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-12 01:57:51.021 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:57:51.023 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 84.2764ms
+2025-06-12 01:57:51.023 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-12 01:57:51.024 +05:30 [INF] HTTP GET /api/events responded 200 in 88.1956 ms
+2025-06-12 01:57:51.024 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 90.173ms
+2025-06-12 01:58:16.837 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/events/Nun - null null
+2025-06-12 01:58:16.840 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 01:58:16.843 +05:30 [INF] Route matched with {action = "DeleteEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] DeleteEvent(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:58:16.851 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 01:58:16.864 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Events"
+WHERE "Id" = @p0;
+2025-06-12 01:58:16.868 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-12 01:58:16.868 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.DeleteEvent (booking_system) in 24.5524ms
+2025-06-12 01:58:16.868 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.DeleteEvent (booking_system)'
+2025-06-12 01:58:16.868 +05:30 [INF] HTTP DELETE /api/events/Nun responded 200 in 28.6408 ms
+2025-06-12 01:58:16.869 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/events/Nun - 200 null application/json; charset=utf-8 31.6915ms
+2025-06-12 01:58:33.184 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - null null
+2025-06-12 01:58:33.184 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-12 01:58:33.188 +05:30 [INF] Route matched with {action = "GetEventsByCategory", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.DTOs.EventDto]]] GetEventsByCategory(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-12 01:58:33.192 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Categories" AS c
+WHERE c."Name" = @__key_0
+LIMIT 2
+2025-06-12 01:58:33.193 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+2025-06-12 01:58:33.197 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.DTOs.EventDto, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 01:58:33.199 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system) in 11.2995ms
+2025-06-12 01:58:33.200 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventsByCategory (booking_system)'
+2025-06-12 01:58:33.200 +05:30 [INF] HTTP GET /api/events/category/Movie responded 200 in 15.7602 ms
+2025-06-12 01:58:33.200 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/category/Movie - 200 null application/json; charset=utf-8 16.4744ms
+2025-06-12 01:59:02.366 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - application/json 91
+2025-06-12 01:59:02.370 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-12 01:59:02.376 +05:30 [INF] Route matched with {action = "BookTicket", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] BookTicket(BookingSystem.Models.DTOs.TicketDto) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-12 01:59:02.391 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."CategoryId", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-12 01:59:02.420 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("BookingDate", "CustomerEmail", "EventId", "IsCancelled", "Quantity", "Total")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-12 01:59:02.740 +05:30 [INF] Executing FileContentResult, sending file with download name 'Ticket_13.pdf' ...
+2025-06-12 01:59:02.759 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.BookTicket (booking_system) in 382.6183ms
+2025-06-12 01:59:02.759 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-12 01:59:02.759 +05:30 [INF] HTTP POST /api/v1/ticket/book responded 200 in 388.8739 ms
+2025-06-12 01:59:02.760 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - 200 74014 application/pdf 393.5392ms
+2025-06-12 01:59:13.783 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/12 - null null
+2025-06-12 01:59:13.783 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketById (booking_system)'
+2025-06-12 01:59:13.787 +05:30 [INF] Route matched with {action = "GetTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] GetTicketById(Int32) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-12 01:59:13.799 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total"
+FROM "Tickets" AS t
+WHERE t."Id" = @__key_0
+LIMIT 2
+2025-06-12 01:59:13.799 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Ticket'.
+2025-06-12 01:59:13.801 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketById (booking_system) in 13.793ms
+2025-06-12 01:59:13.801 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketById (booking_system)'
+2025-06-12 01:59:13.801 +05:30 [INF] HTTP GET /api/v1/ticket/12 responded 200 in 17.8807 ms
+2025-06-12 01:59:13.802 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/12 - 200 null application/json; charset=utf-8 19.0429ms
+2025-06-12 01:59:19.472 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/13 - null null
+2025-06-12 01:59:19.473 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketById (booking_system)'
+2025-06-12 01:59:19.473 +05:30 [INF] Route matched with {action = "GetTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] GetTicketById(Int32) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-12 01:59:19.475 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total"
+FROM "Tickets" AS t
+WHERE t."Id" = @__key_0
+LIMIT 2
+2025-06-12 01:59:19.475 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Ticket'.
+2025-06-12 01:59:19.476 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketById (booking_system) in 2.3957ms
+2025-06-12 01:59:19.476 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketById (booking_system)'
+2025-06-12 01:59:19.476 +05:30 [INF] HTTP GET /api/v1/ticket/13 responded 200 in 2.9251 ms
+2025-06-12 01:59:19.476 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/13 - 200 null application/json; charset=utf-8 3.9538ms
+2025-06-12 01:59:44.759 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5136/api/v1/ticket/13/cancel - null null
+2025-06-12 01:59:44.760 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.CancelTicketById (booking_system)'
+2025-06-12 01:59:44.763 +05:30 [INF] Route matched with {action = "CancelTicketById", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] CancelTicketById(Int32) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-12 01:59:44.767 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total"
+FROM "Tickets" AS t
+WHERE t."Id" = @__key_0
+LIMIT 2
+2025-06-12 01:59:44.769 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total"
+FROM "Tickets" AS t
+WHERE t."Id" = @__key_0
+LIMIT 2
+2025-06-12 01:59:44.772 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Tickets"
+WHERE "Id" = @p0;
+2025-06-12 01:59:44.772 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Ticket'.
+2025-06-12 01:59:44.773 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.CancelTicketById (booking_system) in 9.7429ms
+2025-06-12 01:59:44.773 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.CancelTicketById (booking_system)'
+2025-06-12 01:59:44.773 +05:30 [INF] HTTP DELETE /api/v1/ticket/13/cancel responded 200 in 13.4073 ms
+2025-06-12 01:59:44.773 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5136/api/v1/ticket/13/cancel - 200 null application/json; charset=utf-8 14.7044ms
+2025-06-12 02:00:23.904 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 60
+2025-06-12 02:00:23.905 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 02:00:23.908 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-12 02:00:23.921 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-12 02:00:24.232 +05:30 [INF] User admin7@gmail.com logged in successfully
+2025-06-12 02:00:24.232 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-12 02:00:24.233 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 324.9794ms
+2025-06-12 02:00:24.233 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-12 02:00:24.233 +05:30 [INF] HTTP POST /api/v1/authentication responded 200 in 328.2096 ms
+2025-06-12 02:00:24.233 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 200 null application/json; charset=utf-8 329.1905ms
+2025-06-12 02:01:04.369 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/admin - null null
+2025-06-12 02:01:04.371 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 02:01:04.374 +05:30 [INF] Route matched with {action = "GetAllAdmins", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Admin]]] GetAllAdmins() on controller BookingSystem.Controllers.AdminController (booking_system).
+2025-06-12 02:01:04.415 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Admins" AS a
+2025-06-12 02:01:04.431 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Email", a."Id", a."Name", a."PhoneNumber"
+FROM "Admins" AS a
+2025-06-12 02:01:04.439 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingSystem.Models.Admin, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 02:01:04.440 +05:30 [INF] Executed action BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system) in 66.1567ms
+2025-06-12 02:01:04.440 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.AdminController.GetAllAdmins (booking_system)'
+2025-06-12 02:01:04.440 +05:30 [INF] HTTP GET /api/v1/admin responded 200 in 69.1140 ms
+2025-06-12 02:01:04.441 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/admin - 200 null application/json; charset=utf-8 71.0785ms
+2025-06-12 02:01:18.948 +05:30 [INF] Application is shutting down...
+2025-06-12 02:01:18.949 +05:30 [INF] Connection id "0HND94PE8FVLT", Request id "0HND94PE8FVLT:00000003": the application aborted the connection.
+2025-06-12 02:01:18.959 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-12 02:01:18.959 +05:30 [INF] HTTP GET /eventhub responded 101 in 240539.4118 ms
+2025-06-12 02:01:18.959 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=u9xV-i7GZtq9Pgb12ZVOqw - 101 null null 240545.4098ms

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 namespace BookingSystem.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
@@ -30,7 +30,7 @@ namespace BookingSystem.Controllers
                 return BadRequest("Failed to register customer.");
             }
             _logger.LogInformation("Customer {Email} registered successfully", customer.Email);
-            return CreatedAtAction(nameof(GetCustomerByName), new { email = customer.Email }, customer);
+            return CreatedAtAction(nameof(GetCustomerByName), new { name = customer.Name }, customer);
         }
 
         [HttpGet("{name}")]
@@ -54,7 +54,7 @@ namespace BookingSystem.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles="Customer")]
+        [Authorize(Roles = "Customer")]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
             try

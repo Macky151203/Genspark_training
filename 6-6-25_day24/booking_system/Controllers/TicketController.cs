@@ -12,7 +12,7 @@ using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;
 using System.IO;
 
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 [ApiController]
 
 public class TicketController : ControllerBase

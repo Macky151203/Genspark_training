@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 namespace BookingSystem.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
@@ -20,7 +20,7 @@ namespace BookingSystem.Controllers
             _logger = logger;
         }
 
-      
+
         [HttpPost("register")]
         public async Task<ActionResult<Admin>> RegisterAdmin(AdminDto adminDto)
         {
@@ -30,10 +30,10 @@ namespace BookingSystem.Controllers
                 _logger.LogError("Failed to register admin with email {Email}", adminDto.Email);
                 return BadRequest("Failed to register admin.");
             }
-            return CreatedAtAction(nameof(GetAdminByName), new { email = admin.Email }, admin);
+            return CreatedAtAction(nameof(GetAdminByName), new { name = admin.Name }, admin);
         }
 
-       
+
         [HttpGet("{name}")]
         public async Task<ActionResult<Admin>> GetAdminByName(string name)
         {
@@ -56,7 +56,7 @@ namespace BookingSystem.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<Admin>>> GetAllAdmins()
         {
             try

@@ -57,6 +57,8 @@ public class EventsController : ControllerBase
         }
         catch (Exception ex)
         {
+
+            
             _logger.LogError(ex, "Error retrieving event with name {EventName}", eventName);
             return BadRequest("An error occurred while retrieving the event.");
         }
