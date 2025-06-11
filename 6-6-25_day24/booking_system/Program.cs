@@ -46,6 +46,7 @@ builder.Services.AddTransient<IRepository<string, Customer>, CustomerRepository>
 builder.Services.AddTransient<IRepository<string, Event>, EventRepository>();
 builder.Services.AddTransient<IRepository<string, Category>, CategoryRepository>();
 builder.Services.AddTransient<IRepository<int, Ticket>, TicketRepository>();
+
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
 builder.Services.AddTransient<IAdminService, AdminService>();
 builder.Services.AddTransient<ITicketService, TicketService>();
@@ -54,6 +55,7 @@ builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddSingleton<ITokenCacheService, InMemoryTokenCacheService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
+
 builder.Services.AddHttpContextAccessor();
 
 //rate limiting

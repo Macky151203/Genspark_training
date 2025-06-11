@@ -31,7 +31,7 @@ public class AdminService : IAdminService
             {
                 Name = adminDto.Name,
                 Email = adminDto.Email,
-                Password = encrypteddata.EncryptedData,
+                Password = encrypteddata.EncryptedData??"",
                 Role = "Admin"
             };
 

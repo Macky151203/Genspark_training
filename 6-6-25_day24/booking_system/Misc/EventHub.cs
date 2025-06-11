@@ -3,8 +3,8 @@ namespace BookingSystem.Misc;
 
 public class EventHub : Hub
 {
-    public async Task SendMessage(string user, string message)
+    public async Task SendMessage()
     {
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+       
     }
 }
