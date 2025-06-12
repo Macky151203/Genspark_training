@@ -22,7 +22,8 @@ public class EventService : IEventService
 
     public async Task<IEnumerable<Event>> GetAllEvents()
     {
-        return await _eventRepository.GetAll();
+        var allEvents = await _eventRepository.GetAll();
+        return allEvents.Where(e => !e.IsCancelled);
     }
 
     public async Task<Event?> GetEventByName(string EventName)
@@ -89,7 +90,19 @@ public class EventService : IEventService
         existingEvent.CreatorEmail = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
 
 
-        return await _eventRepository.Update(eventName,existingEvent);
+        return await _eventRepository.Update(eventName, existingEvent);
+    }
+
+    public async Task<Event> CancelEvent(string eventName)
+    {
+        var existingEvent = await _eventRepository.Get(eventName);
+        if (existingEvent == null)
+        {
+            throw new NotImplementedException($"Event '{eventName}' does not exist.");
+        }
+
+        existingEvent.IsCancelled = true;
+        return await _eventRepository.Update(eventName, existingEvent);
     }
 
     public async Task<Event> DeleteEvent(string eventName)
@@ -103,7 +116,7 @@ public class EventService : IEventService
         {
             throw new ArgumentException($"Category '{category}' does not exist.");
         }
-        var categoryid= existingCategory.Id;
+        var categoryid = existingCategory.Id;
         var allEvents = await _eventRepository.GetAll();
         return allEvents.Where(e => e.CategoryId == categoryid).OrderBy(e => e.Date).Select(e => new EventDto { Title = e.Title, Date = e.Date, Description = e.Description, Price = e.Price, CategoryName = category }).ToList();
     }

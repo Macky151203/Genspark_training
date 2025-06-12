@@ -103,13 +103,16 @@ public class EventsController : ControllerBase
         }
     }
 
+
+
+
     [HttpDelete("{eventName}")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Event>> DeleteEvent(string eventName)
     {
         try
         {
-            var deletedEvent = await _eventService.DeleteEvent(eventName);
+            var deletedEvent = await _eventService.CancelEvent(eventName);
             await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Deleted Event", $"{deletedEvent.Title}", $"{deletedEvent.Description}", $"{deletedEvent.CategoryId}");
             return Ok(deletedEvent);
         }
