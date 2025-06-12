@@ -107,9 +107,9 @@ public class EventService : IEventService
         var allEvents = await _eventRepository.GetAll();
         return allEvents.Where(e => e.CategoryId == categoryid).OrderBy(e => e.Date).Select(e => new EventDto { Title = e.Title, Date = e.Date, Description = e.Description, Price = e.Price, CategoryName = category }).ToList();
     }
-    public async Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate)
+    public async Task<IEnumerable<Event>> GetEventsByPriceRange(int min, int max)
     {
         var allEvents = await _eventRepository.GetAll();
-        return allEvents.Where(e => e.Date >= startDate && e.Date <= endDate);
+        return allEvents.Where(e => e.Price >= min && e.Price <= max);
     }
 }

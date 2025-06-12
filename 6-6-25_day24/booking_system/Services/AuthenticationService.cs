@@ -81,7 +81,7 @@ public class AuthenticationService : IAuthenticationService
         await Task.CompletedTask;
     }
 
-    public async Task<UserLoginResponse> RefreshToken(string email, string refreshToken,string token)
+    public async Task<UserLoginResponse> RefreshToken(string email, string refreshToken)
     {
         if (!refreshTokens.TryGetValue(email, out var storedToken) || storedToken != refreshToken)
         {

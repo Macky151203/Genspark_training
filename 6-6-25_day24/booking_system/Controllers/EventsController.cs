@@ -58,7 +58,7 @@ public class EventsController : ControllerBase
         catch (Exception ex)
         {
 
-            
+
             _logger.LogError(ex, "Error retrieving event with name {EventName}", eventName);
             return BadRequest("An error occurred while retrieving the event.");
         }
@@ -72,7 +72,7 @@ public class EventsController : ControllerBase
         {
             var createdEvent = await _eventService.CreateEvent(eventDto);
             _logger.LogInformation("Event {EventName} created successfully", createdEvent.Title);
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $"{createdEvent.Title}",$"{createdEvent.Description}",$"{eventDto.CategoryName}");
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $"{createdEvent.Title}", $"{createdEvent.Description}", $"{eventDto.CategoryName}");
             return CreatedAtAction(nameof(GetEventByName), new { eventName = createdEvent.Title }, createdEvent);
         }
         catch (Exception ex)
@@ -110,7 +110,7 @@ public class EventsController : ControllerBase
         try
         {
             var deletedEvent = await _eventService.DeleteEvent(eventName);
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Deleted Event", $"{deletedEvent.Title}",$"{deletedEvent.Description}",$"{deletedEvent.CategoryId}");
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Deleted Event", $"{deletedEvent.Title}", $"{deletedEvent.Description}", $"{deletedEvent.CategoryId}");
             return Ok(deletedEvent);
         }
         catch (Exception ex)
@@ -135,17 +135,17 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpGet("dateRange")]
-    public async Task<ActionResult<IEnumerable<Event>>> GetEventsByDateRange([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+    [HttpGet("price")]
+    public async Task<ActionResult<IEnumerable<Event>>> GetEventsByPriceRange([FromQuery] int min, [FromQuery] int max)
     {
         try
         {
-            var events = await _eventService.GetEventsByDateRangeAsync(startDate, endDate);
+            var events = await _eventService.GetEventsByPriceRange(min, max);
             return Ok(events);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error retrieving events by date range from {StartDate} to {EndDate}", startDate, endDate);
+            _logger.LogError(ex, "Error retrieving events by price range {Min} - {Max}", min, max);
             return BadRequest(ex.Message);
         }
     }

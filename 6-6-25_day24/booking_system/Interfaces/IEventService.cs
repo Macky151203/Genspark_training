@@ -10,5 +10,5 @@ public interface IEventService
     Task<Event> UpdateEvent(string eventName, EventDto eventDto);
     Task<Event> DeleteEvent(string eventName);
     Task<IEnumerable<EventDto>> GetEventsByCategoryAsync(string category);
-    Task<IEnumerable<Event>> GetEventsByDateRangeAsync(DateTime startDate, DateTime endDate);
+    public Task<IEnumerable<Event>> GetEventsByPriceRange(int min, int max);
 }
