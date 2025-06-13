@@ -1,8 +1,7 @@
-// src/app/components/weather-dashboard/weather-dashboard.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CitySearchComponent } from '../city-search/city-search';
-import { WeatherCardComponent } from '../weather-card/weather-card';
+import { CitySearchComponent } from '../citysearch/city-search';
+import { WeatherCardComponent } from '../weathercard/weather-card';
 import { WeatherService } from '../../services/weather';
 
 @Component({
