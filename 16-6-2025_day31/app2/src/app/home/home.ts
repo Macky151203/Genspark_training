@@ -44,7 +44,7 @@ export class Home implements OnInit {
           this.isEnd = false;
         }),
         switchMap((query) =>
-          this.productService.getProductSearchResult(query)
+          this.productService.getPaginatedProducts(this.limit, this.skip, query)
         ),
         tap(() => (this.loading = false))
       )
@@ -58,19 +58,19 @@ export class Home implements OnInit {
   }
 
   loadMoreProducts() {
-    if (this.isFetching || this.isEnd) return;
+    if (this.loading || this.isEnd) return;
 
-    this.isFetching = true;
-    this.productService.getPaginatedProducts(this.limit, this.skip).subscribe({
+    this.loading = true;
+    this.productService.getPaginatedProducts(this.limit, this.skip,this.searchTerm).subscribe({
       next: (data: any) => {
         this.products = [...this.products, ...data.products];
         this.skip += this.limit;
         if (data.products.length < this.limit) {
           this.isEnd = true;
         }
-        this.isFetching = false;
+        this.loading = false;
       },
-      error: () => (this.isFetching = false),
+      error: () => (this.loading = false),
     });
   }
 
