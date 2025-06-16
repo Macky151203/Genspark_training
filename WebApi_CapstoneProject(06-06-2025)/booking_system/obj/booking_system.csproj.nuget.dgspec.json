@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/booking_system.csproj": {}
+    "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj": {}
   },
   "projects": {
-    "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/booking_system.csproj": {
+    "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/booking_system.csproj",
+        "projectUniqueName": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj",
         "projectName": "booking_system",
-        "projectPath": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/booking_system.csproj",
-        "packagesPath": "/Users/presidio/.nuget/packages/",
-        "outputPath": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/6-6-25_day24/booking_system/obj/",
+        "projectPath": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj",
+        "packagesPath": "C:\\Users\\Subra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/presidio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Subra\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -106,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

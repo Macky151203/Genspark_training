@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
-  private readonly API_KEY = 'api_key_goes_here';
+  private readonly API_KEY = 'f904f2dca05718110dfddcb7dcf6b553';
   private readonly BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
-
+  // weather : any= ""
   weather = signal<any | null>(null);
   error = signal<string>('');
 
