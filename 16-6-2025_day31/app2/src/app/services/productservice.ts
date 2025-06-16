@@ -18,8 +18,8 @@ export class Productservice {
       'https://dummyjson.com/products/search?q=' + searchData
     );
   }
-  getPaginatedProducts(limit: number, skip: number): Observable<any> {
-    const url = `https://dummyjson.com/products?limit=${limit}&skip=${skip}&select=title,price,thumbnail,description`;
+  getPaginatedProducts(limit: number, skip: number, query: string): Observable<any> {
+    const url = `https://dummyjson.com/products/search?q=${query}&limit=${limit}&skip=${skip}&select=title,price,thumbnail,description`;
     return this.http.get(url);
   }
 
