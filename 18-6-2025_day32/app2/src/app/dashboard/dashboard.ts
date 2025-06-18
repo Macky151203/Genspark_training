@@ -70,20 +70,20 @@ export class Dashboard implements OnInit {
 
         this.baroptions = {
           data: Object.entries(this.departmentcounts).map(
-            ([department, count]) => ({
-              department,
+            ([role, count]) => ({
+              role,
               count,
             })
           ),
           title: {
-            text: 'Department Count',
+            text: 'Role Count',
           },
           series: [
             {
               type: 'bar',
-              xKey: 'department',
+              xKey: 'role',
               yKey: 'count',
-              labelKey: 'department',
+              labelKey: 'role',
             },
           ],
         };
@@ -121,9 +121,9 @@ export class Dashboard implements OnInit {
   getdepartmentCount(): any {
     const departmentCounts: { [key: string]: number } = {};
     this.users.forEach((user) => {
-      if (user.company.department) {
-        departmentCounts[user.company.department] =
-          (departmentCounts[user.company.department] || 0) + 1;
+      if (user.role) {
+        departmentCounts[user.role] =
+          (departmentCounts[user.role] || 0) + 1;
       }
     });
 
