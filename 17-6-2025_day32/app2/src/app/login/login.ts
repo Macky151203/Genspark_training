@@ -8,17 +8,17 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   imports: [CommonModule, FormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css'
+  styleUrl: './login.css',
 })
 export class Login {
   user: UserLoginModel = new UserLoginModel();
 
   constructor(private userservice: Userservice, private route: Router) {}
 
-   onSubmit() {
+  onSubmit() {
     console.log('Username:', this.user.username);
     console.log('Password:', this.user.password);
-     this.userservice.validateUserLogin(this.user);
+    this.userservice.validateUserLogin(this.user);
     setTimeout(() => {
       this.route.navigateByUrl('/products');
     }, 1000);
@@ -26,6 +26,8 @@ export class Login {
 
   logout() {
     this.userservice.logout();
+    alert('You have been logged out successfully.');
+
     this.route.navigateByUrl('/');
   }
 }

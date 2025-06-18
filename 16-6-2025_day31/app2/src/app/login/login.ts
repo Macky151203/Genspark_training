@@ -26,6 +26,7 @@ export class Login {
 
   logout() {
     this.userservice.logout();
+    alert('You have been logged out successfully.');
     this.route.navigateByUrl('/');
   }
 }

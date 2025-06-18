@@ -23,10 +23,10 @@ export class Home implements OnInit {
   products: ProductModel[] = [];
   searchTerm: string = '';
   searchSubject = new Subject<string>();
-  loading: boolean = false;
+  loading: boolean = false;     // for initial search/loading
+  isFetching: boolean = false;  // for infinite scroll loading
   limit = 10;
   skip = 0;
-  isFetching = false;
   isEnd = false;
 
   constructor(private productService: Productservice) {}
@@ -36,7 +36,7 @@ export class Home implements OnInit {
 
     this.searchSubject
       .pipe(
-        debounceTime(2000),
+        debounceTime(500),
         distinctUntilChanged(),
         tap(() => {
           this.loading = true;
@@ -44,12 +44,14 @@ export class Home implements OnInit {
           this.isEnd = false;
         }),
         switchMap((query) =>
-          this.productService.getPaginatedProducts(this.limit, this.skip, query)
+          this.productService.getPaginatedProducts(this.limit, 0, query)
         ),
         tap(() => (this.loading = false))
       )
       .subscribe((data: any) => {
         this.products = data.products;
+        this.skip = this.limit;
+        this.isEnd = data.products.length < this.limit;
       });
   }
 
@@ -58,22 +60,25 @@ export class Home implements OnInit {
   }
 
   loadMoreProducts() {
-    if (this.loading || this.isEnd) return;
+    if (this.isFetching || this.isEnd || this.loading) return;
 
-    this.loading = true;
-    this.productService.getPaginatedProducts(this.limit, this.skip,this.searchTerm).subscribe({
-      next: (data: any) => {
-        this.products = [...this.products, ...data.products];
-        this.skip += this.limit;
-        if (data.products.length < this.limit) {
-          this.isEnd = true;
-        }
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-    });
+    this.isFetching = true;
+    this.productService
+      .getPaginatedProducts(this.limit, this.skip, this.searchTerm)
+      .subscribe({
+        next: (data: any) => {
+          this.products = [...this.products, ...data.products];
+          this.skip += this.limit;
+          if (data.products.length < this.limit) {
+            this.isEnd = true;
+          }
+          this.isFetching = false;
+        },
+        error: () => {
+          this.isFetching = false;
+        },
+      });
   }
-
 
   @HostListener('window:scroll', [])
   onScroll(): void {
@@ -84,4 +89,3 @@ export class Home implements OnInit {
     }
   }
 }
-
