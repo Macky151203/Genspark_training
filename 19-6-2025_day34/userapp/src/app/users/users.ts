@@ -21,7 +21,8 @@ import { CustomValidators } from '../validators/customvalidators';
 })
 export class Users implements OnInit {
   form: FormGroup;
-  users = signal<User[]>([]);
+  // users = signal<User[]>([]);
+  users : User[] = [];
   searchTerm = '';
   searchSubject = new Subject<string>();
 
@@ -53,9 +54,10 @@ export class Users implements OnInit {
       }
     );
 
-    this.userService.users$.subscribe((users) => this.users.set(users));
+    this.userService.users$.subscribe((users) => this.users = users)
   }
   ngOnInit(): void {
+    //the observer
     this.searchSubject
       .pipe(
         debounceTime(2000),
@@ -63,7 +65,7 @@ export class Users implements OnInit {
         switchMap(() => this.userService.searchUserByName(this.searchTerm))
       )
       .subscribe((data: any) => {
-        this.users.set(data);
+        this.users=data;
       });
   }
 
@@ -79,6 +81,7 @@ export class Users implements OnInit {
   }
 
   searchuser() {
+    //observable emitted
     this.searchSubject.next(this.searchTerm);
   }
 }
