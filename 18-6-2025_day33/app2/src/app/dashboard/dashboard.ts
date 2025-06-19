@@ -47,8 +47,8 @@ export class Dashboard implements OnInit {
             {
               type: 'map-shape',
               title: 'Access to Clean Fuels',
-              idKey: 'name',
-              colorKey: 'value',
+              idKey: 'state',
+              colorKey: 'count',
               colorName: '% of population',
             },
           ],
