@@ -1,0 +1,309 @@
+2025-06-22 00:00:24.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:00:24.419 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:00:24.420 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:00:24.420 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:00:24.427 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:00:24.428 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:00:24.430 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 8.9659ms
+2025-06-22 00:00:24.430 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:00:24.430 +05:30 [INF] HTTP GET /api/events responded 200 in 9.8548 ms
+2025-06-22 00:00:24.430 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 16.8197ms
+2025-06-22 00:03:10.004 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:03:10.005 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:03:10.005 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:03:10.005 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:03:10.064 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:03:10.065 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:03:10.066 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 60.3972ms
+2025-06-22 00:03:10.066 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:03:10.066 +05:30 [INF] HTTP GET /api/events responded 200 in 60.9859 ms
+2025-06-22 00:03:10.066 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 62.1873ms
+2025-06-22 00:03:17.261 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:03:17.262 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:03:17.263 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:03:17.263 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:03:17.269 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:03:17.271 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:03:17.272 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 8.5832ms
+2025-06-22 00:03:17.272 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:03:17.272 +05:30 [INF] HTTP GET /api/events responded 200 in 9.6832 ms
+2025-06-22 00:03:17.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 11.2274ms
+2025-06-22 00:04:35.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:04:35.672 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:04:35.672 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:04:35.672 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:04:35.674 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:04:35.675 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:04:35.676 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 3.1683ms
+2025-06-22 00:04:35.676 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:04:35.676 +05:30 [INF] HTTP GET /api/events responded 200 in 3.6205 ms
+2025-06-22 00:04:35.676 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 5.1346ms
+2025-06-22 00:05:04.763 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:05:04.763 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:05:04.763 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:05:04.764 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:05:04.767 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:05:04.768 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:05:04.769 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 4.9998ms
+2025-06-22 00:05:04.769 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:05:04.769 +05:30 [INF] HTTP GET /api/events responded 200 in 5.5557 ms
+2025-06-22 00:05:04.769 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 6.3984ms
+2025-06-22 00:09:18.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:09:18.768 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:09:18.769 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:09:18.769 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:09:18.790 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:09:18.791 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:09:18.791 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 22.3173ms
+2025-06-22 00:09:18.792 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:09:18.792 +05:30 [INF] HTTP GET /api/events responded 200 in 22.9323 ms
+2025-06-22 00:09:18.792 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 25.1041ms
+2025-06-22 00:13:23.050 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:13:23.051 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:13:23.051 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:13:23.051 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:13:23.053 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:13:23.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:13:23.054 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 2.6922ms
+2025-06-22 00:13:23.054 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:13:23.054 +05:30 [INF] HTTP GET /api/events responded 200 in 3.2532 ms
+2025-06-22 00:13:23.054 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 4.5155ms
+2025-06-22 00:13:27.748 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:13:27.748 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:13:27.749 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 0.8229ms
+2025-06-22 00:13:27.750 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:13:27.751 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:13:27.751 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:13:27.751 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:13:27.756 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:13:27.894 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:13:27.894 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:13:27.896 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:13:27.896 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 144.6809ms
+2025-06-22 00:13:27.896 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:13:27.896 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 145.1577 ms
+2025-06-22 00:13:27.896 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 145.7541ms
+2025-06-22 00:14:07.133 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:14:07.134 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:07.135 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 1.5867ms
+2025-06-22 00:14:07.137 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:14:07.137 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:07.137 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:07.137 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:14:07.139 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:14:07.273 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:14:07.274 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:14:07.274 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:14:07.275 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 137.4327ms
+2025-06-22 00:14:07.275 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:07.275 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 137.7698 ms
+2025-06-22 00:14:07.275 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 138.378ms
+2025-06-22 00:14:27.864 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:14:27.865 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:27.865 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 1.1686ms
+2025-06-22 00:14:27.867 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:14:27.867 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:27.867 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:27.867 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:14:27.880 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:14:28.014 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:14:28.014 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:14:28.015 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:14:28.015 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 147.444ms
+2025-06-22 00:14:28.015 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:28.015 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 148.1735 ms
+2025-06-22 00:14:28.015 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 148.7714ms
+2025-06-22 00:14:57.335 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:14:57.336 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:57.336 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 1.015ms
+2025-06-22 00:14:57.338 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:14:57.338 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:14:57.338 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:57.338 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:14:57.340 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:14:57.473 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:14:57.473 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:14:57.473 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:14:57.473 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 134.6421ms
+2025-06-22 00:14:57.473 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:14:57.473 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 135.0298 ms
+2025-06-22 00:14:57.474 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 135.5134ms
+2025-06-22 00:15:39.845 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:15:39.846 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:15:39.846 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 1.22ms
+2025-06-22 00:15:39.848 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:15:39.848 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:15:39.848 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:39.848 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:15:39.851 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:15:39.987 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:15:39.987 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:15:39.988 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:15:39.988 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 139.3268ms
+2025-06-22 00:15:39.988 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:39.988 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 139.7961 ms
+2025-06-22 00:15:39.988 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 140.3648ms
+2025-06-22 00:15:44.322 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:15:44.322 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:15:44.323 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:44.323 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:15:44.324 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:15:44.461 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:15:44.461 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:15:44.461 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:15:44.461 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 138.3759ms
+2025-06-22 00:15:44.461 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:44.461 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 138.7389 ms
+2025-06-22 00:15:44.461 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 139.3644ms
+2025-06-22 00:15:58.643 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:15:58.644 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:15:58.644 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 0.455ms
+2025-06-22 00:15:58.645 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:15:58.646 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:15:58.646 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:58.646 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:15:58.647 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:15:58.785 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:15:58.785 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:15:58.785 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:15:58.785 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 139.5885ms
+2025-06-22 00:15:58.786 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:15:58.786 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 139.9831 ms
+2025-06-22 00:15:58.786 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 140.6033ms
+2025-06-22 00:16:28.228 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:16:28.229 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:28.229 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 1.6408ms
+2025-06-22 00:16:28.231 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 52
+2025-06-22 00:16:28.232 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:28.232 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:16:28.232 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:16:28.235 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:16:28.374 +05:30 [ERR] Invalid login attempt
+2025-06-22 00:16:28.374 +05:30 [ERR] Login failed for user admin10@gmail.com
+System.Exception: Invalid password
+   at BookingSystem.Services.AuthenticationService.Login(UserLoginRequest user) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Services/AuthenticationService.cs:line 49
+   at AuthenticationController.UserLogin(UserLoginRequest loginRequest) in /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/Controllers/AuthenticationController.cs:line 29
+2025-06-22 00:16:28.376 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-22 00:16:28.376 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 144.0422ms
+2025-06-22 00:16:28.376 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:16:28.376 +05:30 [INF] HTTP POST /api/v1/authentication responded 401 in 144.4688 ms
+2025-06-22 00:16:28.376 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 401 null text/plain; charset=utf-8 145.006ms
+2025-06-22 00:16:44.592 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - null 0
+2025-06-22 00:16:44.593 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:44.593 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/authentication - 204 null null 0.4565ms
+2025-06-22 00:16:44.594 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/authentication - application/json 53
+2025-06-22 00:16:44.594 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:44.594 +05:30 [INF] Executing endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:16:44.594 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.DTOs.UserLoginResponse]] UserLogin(BookingSystem.Models.DTOs.UserLoginRequest) on controller AuthenticationController (booking_system).
+2025-06-22 00:16:44.596 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Email", u."Name", u."Password", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @__key_0
+LIMIT 2
+2025-06-22 00:16:44.731 +05:30 [INF] User admin10@gmail.com logged in successfully
+2025-06-22 00:16:44.731 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.DTOs.UserLoginResponse'.
+2025-06-22 00:16:44.731 +05:30 [INF] Executed action AuthenticationController.UserLogin (booking_system) in 136.9532ms
+2025-06-22 00:16:44.732 +05:30 [INF] Executed endpoint 'AuthenticationController.UserLogin (booking_system)'
+2025-06-22 00:16:44.732 +05:30 [INF] HTTP POST /api/v1/authentication responded 200 in 137.4036 ms
+2025-06-22 00:16:44.732 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/authentication - 200 null application/json; charset=utf-8 137.8813ms
+2025-06-22 00:16:47.287 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:16:47.287 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:47.287 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:16:47.288 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:16:47.292 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:16:47.293 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:16:47.294 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 5.9717ms
+2025-06-22 00:16:47.294 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:16:47.294 +05:30 [INF] HTTP GET /api/events responded 200 in 6.7037 ms
+2025-06-22 00:16:47.294 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 7.3649ms
+2025-06-22 00:16:50.374 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-22 00:16:50.374 +05:30 [INF] CORS policy execution successful.
+2025-06-22 00:16:50.375 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:16:50.375 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-22 00:16:50.377 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-22 00:16:50.378 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-22 00:16:50.378 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 3.4576ms
+2025-06-22 00:16:50.378 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-22 00:16:50.379 +05:30 [INF] HTTP GET /api/events responded 200 in 4.0263 ms
+2025-06-22 00:16:50.379 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 4.696ms
+2025-06-22 00:17:36.478 +05:30 [INF] Application is shutting down...

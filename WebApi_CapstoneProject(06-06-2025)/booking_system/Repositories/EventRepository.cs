@@ -23,7 +23,7 @@ public class EventRepository : Repository<string, Event>
 
     public override async Task<IEnumerable<Event>> GetAll()
     {
-        var events = await _bookingdbcontext.Events.ToListAsync();
+        var events = await _bookingdbcontext.Events.Include(e => e.Category).ToListAsync();
         if (!events.Any())
             throw new Exception("No Events in the database");
 

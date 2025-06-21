@@ -10,5 +10,9 @@ public class EventDto
     public DateTime Date { get; set; }
     public int Price { get; set; }
 
+    public string Address { get; set; }
+
+    public string City { get; set; }
+
     public string CategoryName { get; set; }
 }

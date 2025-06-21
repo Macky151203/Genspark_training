@@ -1,0 +1,91 @@
+<div class="container py-4">
+
+    <!-- Latest Events -->
+    <section class="mb-4">
+        <div class="mb-3 fs-4">Latest Events</div>
+        <div class="row g-3">
+            <div class="col-md-4" *ngFor="let event of latestEvents">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.title }}</h5>
+                        <p class="card-text">{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="d-flex justify-content-center mb-4">
+        <input type="text" class="form-control w-50" placeholder="Search events..." [(ngModel)]="searchText" />
+    </section>
+
+    <!-- Filters and Events -->
+    <section class="row g-4">
+        <!-- Filters - 25% -->
+        <div class="col-md-3">
+            <div class="p-3 border rounded shadow-sm bg-light">
+                <h5>Filters</h5>
+
+                <!-- Price Filter -->
+                <div class="mb-3">
+                    <label class="form-label">Min Price</label>
+                    <input type="number" class="form-control" [(ngModel)]="filters.minPrice" placeholder="e.g. 100" />
+                </div>
+
+                <!-- Max Price -->
+                <div class="mb-3">
+                    <label class="form-label">Max Price</label>
+                    <input type="number" class="form-control" [(ngModel)]="filters.maxPrice" placeholder="e.g. 1000" />
+                </div>
+
+                <!-- Category Filter -->
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" [(ngModel)]="filters.category">
+                        <option value="">All</option>
+                        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+                    </select>
+                </div>
+
+                <!-- Location Filter -->
+                 <div class="mb-3">
+                    <label class="form-label">Location</label>
+                    <select class="form-select" [(ngModel)]="filters.city">
+                        <option value="">All</option>
+                        <option *ngFor="let c of cities" [value]="c">{{ c }}</option>
+                    </select>
+                </div>
+
+
+            </div>
+        </div>
+        
+
+        <!-- Event Cards - 75% -->
+        <div class="col-md-9">
+            <div class="row g-3">
+                <div class="col-md-4" *ngFor="let event of filteredEvents()">
+                    <div class="card h-100">
+                        <img class="rounded-top" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="error" />
+                        <div class="card-body">
+                            <div class="d-flex flex-row justify-content-between"> 
+                                <div>
+                                    <h5 class="card-title">{{ event.title }}</h5>
+                                    <p class="card-text">{{ event.description }}</p>
+                                    <p>Location- {{ event.city? event.city : 'Unknown Location' }}</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-danger bg-opacity-50">{{ event.category.name }}</span>
+                                    <p class="mt-2">₹{{ event.price }}</p>
+                                </div>
+                                
+                            </div>
+                            <button class="btn btn-danger">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
