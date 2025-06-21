@@ -10,6 +10,10 @@ public class Event
     public DateTime Date { get; set; }
     public int Price { get; set; }
 
+    public string Address { get; set; } = string.Empty;
+
+    public string City { get; set; } = string.Empty;
+
     public int CategoryId { get; set; }
     public bool IsCancelled { get; set; }
 

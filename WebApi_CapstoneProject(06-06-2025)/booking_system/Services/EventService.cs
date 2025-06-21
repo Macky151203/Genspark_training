@@ -47,6 +47,8 @@ public class EventService : IEventService
                 CategoryId = newCategory.Id,
                 CreatorEmail = username ?? string.Empty,
                 Price = eventDto.Price,
+                Address= eventDto.Address?? "",
+                City= eventDto.City?? "",
                 IsCancelled = false
             };
             return await _eventRepository.Add(newEvent);
@@ -60,6 +62,8 @@ public class EventService : IEventService
             CategoryId = existingCategory.Id,
             CreatorEmail = username ?? string.Empty,
             Price = eventDto.Price,
+            Address= eventDto.Address?? "",
+            City= eventDto.City?? "",
             IsCancelled = false
 
         };
@@ -87,6 +91,8 @@ public class EventService : IEventService
         existingEvent.Date = eventDto.Date;
         existingEvent.CategoryId = existingCategory.Id;
         existingEvent.Price = eventDto.Price;
+        existingEvent.Address = eventDto.Address;
+        existingEvent.City = eventDto.City;
         existingEvent.CreatorEmail = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
 
 

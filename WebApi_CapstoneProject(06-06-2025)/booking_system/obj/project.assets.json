@@ -5230,19 +5230,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Subra\\.nuget\\packages\\": {}
+    "/Users/presidio/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj",
+      "projectUniqueName": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/booking_system.csproj",
       "projectName": "booking_system",
-      "projectPath": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\booking_system.csproj",
-      "packagesPath": "C:\\Users\\Subra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Subra\\OneDrive\\Desktop\\presidio\\Genspark_training\\WebApi_CapstoneProject(06-06-2025)\\booking_system\\obj\\",
+      "projectPath": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/booking_system.csproj",
+      "packagesPath": "/Users/presidio/.nuget/packages/",
+      "outputPath": "/Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Subra\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/presidio/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -5266,7 +5266,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -5334,7 +5334,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
