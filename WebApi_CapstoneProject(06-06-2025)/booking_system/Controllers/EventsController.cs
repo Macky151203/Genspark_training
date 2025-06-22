@@ -57,9 +57,27 @@ public class EventsController : ControllerBase
         }
         catch (Exception ex)
         {
-
-
             _logger.LogError(ex, "Error retrieving event with name {EventName}", eventName);
+            return BadRequest("An error occurred while retrieving the event.");
+        }
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Event>> GetEventById(int id)
+    {
+        try
+        {
+            var ev = await _eventService.GetEventById(id);
+            if (ev == null)
+            {
+                _logger.LogWarning("Event with ID {Id} not found", id);
+                return NotFound();
+            }
+            return Ok(ev);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving event with ID {Id}", id);
             return BadRequest("An error occurred while retrieving the event.");
         }
     }

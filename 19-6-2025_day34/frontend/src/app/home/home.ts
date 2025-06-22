@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HomepageService } from '../services/homepage-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +33,7 @@ export class Home implements OnInit {
 
   allEvents : any=[]
 
-  constructor(private homepageService: HomepageService){}
+  constructor(private homepageService: HomepageService,private router: Router){}
 
   ngOnInit(){
     this.homepageService.getallevents().subscribe(
@@ -64,5 +65,10 @@ export class Home implements OnInit {
 
       return matchesMinPrice && matchesMaxPrice && matchesCategory && matchesName && matchesSearch && matchescity;
     });
+  }
+
+  handleBookNow(id:any){
+        this.router.navigateByUrl("/event/"+id);
+
   }
 }

@@ -12,7 +12,7 @@ export class Login {
   constructor(private loginservice: Loginservice){}
 
   onLoginClick(){
-    this.loginservice.login("admin10@gmail.com","admin10").subscribe({
+    this.loginservice.login("cust10@gmail.com","cust10").subscribe({
       next: (data) => {
         console.log(data);
         localStorage.setItem("token", data.token);

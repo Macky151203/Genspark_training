@@ -8,8 +8,10 @@ public interface IEventService
     Task<Event> GetEventByName(string eventName);
     Task<IEnumerable<Event>> GetAllEvents();
     Task<Event> UpdateEvent(string eventName, EventDto eventDto);
-     Task<Event> CancelEvent(string eventName);
+    Task<Event> CancelEvent(string eventName);
     Task<Event> DeleteEvent(string eventName);
+
+    Task<Event> GetEventById(int id);
     Task<IEnumerable<EventDto>> GetEventsByCategoryAsync(string category);
     public Task<IEnumerable<Event>> GetEventsByPriceRange(int min, int max);
 }

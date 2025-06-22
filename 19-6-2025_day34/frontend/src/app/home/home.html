@@ -22,7 +22,7 @@
 
     <!-- Filters and Events -->
     <section class="row g-4">
-        <!-- Filters - 25% -->
+        <!-- Filters -->
         <div class="col-md-3">
             <div class="p-3 border rounded shadow-sm bg-light">
                 <h5>Filters</h5>
@@ -62,7 +62,7 @@
         </div>
         
 
-        <!-- Event Cards - 75% -->
+        <!-- Event Cards  -->
         <div class="col-md-9">
             <div class="row g-3">
                 <div class="col-md-4" *ngFor="let event of filteredEvents()">
@@ -81,7 +81,7 @@
                                 </div>
                                 
                             </div>
-                            <button class="btn btn-danger">Book Now</button>
+                            <button (click)="handleBookNow(event.id)" class="btn btn-danger">Book Now</button>
                         </div>
                     </div>
                 </div>
