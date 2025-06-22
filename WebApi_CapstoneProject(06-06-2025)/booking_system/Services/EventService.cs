@@ -30,6 +30,12 @@ public class EventService : IEventService
     {
         return await _eventRepository.Get(EventName);
     }
+    
+    public async Task<Event> GetEventById(int id)
+    {
+        var allEvents = await _eventRepository.GetAll();
+        return allEvents.FirstOrDefault(e => e.Id == id)!;   
+    }
 
     public async Task<Event> CreateEvent(EventDto eventDto)
     {
@@ -47,8 +53,8 @@ public class EventService : IEventService
                 CategoryId = newCategory.Id,
                 CreatorEmail = username ?? string.Empty,
                 Price = eventDto.Price,
-                Address= eventDto.Address?? "",
-                City= eventDto.City?? "",
+                Address = eventDto.Address ?? "",
+                City = eventDto.City ?? "",
                 IsCancelled = false
             };
             return await _eventRepository.Add(newEvent);
@@ -62,8 +68,8 @@ public class EventService : IEventService
             CategoryId = existingCategory.Id,
             CreatorEmail = username ?? string.Empty,
             Price = eventDto.Price,
-            Address= eventDto.Address?? "",
-            City= eventDto.City?? "",
+            Address = eventDto.Address ?? "",
+            City = eventDto.City ?? "",
             IsCancelled = false
 
         };
