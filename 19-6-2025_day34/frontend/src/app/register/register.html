@@ -1,0 +1,56 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow rounded" style="width: 100%; max-width: 450px;">
+    <h4 class="text-center mb-4">Register</h4>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegisterClick()">
+
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="name" class="form-control " placeholder="Enter your name">
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="text-danger small">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control " placeholder="Enter your email">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger small">
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control " placeholder="Enter password">
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger small">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" formControlName="phone" class="form-control " placeholder="Enter 10-digit phone number">
+        <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="text-danger small">
+          Enter a valid 10-digit phone number.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Role</label>
+        <select formControlName="role" class="form-select ">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-danger w-100" [disabled]="registerForm.invalid">Register</button>
+
+      <div class="text-center mt-3">
+        <span class="text-muted">Already have an account?</span>
+        <a href="/login" class="text-danger fw-bold ms-1">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+

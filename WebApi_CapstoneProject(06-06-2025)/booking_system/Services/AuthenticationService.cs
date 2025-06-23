@@ -59,6 +59,7 @@ public class AuthenticationService : IAuthenticationService
         return new UserLoginResponse
         {
             Username = user.Username,
+            Role=dbUser.Role,
             Token = token,
             RefreshToken = refreshToken
         };
