@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventpageService } from '../services/eventpage-service';
 import { CommonModule } from '@angular/common';
+import { ConfirmationService } from '../services/confirmation-service';
 
 @Component({
   selector: 'app-event',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './event.css'
 })
 export class Event implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router, private eventservice: EventpageService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private eventservice: EventpageService,private confirmationService: ConfirmationService) { }
   id: string = "";
   event: any = {}
   ngOnInit(): void {
@@ -22,16 +23,7 @@ export class Event implements OnInit {
 
   }
 
-  // event = {
-  //   title: 'Vikram',
-  //   description: 'Kamal movie',
-  //   date: '2025-11-10T20:31:39.356Z',
-  //   price: 500,
-  //   address: 'Grand Mall',
-  //   city: 'Chennai',
-  //   category: { name: 'Movie' },
-  //   imageUrl: '' // optional
-  // };
+
 
   count = 1;
 
@@ -44,23 +36,27 @@ export class Event implements OnInit {
   }
 
   bookNow() {
-    this.eventservice.bookticket(this.event.title, this.count).subscribe({
-      next: (response: Blob) => {
-        const blob = new Blob([response], { type: 'application/pdf' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `Ticket_${this.event.title}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url); // Clean up
-      },
-      error: (err) => {
-        console.error("Error downloading ticket:", err);
-        alert("Ticket booking failed. Please try again.");
-      }
-    });
+    // this.eventservice.bookticket(this.event.title, this.count).subscribe({
+    //   next: (response: Blob) => {
+    //     const blob = new Blob([response], { type: 'application/pdf' });
+    //     const url = window.URL.createObjectURL(blob);
+    //     const a = document.createElement('a');
+    //     a.href = url;
+    //     a.download = `Ticket_${this.event.title}.pdf`;
+    //     document.body.appendChild(a);
+    //     a.click();
+    //     a.remove();
+    //     window.URL.revokeObjectURL(url); // Clean up
+    //   },
+    //   error: (err) => {
+    //     console.error("Error downloading ticket:", err);
+    //     alert("Ticket booking failed. Please try again.");
+    //   }
+    // });
+
+    //add qty and detail to confirmation service
+    this.confirmationService.setBookingData(this.event, this.count);
+    this.router.navigate([`/confirmbooking/${this.id}`])
   }
 
 

@@ -15,23 +15,23 @@ export class EventpageService {
     return this.httpclient.get(`http://localhost:5136/api/events/${id}`);
   }
 
-  bookticket(eventname: string, qty: number): Observable<any> {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+  // bookticket(eventname: string, qty: number): Observable<any> {
+  //   const token = localStorage.getItem('token');
+  //   const headers = new HttpHeaders({
+  //     'Authorization': `Bearer ${token}`
+  //   });
 
-    return this.httpclient.post(
-      `http://localhost:5136/api/v1/ticket/book`,
-      {
-        "eventName": eventname,
-        "quantity": qty
-      },
-      {
-        headers: headers,
-        responseType: 'blob'
-      }
-    );
-  }
+  //   return this.httpclient.post(
+  //     `http://localhost:5136/api/v1/ticket/book`,
+  //     {
+  //       "eventName": eventname,
+  //       "quantity": qty
+  //     },
+  //     {
+  //       headers: headers,
+  //       responseType: 'blob'
+  //     }
+  //   );
+  // }
 
 }

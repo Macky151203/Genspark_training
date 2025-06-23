@@ -5,11 +5,15 @@ import { About } from './about/about';
 import { History } from './history/history';
 import { AuthGuard } from './auth-guard';
 import { Event } from './event/event';
+import { Register } from './register/register';
+import { Confirmbooking } from './confirmbooking/confirmbooking';
 
 export const routes: Routes = [
     {path:"",component:Home},
     {path:"login",component:Login},
     {path:"about",component:About},
     {path:"history",component:History,canActivate:[AuthGuard]},
-    {path:"event/:id",component:Event}
+    {path:"event/:id",component:Event},
+    {path:"confirmbooking/:id",component:Confirmbooking},
+    {path:"register",component:Register}
 ];

@@ -5,12 +5,30 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
 export class Navbar {
 
-  constructor(public loginservice: Loginservice){}
+  showToast: boolean = false;
+
+  constructor(public loginservice: Loginservice) { }
+
+
+
+  handlelogout() {
+    this.loginservice.logout();
+    this.showToast = true;
+
+    setTimeout(() => {
+      this.showToast = false;
+    }, 2000);
+
+  }
+
+  closeToast() {
+    this.showToast = false;
+  }
 
 }

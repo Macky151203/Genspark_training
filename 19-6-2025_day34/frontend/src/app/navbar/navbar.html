@@ -20,9 +20,20 @@
           <button class="btn btn-outline-primary" routerLink="/login">Login</button>
         </li>
         <li class="nav-item" *ngIf="loginservice.isloggedin()">
-          <button class="btn btn-outline-danger" (click)="loginservice.logout()">Logout</button>
+          <button class="btn btn-outline-danger" (click)="handlelogout()">Logout</button>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+  <div class="toast align-items-center text-white bg-danger border-0" role="alert" [class.show]="showToast" [class.hide]="!showToast">
+    <div class="d-flex">
+      <div class="toast-body">
+        Logged Out Successfully
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="closeToast()"></button>
+    </div>
+  </div>
+</div>
