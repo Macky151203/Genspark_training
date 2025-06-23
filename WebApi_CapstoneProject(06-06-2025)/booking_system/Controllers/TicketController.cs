@@ -108,6 +108,29 @@ public class TicketController : ControllerBase
             return NotFound(ex.Message);
         }
     }
+
+    [HttpGet("gettickets/{email}")]
+    [Authorize(Roles = "Customer")]
+    public async Task<ActionResult<IEnumerable<Ticket>>> GetTicketByUser(string email)
+    {
+        try
+        {
+            var tickets = await _ticketService.GetTicketByUser(email);
+            if (tickets == null)
+            {
+                _logger.LogWarning("Ticket Notfound", email);
+                return NotFound();
+            }
+            return Ok(tickets);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving tickets booked from the given email.", email);
+            return NotFound(ex.Message);
+        }
+    }
+
+
     [HttpDelete("{id}/cancel")]
     [Authorize(Roles = "Customer")]
     public async Task<ActionResult<Ticket>> CancelTicketById(int id)

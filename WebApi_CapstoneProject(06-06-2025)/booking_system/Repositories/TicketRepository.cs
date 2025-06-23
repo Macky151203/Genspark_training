@@ -23,7 +23,7 @@ public class TicketRepository : Repository<int, Ticket>
 
     public override async Task<IEnumerable<Ticket>> GetAll()
     {
-        var  tickets=  _bookingdbcontext.Tickets;
+        var  tickets=  _bookingdbcontext.Tickets.Include(t=>t.Event);
         if (tickets.Count()==0)
             throw new Exception("No Tickets in the database");
 

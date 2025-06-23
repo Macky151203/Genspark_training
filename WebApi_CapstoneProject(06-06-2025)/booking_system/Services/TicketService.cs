@@ -47,6 +47,12 @@ public class TicketService : ITicketService
         return await _ticketRepository.Get(id);
     }
 
+    public async Task<IEnumerable<Ticket>> GetTicketByUser(string email){
+        var alltickets= await _ticketRepository.GetAll();
+        return alltickets.Where(t => t.CustomerEmail.Equals(email, StringComparison.OrdinalIgnoreCase));
+
+    }
+
     public async Task<Ticket> CancelTicketById(int id)
     {
         var ticket = await _ticketRepository.Get(id);
