@@ -54,13 +54,14 @@ public class TicketService : ITicketService
     }
 
     public async Task<Ticket> CancelTicketById(int id)
+{
+    var ticket = await _ticketRepository.Get(id);
+    if (ticket == null)
     {
-        var ticket = await _ticketRepository.Get(id);
-        if (ticket == null)
-        {
-            throw new Exception("Ticket not found");
-        }
-        await _ticketRepository.Delete(id);
-        return ticket;
+        throw new Exception("Ticket not found");
     }
+    ticket.IsCancelled = true;
+    await _ticketRepository.Update(id,ticket);
+    return ticket;
+}
 }
