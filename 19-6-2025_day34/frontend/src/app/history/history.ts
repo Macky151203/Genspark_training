@@ -82,13 +82,11 @@ export class History implements OnInit {
       const titleMatch = event.title.toLowerCase().includes(this.filters.search.toLowerCase());
       const minPriceMatch = this.filters.minPrice == null || ticket.total >= this.filters.minPrice;
       const maxPriceMatch = this.filters.maxPrice == null || ticket.total <= this.filters.maxPrice;
-      const categoryMatch = !this.filters.category || event.category?.name === this.filters.category;
-      const cityMatch = !this.filters.city || event.city === this.filters.city;
       const statusMatch = this.filters.status === 'all'
         || (this.filters.status === 'upcoming' && ticket.isUpcoming && !ticket.isCancelled)
         || (this.filters.status === 'completed' && !ticket.isUpcoming && !ticket.isCancelled)
         || (this.filters.status === 'cancelled' && ticket.isCancelled);
-      return titleMatch && minPriceMatch && maxPriceMatch && categoryMatch && cityMatch && statusMatch;
+      return titleMatch && minPriceMatch && maxPriceMatch  && statusMatch;
     });
   }
 
