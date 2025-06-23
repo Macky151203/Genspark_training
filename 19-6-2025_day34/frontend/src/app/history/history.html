@@ -59,7 +59,7 @@
             <path
                 d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
         </svg>
-        <div>Your Ticket History</div>
+        <div>Your<span class="text-danger fst-italic">Ticket</span>  History</div>
     </h3>
 
     <!-- Search -->
@@ -76,22 +76,14 @@
                 <h5 class="mb-3">Filters</h5>
 
                 <label class="form-label">Min Price</label>
-                <input type="number" class="form-control mb-3" [(ngModel)]="filters.minPrice" />
+                <input placeholder="e.g. 100" type="number" class="form-control mb-3" [(ngModel)]="filters.minPrice" />
 
                 <label class="form-label">Max Price</label>
-                <input type="number" class="form-control mb-3" [(ngModel)]="filters.maxPrice" />
+                <input placeholder="e.g. 1000" type="number" class="form-control mb-3" [(ngModel)]="filters.maxPrice" />
 
-                <label class="form-label">Category</label>
-                <select class="form-select mb-3" [(ngModel)]="filters.category">
-                    <option value="">All</option>
-                    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
-                </select>
+                
 
-                <label class="form-label">City</label>
-                <select class="form-select mb-3" [(ngModel)]="filters.city">
-                    <option value="">All</option>
-                    <option *ngFor="let c of cities" [value]="c">{{ c }}</option>
-                </select>
+               
 
                 <label class="form-label">Status</label>
                 <select class="form-select" [(ngModel)]="filters.status">

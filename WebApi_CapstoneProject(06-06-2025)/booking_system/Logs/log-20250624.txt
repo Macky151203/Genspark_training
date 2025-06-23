@@ -1951,3 +1951,379 @@ LIMIT 2
 2025-06-24 01:49:55.492 +05:30 [INF] HTTP GET /api/v1/Customer/cust3 responded 200 in 2.2871 ms
 2025-06-24 01:49:55.492 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/Customer/cust3 - 200 null application/json; charset=utf-8 2.9521ms
 2025-06-24 01:50:43.444 +05:30 [INF] Application is shutting down...
+2025-06-24 01:52:57.771 +05:30 [INF] User profile is available. Using '/Users/subramaniyans/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-24 01:52:57.935 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-24 01:52:57.936 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 01:52:57.937 +05:30 [INF] Hosting environment: Development
+2025-06-24 01:52:57.937 +05:30 [INF] Content root path: /Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system
+2025-06-24 01:53:38.799 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:53:38.846 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-24 01:53:38.870 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:38.876 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 79.7304ms
+2025-06-24 01:53:38.887 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:53:38.958 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:38.968 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:38.985 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:53:40.097 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:53:40.269 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:53:40.351 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:53:40.383 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 1392.7064ms
+2025-06-24 01:53:40.384 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:40.387 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 1418.9612 ms
+2025-06-24 01:53:40.397 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 1510.1039ms
+2025-06-24 01:53:40.798 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:53:40.803 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:40.803 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:40.804 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:53:40.823 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:53:40.824 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:53:40.826 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:53:40.826 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 22.5225ms
+2025-06-24 01:53:40.826 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:40.827 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 23.4829 ms
+2025-06-24 01:53:40.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 29.6055ms
+2025-06-24 01:53:44.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:53:44.757 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:44.758 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:53:44.767 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:53:44.859 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:53:44.868 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:53:44.876 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 108.3673ms
+2025-06-24 01:53:44.876 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:53:44.877 +05:30 [INF] HTTP GET /api/events responded 200 in 118.1873 ms
+2025-06-24 01:53:44.877 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 121.7483ms
+2025-06-24 01:53:46.486 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/2 - null null
+2025-06-24 01:53:46.487 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:46.488 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventById (booking_system)'
+2025-06-24 01:53:46.495 +05:30 [INF] Route matched with {action = "GetEventById", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventById(Int32) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:53:46.513 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:53:46.516 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-24 01:53:46.516 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventById (booking_system) in 21.2445ms
+2025-06-24 01:53:46.516 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventById (booking_system)'
+2025-06-24 01:53:46.516 +05:30 [INF] HTTP GET /api/events/2 responded 200 in 28.8454 ms
+2025-06-24 01:53:46.517 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/2 - 200 null application/json; charset=utf-8 31.1452ms
+2025-06-24 01:53:50.793 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/book - null 0
+2025-06-24 01:53:50.793 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:50.794 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/book - 204 null null 0.8788ms
+2025-06-24 01:53:50.796 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - application/json 37
+2025-06-24 01:53:50.799 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:50.799 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-24 01:53:50.803 +05:30 [INF] Route matched with {action = "BookTicket", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] BookTicket(BookingSystem.Models.DTOs.TicketDto) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:53:50.873 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-24 01:53:50.991 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("BookingDate", "CustomerEmail", "EventId", "IsCancelled", "Quantity", "Total")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-24 01:53:51.263 +05:30 [INF] Executing FileContentResult, sending file with download name 'Ticket_15.pdf' ...
+2025-06-24 01:53:51.282 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.BookTicket (booking_system) in 479.3082ms
+2025-06-24 01:53:51.282 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-24 01:53:51.282 +05:30 [INF] HTTP POST /api/v1/ticket/book responded 200 in 483.7103 ms
+2025-06-24 01:53:51.283 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - 200 72991 application/pdf 487.2228ms
+2025-06-24 01:53:54.296 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:53:54.297 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:54.298 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:53:54.299 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:53:54.313 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:53:54.314 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:53:54.315 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 16.3186ms
+2025-06-24 01:53:54.316 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:53:54.316 +05:30 [INF] HTTP GET /api/events responded 200 in 17.8680 ms
+2025-06-24 01:53:54.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 20.3589ms
+2025-06-24 01:53:58.296 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:53:58.296 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:58.297 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 0.8991ms
+2025-06-24 01:53:58.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:53:58.300 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:53:58.300 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:58.300 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:53:58.302 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:53:58.305 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:53:58.306 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:53:58.310 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 10.3853ms
+2025-06-24 01:53:58.311 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:53:58.312 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 11.9621 ms
+2025-06-24 01:53:58.312 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 13.6403ms
+2025-06-24 01:54:18.426 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:54:18.426 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:54:18.427 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:54:18.427 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:54:18.512 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:54:18.513 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:54:18.513 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 85.6459ms
+2025-06-24 01:54:18.513 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:54:18.513 +05:30 [INF] HTTP GET /api/events responded 200 in 86.1623 ms
+2025-06-24 01:54:18.514 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 88.0516ms
+2025-06-24 01:54:21.404 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:54:21.405 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:54:21.405 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 0.6453ms
+2025-06-24 01:54:21.407 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:54:21.408 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:54:21.408 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:54:21.408 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:54:21.414 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:54:21.418 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:54:21.419 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:54:21.419 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 10.4686ms
+2025-06-24 01:54:21.419 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:54:21.419 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 11.1243 ms
+2025-06-24 01:54:21.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 12.5373ms
+2025-06-24 01:54:52.184 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:54:52.185 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:54:52.185 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:54:52.185 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:54:52.187 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:54:52.188 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:54:52.188 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 2.5215ms
+2025-06-24 01:54:52.188 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:54:52.188 +05:30 [INF] HTTP GET /api/events responded 200 in 3.0642 ms
+2025-06-24 01:54:52.188 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 4.0243ms
+2025-06-24 01:55:05.429 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:55:05.430 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:55:05.431 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 1.4666ms
+2025-06-24 01:55:05.433 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:55:05.434 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:55:05.434 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:05.434 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:55:05.437 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:55:05.439 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:55:05.441 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:55:05.441 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 7.2595ms
+2025-06-24 01:55:05.442 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:05.442 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 8.1491 ms
+2025-06-24 01:55:05.442 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 9.2616ms
+2025-06-24 01:55:09.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:55:09.756 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:55:09.756 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:09.756 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:55:09.758 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:55:09.760 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:55:09.761 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:55:09.761 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 4.8018ms
+2025-06-24 01:55:09.762 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:09.762 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 5.7064 ms
+2025-06-24 01:55:09.762 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 6.8057ms
+2025-06-24 01:55:36.569 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:55:36.570 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:55:36.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 1.0998ms
+2025-06-24 01:55:36.572 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:55:36.573 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:55:36.573 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:36.574 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:55:36.577 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:55:36.578 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:55:36.578 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:55:36.579 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 4.7837ms
+2025-06-24 01:55:36.579 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:55:36.579 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 5.5130 ms
+2025-06-24 01:55:36.579 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 6.9226ms
+2025-06-24 01:57:32.243 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:57:32.244 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:57:32.245 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 1.1821ms
+2025-06-24 01:57:32.246 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:57:32.247 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:57:32.247 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:57:32.247 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:57:32.249 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:57:32.250 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:57:32.251 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:57:32.251 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 3.5787ms
+2025-06-24 01:57:32.251 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:57:32.251 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 4.1425 ms
+2025-06-24 01:57:32.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 5.1875ms
+2025-06-24 01:58:09.806 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:58:09.807 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:09.807 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:09.807 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:58:09.809 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:58:09.809 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:09.810 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 2.509ms
+2025-06-24 01:58:09.810 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:09.810 +05:30 [INF] HTTP GET /api/events responded 200 in 3.1009 ms
+2025-06-24 01:58:09.811 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 4.499ms
+2025-06-24 01:58:16.229 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:58:16.230 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:16.231 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:16.231 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:58:16.233 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:58:16.234 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:16.235 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 4.0071ms
+2025-06-24 01:58:16.235 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:16.236 +05:30 [INF] HTTP GET /api/events responded 200 in 5.1330 ms
+2025-06-24 01:58:16.236 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 6.6172ms
+2025-06-24 01:58:21.629 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:58:21.630 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:21.630 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 1.0049ms
+2025-06-24 01:58:21.633 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:58:21.635 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:21.635 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:58:21.635 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:58:21.637 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:58:21.660 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:58:21.661 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:21.662 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 26.3957ms
+2025-06-24 01:58:21.662 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:58:21.662 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 27.2690 ms
+2025-06-24 01:58:21.663 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 29.5649ms
+2025-06-24 01:58:46.681 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:58:46.682 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:46.682 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:46.682 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:58:46.726 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:58:46.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:46.727 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 44.1655ms
+2025-06-24 01:58:46.727 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:46.727 +05:30 [INF] HTTP GET /api/events responded 200 in 44.6934 ms
+2025-06-24 01:58:46.727 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 45.5972ms
+2025-06-24 01:58:50.057 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null 0
+2025-06-24 01:58:50.058 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:50.058 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 204 null null 0.5125ms
+2025-06-24 01:58:50.060 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - null null
+2025-06-24 01:58:50.061 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:50.061 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:58:50.061 +05:30 [INF] Route matched with {action = "GetTicketByUser", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Ticket]]] GetTicketByUser(System.String) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:58:50.066 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Tickets" AS t
+2025-06-24 01:58:50.089 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BookingDate", t."CustomerEmail", t."EventId", t."IsCancelled", t."Quantity", t."Total", e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Tickets" AS t
+INNER JOIN "Events" AS e ON t."EventId" = e."Id"
+2025-06-24 01:58:50.090 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Ticket, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:50.090 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system) in 28.9572ms
+2025-06-24 01:58:50.090 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.GetTicketByUser (booking_system)'
+2025-06-24 01:58:50.090 +05:30 [INF] HTTP GET /api/v1/ticket/gettickets/cust3@gmail.com responded 200 in 29.4469 ms
+2025-06-24 01:58:50.090 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/v1/ticket/gettickets/cust3@gmail.com - 200 null application/json; charset=utf-8 30.5252ms
+2025-06-24 01:58:58.127 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:58:58.128 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:58.128 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:58.128 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:58:58.152 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:58:58.153 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:58:58.154 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 25.4858ms
+2025-06-24 01:58:58.154 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:58:58.154 +05:30 [INF] HTTP GET /api/events responded 200 in 26.3470 ms
+2025-06-24 01:58:58.154 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 27.1221ms
+2025-06-24 01:58:59.491 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/2 - null null
+2025-06-24 01:58:59.492 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:58:59.493 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventById (booking_system)'
+2025-06-24 01:58:59.493 +05:30 [INF] Route matched with {action = "GetEventById", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Event]] GetEventById(Int32) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:58:59.506 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:58:59.507 +05:30 [INF] Executing OkObjectResult, writing value of type 'BookingSystem.Models.Event'.
+2025-06-24 01:58:59.507 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventById (booking_system) in 13.5502ms
+2025-06-24 01:58:59.507 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventById (booking_system)'
+2025-06-24 01:58:59.507 +05:30 [INF] HTTP GET /api/events/2 responded 200 in 14.3649 ms
+2025-06-24 01:58:59.507 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/2 - 200 null application/json; charset=utf-8 16.9027ms
+2025-06-24 01:59:10.457 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/book - null 0
+2025-06-24 01:59:10.457 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:59:10.458 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/api/v1/ticket/book - 204 null null 0.7637ms
+2025-06-24 01:59:10.460 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - application/json 37
+2025-06-24 01:59:10.460 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:59:10.460 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-24 01:59:10.460 +05:30 [INF] Route matched with {action = "BookTicket", controller = "Ticket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingSystem.Models.Ticket]] BookTicket(BookingSystem.Models.DTOs.TicketDto) on controller BookingSystem.Controllers.TicketController (booking_system).
+2025-06-24 01:59:10.463 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title"
+FROM "Events" AS e
+WHERE e."Title" = @__key_0
+LIMIT 2
+2025-06-24 01:59:10.469 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tickets" ("BookingDate", "CustomerEmail", "EventId", "IsCancelled", "Quantity", "Total")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-24 01:59:10.531 +05:30 [INF] Executing FileContentResult, sending file with download name 'Ticket_16.pdf' ...
+2025-06-24 01:59:10.533 +05:30 [INF] Executed action BookingSystem.Controllers.TicketController.BookTicket (booking_system) in 72.693ms
+2025-06-24 01:59:10.533 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.TicketController.BookTicket (booking_system)'
+2025-06-24 01:59:10.534 +05:30 [INF] HTTP POST /api/v1/ticket/book responded 200 in 73.2920 ms
+2025-06-24 01:59:10.534 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/api/v1/ticket/book - 200 73662 application/pdf 74.2002ms
+2025-06-24 01:59:13.547 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events - null null
+2025-06-24 01:59:13.548 +05:30 [INF] CORS policy execution successful.
+2025-06-24 01:59:13.548 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:59:13.549 +05:30 [INF] Route matched with {action = "GetAllEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetAllEvents() on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-24 01:59:13.551 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."CreatorEmail", e."Date", e."Description", e."IsCancelled", e."Price", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-24 01:59:13.552 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-24 01:59:13.553 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetAllEvents (booking_system) in 3.7611ms
+2025-06-24 01:59:13.553 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetAllEvents (booking_system)'
+2025-06-24 01:59:13.553 +05:30 [INF] HTTP GET /api/events responded 200 in 4.9292 ms
+2025-06-24 01:59:13.554 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events - 200 null application/json; charset=utf-8 7.3411ms
+2025-06-24 01:59:24.196 +05:30 [INF] Application is shutting down...
