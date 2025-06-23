@@ -26,7 +26,7 @@ export class Register {
   onRegisterClick() {
     if (this.registerForm.valid) {
       console.log("Registration Data:", this.registerForm.value);
-      const obj={name:this.registerForm.value.name,email:this.registerForm.value.email,password:this.registerForm.value.password,phoneNumber:this.registerForm.value.phoneNumber}
+      const obj={name:this.registerForm.value.name,email:this.registerForm.value.email,password:this.registerForm.value.password,phoneNumber:this.registerForm.value.phone}
       this.loginservice.register(obj,this.registerForm.value.role).subscribe({
         next:(data:any)=>{
           console.log(data);
