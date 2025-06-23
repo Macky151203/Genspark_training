@@ -1,5 +1,0 @@
-2025-06-20 20:54:53.118 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2025-06-20 20:54:53.251 +05:30 [INF] Now listening on: http://localhost:5136
-2025-06-20 20:54:53.253 +05:30 [INF] Application started. Press Ctrl+C to shut down.
-2025-06-20 20:54:53.253 +05:30 [INF] Hosting environment: Development
-2025-06-20 20:54:53.253 +05:30 [INF] Content root path: /Users/presidio/Desktop/dotnet/GensparkTraining/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system
