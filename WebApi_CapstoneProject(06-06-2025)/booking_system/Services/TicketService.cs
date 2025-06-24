@@ -27,6 +27,9 @@ public class TicketService : ITicketService
         {
             throw new Exception("Event not found");
         }
+        if(curevent.Ticketcount<ticketDto.Quantity){
+            throw new Exception("Tickets not available!");
+        }
         var eventid= curevent.Id;
 
         string? username = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -39,6 +42,11 @@ public class TicketService : ITicketService
             Total= ticketDto.Quantity * curevent.Price,
             IsCancelled = false
         };
+
+        //reduce ticket count
+        curevent.Ticketcount=curevent.Ticketcount-ticketDto.Quantity;
+        await _eventRepository.Update(curevent.Title, curevent);
+
         return await _ticketRepository.Add(newTicket);
     }
 

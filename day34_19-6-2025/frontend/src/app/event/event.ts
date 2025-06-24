@@ -59,5 +59,9 @@ export class Event implements OnInit {
     this.router.navigate([`/confirmbooking/${this.id}`])
   }
 
+  gotohome(){
+    
+  }
+
 
 }

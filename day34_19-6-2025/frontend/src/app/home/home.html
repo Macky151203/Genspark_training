@@ -13,21 +13,19 @@
                 </div>
             </div>
         </div> -->
-        <p-carousel [value]="latestEvents" [numVisible]="1" [numScroll]="1" [circular]="false"
-            >
+        <p-carousel [value]="latestEvents" [numVisible]="1" [numScroll]="1" [circular]="false">
             <ng-template let-product #item>
                 <div class="border border-surface rounded-border m-2 p-4">
                     <div class="mb-4">
                         <div class="relative mx-auto">
-                            <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
-                                [alt]="product.name" class="w-full rounded-border" />
-                            
+                            <img src="" [alt]="product.name" class="w-full rounded-border" />
+
                         </div>
                     </div>
                     <div class="mb-4 font-medium">{{ product.title }}</div>
                     <div class="flex justify-between items-center">
-                        <div class="mt-0 font-semibold text-xl">Category- {{  product.category }}</div>
-                        
+                        <div class="mt-0 font-semibold text-xl">Category- {{ product.category }}</div>
+
                     </div>
                 </div>
             </ng-template>
@@ -90,27 +88,27 @@
             <div class="row g-3">
                 <div class="col-md-4" *ngFor="let event of filteredEvents()">
                     <div class="card h-100">
-                        <img class="rounded-top"
-                            src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
-                            alt="error" />
-                        <div class="card-body">
-                            <div class="d-flex flex-row justify-content-between">
-                                <div>
-                                    <h5 class="card-title">{{ event.title }}</h5>
-                                    <p class="card-text">{{ event.description }}</p>
-                                    <p>Location- {{ event.city? event.city : 'Unknown Location' }}</p>
-                                </div>
-                                <div>
-                                    <span class="badge bg-danger bg-opacity-50">{{ event.category.name }}</span>
-                                    <p class="mt-2">₹{{ event.price }}</p>
-                                </div>
+                        <img class="rounded-top card-img-fixed" [src]="event.imageurl" alt="error" />
+                        <div class="card-body d-flex flex-column justify-content-between">
 
+                            <!-- Title & Category -->
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h5 class="card-title mb-0">{{ event.title }}</h5>
+                                <span class="badge bg-danger bg-opacity-50">{{ event.category.name }}</span>
                             </div>
-                            <button (click)="handleBookNow(event.id)" class="btn btn-danger">Book Now</button>
+
+                            <!-- Book & Price -->
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                                <button (click)="handleBookNow(event.id)" class="btn btn-danger btn-sm mt-2">Book
+                                    Now</button>
+                                <p class="mt-2 mb-0 fw-semibold text-dark">₹{{ event.price }}</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 </div>
