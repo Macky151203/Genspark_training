@@ -37,6 +37,14 @@ public class EventService : IEventService
         return allEvents.FirstOrDefault(e => e.Id == id)!;   
     }
 
+    public async Task<IEnumerable<Event>> GetAllEventsByEmail(string email)
+    {
+        var allEvents = await _eventRepository.GetAll();
+        return allEvents.Where(e => e.CreatorEmail.Equals(email, StringComparison.OrdinalIgnoreCase));
+    }
+
+    
+
     public async Task<Event> CreateEvent(EventDto eventDto)
     {
         var existingCategory = await _categoryRepository.Get(eventDto.CategoryName);

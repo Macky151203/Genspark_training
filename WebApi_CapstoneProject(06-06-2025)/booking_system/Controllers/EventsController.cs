@@ -62,6 +62,27 @@ public class EventsController : ControllerBase
         }
     }
 
+    [HttpGet("admin/{email}")]
+    public async Task<ActionResult<IEnumerable<Event>>> GetEventByEmail(string email)
+    {
+        try
+        {
+            var ev = await _eventService.GetAllEventsByEmail(email);
+            if (ev == null)
+            {
+                _logger.LogWarning("Event with name {EventName} not found", email);
+                return NotFound();
+            }
+            return Ok(ev);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving event with name {EventName}", email);
+            return BadRequest("An error occurred while retrieving the event.");
+        }
+    }
+
+
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Event>> GetEventById(int id)
     {
