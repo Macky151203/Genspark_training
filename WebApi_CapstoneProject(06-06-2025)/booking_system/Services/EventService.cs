@@ -55,6 +55,9 @@ public class EventService : IEventService
                 Price = eventDto.Price,
                 Address = eventDto.Address ?? "",
                 City = eventDto.City ?? "",
+                Context=eventDto.Context,
+                Imageurl=eventDto.Imageurl,
+                Ticketcount=eventDto.Ticketcount,
                 IsCancelled = false
             };
             return await _eventRepository.Add(newEvent);
@@ -70,6 +73,9 @@ public class EventService : IEventService
             Price = eventDto.Price,
             Address = eventDto.Address ?? "",
             City = eventDto.City ?? "",
+            Context=eventDto.Context,
+            Imageurl=eventDto.Imageurl,
+            Ticketcount=eventDto.Ticketcount,
             IsCancelled = false
 
         };
@@ -99,6 +105,9 @@ public class EventService : IEventService
         existingEvent.Price = eventDto.Price;
         existingEvent.Address = eventDto.Address;
         existingEvent.City = eventDto.City;
+        existingEvent.Imageurl = eventDto.Imageurl;
+        existingEvent.Context = eventDto.Context;
+        existingEvent.Ticketcount = eventDto.Ticketcount;
         existingEvent.CreatorEmail = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
 
 

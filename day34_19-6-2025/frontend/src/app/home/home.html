@@ -2,7 +2,7 @@
 
     <!-- Latest Events -->
     <section class="mb-4">
-        <div class="mb-3 fs-4">Latest Events</div>
+        <!-- <div class="mb-3 fs-4">Latest Events</div>
         <div class="row g-3">
             <div class="col-md-4" *ngFor="let event of latestEvents">
                 <div class="card h-100">
@@ -12,7 +12,26 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <p-carousel [value]="latestEvents" [numVisible]="1" [numScroll]="1" [circular]="false"
+            >
+            <ng-template let-product #item>
+                <div class="border border-surface rounded-border m-2 p-4">
+                    <div class="mb-4">
+                        <div class="relative mx-auto">
+                            <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                                [alt]="product.name" class="w-full rounded-border" />
+                            
+                        </div>
+                    </div>
+                    <div class="mb-4 font-medium">{{ product.title }}</div>
+                    <div class="flex justify-between items-center">
+                        <div class="mt-0 font-semibold text-xl">Category- {{  product.category }}</div>
+                        
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
     </section>
 
     <!-- Search Bar -->
@@ -25,7 +44,11 @@
         <!-- Filters -->
         <div class="col-md-3">
             <div class="p-3 border rounded shadow-sm bg-light">
-                <h5>Filters</h5>
+                <h5>Filters<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-filter m-1" viewBox="0 0 16 16">
+                        <path
+                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                    </svg></h5>
 
                 <!-- Price Filter -->
                 <div class="mb-3">
@@ -49,7 +72,7 @@
                 </div>
 
                 <!-- Location Filter -->
-                 <div class="mb-3">
+                <div class="mb-3">
                     <label class="form-label">Location</label>
                     <select class="form-select" [(ngModel)]="filters.city">
                         <option value="">All</option>
@@ -60,16 +83,18 @@
 
             </div>
         </div>
-        
+
 
         <!-- Event Cards  -->
         <div class="col-md-9">
             <div class="row g-3">
                 <div class="col-md-4" *ngFor="let event of filteredEvents()">
                     <div class="card h-100">
-                        <img class="rounded-top" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="error" />
+                        <img class="rounded-top"
+                            src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="error" />
                         <div class="card-body">
-                            <div class="d-flex flex-row justify-content-between"> 
+                            <div class="d-flex flex-row justify-content-between">
                                 <div>
                                     <h5 class="card-title">{{ event.title }}</h5>
                                     <p class="card-text">{{ event.description }}</p>
@@ -79,7 +104,7 @@
                                     <span class="badge bg-danger bg-opacity-50">{{ event.category.name }}</span>
                                     <p class="mt-2">₹{{ event.price }}</p>
                                 </div>
-                                
+
                             </div>
                             <button (click)="handleBookNow(event.id)" class="btn btn-danger">Book Now</button>
                         </div>
