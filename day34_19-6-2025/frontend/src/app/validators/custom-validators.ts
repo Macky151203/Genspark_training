@@ -2,12 +2,6 @@ import { AbstractControl, ValidationErrors, ValidatorFn, FormGroup } from '@angu
 
 
 export class CustomValidators {
-  static bannedWords(banned: string[]): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const value = control.value?.toLowerCase();
-      return banned.some(word => value?.includes(word)) ? { bannedWord: true } : null;
-    };
-  }
 
   static passwordStrength(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { Loginservice } from '../services/loginservice';
 import { Router } from '@angular/router';
+import { CustomValidators } from '../validators/custom-validators';
 
 @Component({
   selector: 'app-register',
@@ -15,11 +16,19 @@ export class Register {
 
   constructor(private fb: FormBuilder,private loginservice:Loginservice,private router:Router) {
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required,CustomValidators.passwordStrength()]],
+      confirmPassword: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       role: ['user', Validators.required]
+    },{
+      
+        validators: CustomValidators.matchPassword(
+          'password',
+          'confirmPassword'
+        ),
+      
     });
   }
 

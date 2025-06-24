@@ -24,6 +24,9 @@ export class Home implements OnInit {
 
   categories : string[] = [];
   cities : string[] = [];
+  concerts: any[] = [];
+  Movies: any[] = [];
+  techevents: any[] = [];
 
   latestEvents = [
     { title: 'Concert A', description: 'Music concert', category: 'Music', price: 500 },
@@ -44,6 +47,11 @@ export class Home implements OnInit {
           this.allEvents = data as any;
           this.categories = Array.from(new Set(this.allEvents.map((e:any) => e.category.name)));
           this.cities = Array.from(new Set(this.allEvents.map((e:any) => e.city)));
+          this.concerts = this.allEvents.filter((e: any) => e.category.name.toLowerCase() === 'concert');
+          this.Movies = this.allEvents.filter((e: any) => e.category.name.toLowerCase() === 'movie');
+          this.techevents = this.allEvents.filter((e: any) => e.category.name.toLowerCase() === 'tech');
+
+
           console.log(this.categories)
           console.log(this.allEvents)
         },

@@ -22,11 +22,22 @@
 
       <div class="mb-3">
         <label class="form-label">Password</label>
-        <input type="password" formControlName="password" class="form-control " placeholder="Enter password">
-        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger small">
-          Password is required.
+        <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+        <div *ngIf="registerForm.get('password')?.errors?.['weakPassword'] && registerForm.get('password')?.touched" class="text-danger">
+          Password must be at least 6 characters, contain a number and a symbol.
         </div>
       </div>
+
+
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" />
+        <div *ngIf="registerForm.errors?.['passwordMismatch'] && registerForm.get('confirmPassword')?.touched" class="text-danger">
+          Passwords do not match.
+        </div>
+      </div>
+
+
 
       <div class="mb-3">
         <label class="form-label">Phone Number</label>
@@ -36,13 +47,7 @@
         </div>
       </div>
 
-      <div class="mb-3">
-        <label class="form-label">Role</label>
-        <select formControlName="role" class="form-select ">
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
+      
 
       <button type="submit" class="btn btn-danger w-100" [disabled]="registerForm.invalid">Register</button>
 
