@@ -60,5 +60,9 @@ export class Confirmbooking implements OnInit {
   closeToast() {
     this.showToast = false;
   }
+
+  cancel(){
+    this.router.navigate([`/event/${this.event().id}`])
+  }
 }
 

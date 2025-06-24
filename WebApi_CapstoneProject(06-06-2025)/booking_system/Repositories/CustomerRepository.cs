@@ -14,9 +14,9 @@ public class CustomerRepository : Repository<string, Customer>
 
     public override async Task<Customer> Get(string key)
     {
-        var customer = await _bookingdbcontext.Customers.SingleOrDefaultAsync(c => c.Name == key);
+        var customer = await _bookingdbcontext.Customers.Include(c=>c.Tickets).SingleOrDefaultAsync(c => c.Email == key);
 
-        return customer ?? throw new Exception("No Customer with the given ID");
+        return customer ?? throw new Exception("No Customer with the given mail ID");
     }
 
     public override async Task<IEnumerable<Customer>> GetAll()

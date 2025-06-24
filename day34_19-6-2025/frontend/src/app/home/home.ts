@@ -3,10 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HomepageService } from '../services/homepage-service';
 import { Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,ButtonModule,CarouselModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

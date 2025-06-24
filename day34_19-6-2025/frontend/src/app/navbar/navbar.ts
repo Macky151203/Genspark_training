@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Loginservice } from '../services/loginservice';
 import { CommonModule } from '@angular/common';
+import { ProfileService } from '../services/profile-service';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class Navbar {
+export class Navbar implements OnInit {
 
   showToast: boolean = false;
 
-  constructor(public loginservice: Loginservice) { }
+  constructor(
+    public loginservice: Loginservice
+  ) {
+  }
 
-
+  ngOnInit(): void {
+    
+  }
 
   handlelogout() {
     this.loginservice.logout();
@@ -24,11 +31,9 @@ export class Navbar {
     setTimeout(() => {
       this.showToast = false;
     }, 2000);
-
   }
 
   closeToast() {
     this.showToast = false;
   }
-
 }

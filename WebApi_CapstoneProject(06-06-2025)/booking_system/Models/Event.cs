@@ -14,6 +14,12 @@ public class Event
 
     public string City { get; set; } = string.Empty;
 
+    public string Context {get;set;}= string.Empty;
+
+    public int Ticketcount {get;set;}=0;
+
+    public string Imageurl {get;set;}= string.Empty;
+
     public int CategoryId { get; set; }
     public bool IsCancelled { get; set; }
 
