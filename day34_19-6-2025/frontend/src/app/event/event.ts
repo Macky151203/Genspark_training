@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EventpageService } from '../services/eventpage-service';
 import { CommonModule } from '@angular/common';
 import { ConfirmationService } from '../services/confirmation-service';
+import { HomepageService } from '../services/homepage-service';
 
 @Component({
   selector: 'app-event',
@@ -11,21 +12,30 @@ import { ConfirmationService } from '../services/confirmation-service';
   styleUrl: './event.css'
 })
 export class Event implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router, private eventservice: EventpageService,private confirmationService: ConfirmationService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private eventservice: EventpageService,private confirmationService: ConfirmationService,private homepageservice: HomepageService) { }
   id: string = "";
   event: any = {}
+  similarEvents: any[] = [];
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+  this.route.params.subscribe(params => {
+    this.id = params['id'];
     this.eventservice.geteventbyid(Number(this.id)).subscribe((data) => {
       this.event = data;
+      this.fetchSimilarEvents();
       console.log(data);
     });
-
-  }
-
-
-
+  });
+}
   count = 1;
+
+  fetchSimilarEvents() {
+    this.homepageservice.getallevents().subscribe((allEvents:any) => {
+      console.log(allEvents)
+      this.similarEvents = allEvents.filter(
+        (e: any) => e.categoryId === this.event.categoryId && e.id !== this.event.id
+      );
+    });
+  }
 
   increment() {
     this.count = Math.min(this.count + 1, 10);
@@ -33,6 +43,10 @@ export class Event implements OnInit {
 
   decrement() {
     this.count = Math.max(this.count - 1, 1);
+  }
+
+  handleBookNow(id: number) {
+    this.router.navigate([`/event/${id}`]);
   }
 
   bookNow() {
@@ -60,7 +74,7 @@ export class Event implements OnInit {
   }
 
   gotohome(){
-    
+    this.router.navigate(['/'])
   }
 
 
