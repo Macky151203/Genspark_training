@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace booking_system.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20250609192240_model_change1")]
-    partial class model_change1
+    [Migration("20250624092612_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,9 @@ namespace booking_system.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
                     b.HasKey("Email");
@@ -64,11 +67,17 @@ namespace booking_system.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
+
                     b.Property<int>("Id")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
                     b.HasKey("Email");
@@ -84,8 +93,20 @@ namespace booking_system.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Context")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("CreatorEmail")
                         .IsRequired()
@@ -98,7 +119,17 @@ namespace booking_system.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Imageurl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("Price")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Ticketcount")
                         .HasColumnType("integer");
 
                     b.Property<string>("Title")
@@ -136,6 +167,9 @@ namespace booking_system.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Total")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

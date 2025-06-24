@@ -18,6 +18,7 @@ public class Event
 
     public int Ticketcount {get;set;}=0;
 
+
     public string Imageurl {get;set;}= string.Empty;
 
     public int CategoryId { get; set; }
