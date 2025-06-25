@@ -1,4 +1,17 @@
 <div class="container my-4">
+  <div class="mb-3">
+        <button class="btn btn-outline-secondary d-flex align-items-center" (click)="gotohome()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left-circle mx-1" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+            </svg>
+            <div>
+                Back
+
+            </div>
+        </button>
+    </div>
   <h3 class="mb-4 text-center">Edit Event</h3>
 
   <form #eventForm="ngForm" novalidate>
@@ -92,12 +105,14 @@
 
       <!-- Submit -->
       <div class="col-12 d-flex justify-content-end">
-        <button class="btn btn-primary" (click)="updateEvent(eventForm)" [disabled]="eventForm.invalid">Update</button>
-        <button class="btn btn btn-secondary ms-2 " (click)="openCancelModal(event.id)">Cancel</button>
+        <button class="btn btn-success" (click)="updateEvent(eventForm)" [disabled]="eventForm.invalid">Update Event</button>
+        <button class="btn btn btn-danger ms-2 " (click)="openCancelModal(event.id)">Cancel Event</button>
       </div>
     </div>
   </form>
 </div>
+
+<!-- Toasts -->
 
 <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
   <div class="toast align-items-center text-white bg-success border-0" role="alert" [class.show]="showToast"
@@ -112,11 +127,11 @@
 </div>
 
 <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
-  <div class="toast align-items-center text-white bg-danger border-0" role="alert" [class.show]="showToast"
+  <div class="toast align-items-center text-white bg-danger border-0" role="alert" [class.show]="showDeleteToast"
     [class.hide]="!showDeleteToast">
     <div class="d-flex">
       <div class="toast-body">
-        Updated Successfully!
+        Event Cancelled Successfully!
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="closeDeleteToast()"></button>
     </div>
@@ -128,7 +143,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0 shadow">
       <div class="modal-header bg-light">
-        <h5 class="modal-title" id="cancelModalLabel">Cancel Ticket</h5>
+        <h5 class="modal-title" id="cancelModalLabel">Cancel Event</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">Are you sure you want to cancel this Event?</div>

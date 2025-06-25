@@ -10,7 +10,7 @@
   object-fit: cover;
 }
 .event-scroll-container {
-  max-height: 650px; /* Adjust based on card height and spacing */
+  max-height: 90vh; /* Adjust based on card height and spacing */
   overflow-y: auto;
   padding-right: 8px;
 }

@@ -6,6 +6,7 @@ import { AuthGuard } from './auth-guard';
 import { Event } from './event/event';
 import { Register } from './register/register';
 import { Profile } from './profile/profile';
+import { Add } from './add/add';
 
 export const routes: Routes = [
     {path:"",component:Home,canActivate:[AuthGuard]},
@@ -13,5 +14,7 @@ export const routes: Routes = [
     {path:"about",component:About},
     {path:"event/:id",component:Event},
     {path:"register",component:Register},
-    {path:"profile",component:Profile,canActivate:[AuthGuard]}
+    {path:"add",component:Add},
+    {path:"profile",component:Profile,canActivate:[AuthGuard]},
+    
 ];
