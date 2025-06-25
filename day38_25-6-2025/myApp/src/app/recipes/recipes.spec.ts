@@ -1,11 +1,14 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RecipeService } from '../services/recipeservice';
-import { HttpClient } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
+import { Recipe } from '../recipe/recipe';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Recipes } from './recipes';
 
-describe('RecipeService', () => {
-  let service: RecipeService;
-  let httpClientSpy: jasmine.SpyObj<HttpClient>;
+describe('Recipe Component', () => {
+  let component: Recipes;
+  let fixture: ComponentFixture<Recipes>;
+  let servicespy: jasmine.SpyObj<RecipeService>;
 
   const mockResponse = {
     recipes: [
@@ -21,39 +24,45 @@ describe('RecipeService', () => {
   };
 
   beforeEach(() => {
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    servicespy = jasmine.createSpyObj('RecipeService', ['getAllRecipes'])
 
     TestBed.configureTestingModule({
+      imports: [Recipe],
       providers: [
         RecipeService,
-        { provide: HttpClient, useValue: httpClientSpy }
-      ]
+        { provide: RecipeService, useValue: servicespy }
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
 
-    service = TestBed.inject(RecipeService);
+    fixture = TestBed.createComponent(Recipes)
+    component = fixture.componentInstance;
+    servicespy = TestBed.inject(RecipeService) as jasmine.SpyObj<RecipeService>;
+
+
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it('should call getAllRecipes and return data', (done) => {
-    httpClientSpy.get.and.returnValue(of(mockResponse));
+    servicespy.getAllRecipes.and.returnValue(of(mockResponse));
 
-    service.getAllRecipes().subscribe((data:any) => {
+    servicespy.getAllRecipes().subscribe((data: any) => {
       expect(data).toEqual(mockResponse);
-      expect(httpClientSpy.get).toHaveBeenCalledWith('https://dummyjson.com/recipes');
+      expect(servicespy.getAllRecipes).toHaveBeenCalled();
       done();
     });
   });
 
   it('should handle error from getAllRecipes', (done) => {
     const error = new Error('Network error');
-    httpClientSpy.get.and.returnValue(throwError(() => error));
+    servicespy.getAllRecipes.and.returnValue(throwError(() => error));
 
-    service.getAllRecipes().subscribe({
-      next: () => {},
-      error: (err:any) => {
+    servicespy.getAllRecipes().subscribe({
+      next: () => { },
+      error: (err: any) => {
         expect(err).toBe(error);
         done();
       }
