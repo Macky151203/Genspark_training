@@ -31,5 +31,13 @@ export class EventpageService {
     return this.httpclient.delete(`http://localhost:5136/api/events/${eventname}`,{headers:headers})
   }
 
+  addevent(event:any):Observable<any>{
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.httpclient.post(`http://localhost:5136/api/events`,event,{headers:headers})
+  }
+
 
 }

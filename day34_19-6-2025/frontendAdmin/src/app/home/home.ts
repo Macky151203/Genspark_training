@@ -69,16 +69,19 @@ export class Home implements OnInit {
       const matchesMinPrice = this.filters.minPrice == null || e.price >= this.filters.minPrice;
       const matchesMaxPrice = this.filters.maxPrice == null || e.price <= this.filters.maxPrice;
       const matchesCategory = !this.filters.category || e.category.name === this.filters.category;
-      const matchesName = !this.filters.title || e.title.toLowerCase().includes(this.filters.title.toLowerCase());
       const matchesSearch = !this.searchText || e.title.toLowerCase().includes(this.searchText.toLowerCase());
       const matchescity= !this.filters.city || e.city === this.filters.city;
 
-      return matchesMinPrice && matchesMaxPrice && matchesCategory && matchesName && matchesSearch && matchescity;
+      return matchesMinPrice && matchesMaxPrice && matchesCategory && matchesSearch && matchescity;
     });
   }
 
   handleBookNow(id:any){
         this.router.navigateByUrl("/event/"+id);
 
+  }
+
+  addevent(){
+    this.router.navigate(['/add'])
   }
 }

@@ -101,6 +101,7 @@ export class Event implements OnInit {
     console.log("cancel-", this.event.id)
     this.eventservice.deleteEvent(this.event.title).subscribe({
       next: (data: any) => {
+        this.showDeleteToast=true;
         console.log("deleted-", data)
         const modalEl = document.getElementById('cancelModal');
         const modal = bootstrap.Modal.getInstance(modalEl);

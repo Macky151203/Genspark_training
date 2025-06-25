@@ -5,10 +5,11 @@ import { HomepageService } from '../services/homepage-service';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule,ButtonModule,CarouselModule],
+  imports: [FormsModule, CommonModule,ButtonModule,CarouselModule,NgOptimizedImage],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
