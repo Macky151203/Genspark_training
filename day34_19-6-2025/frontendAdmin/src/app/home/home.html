@@ -30,17 +30,7 @@
           </svg>
         </h5>
 
-        <!-- Price Filter -->
-        <div class="mb-3">
-          <label class="form-label">Min Price</label>
-          <input type="number" class="form-control" [(ngModel)]="filters.minPrice" placeholder="e.g. 100" />
-        </div>
-
-        <!-- Max Price -->
-        <div class="mb-3">
-          <label class="form-label">Max Price</label>
-          <input type="number" class="form-control" [(ngModel)]="filters.maxPrice" placeholder="e.g. 1000" />
-        </div>
+       
 
         <!-- Category Filter -->
         <div class="mb-3">
@@ -48,6 +38,15 @@
           <select class="form-select" [(ngModel)]="filters.category">
             <option value="">All</option>
             <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <select class="form-select" [(ngModel)]="filters.isCancelled">
+            <option value="">All</option>
+            <option value="false">Not Cancelled</option>
+            <option value="true">Cancelled</option>
           </select>
         </div>
 

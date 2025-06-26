@@ -29,7 +29,6 @@ describe('Recipe Component', () => {
     TestBed.configureTestingModule({
       imports: [Recipe],
       providers: [
-        RecipeService,
         { provide: RecipeService, useValue: servicespy }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]

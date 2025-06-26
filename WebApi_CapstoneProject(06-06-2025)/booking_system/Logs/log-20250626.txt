@@ -1,0 +1,50 @@
+2025-06-26 00:19:56.484 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-26 00:19:56.489 +05:30 [INF] CORS policy execution successful.
+2025-06-26 00:19:56.489 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 5.1935ms
+2025-06-26 00:19:56.492 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-26 00:19:56.492 +05:30 [INF] CORS policy execution successful.
+2025-06-26 00:19:56.492 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-26 00:19:56.493 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-26 00:19:56.493 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 0.3530 ms
+2025-06-26 00:19:56.493 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 1.2383ms
+2025-06-26 00:19:56.502 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=a0iMxCL2WwXxyYKk1Hd3xA - null null
+2025-06-26 00:19:56.503 +05:30 [INF] CORS policy execution successful.
+2025-06-26 00:19:56.504 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-26 00:27:14.631 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/api/events/admin/admin1@gmail.com - null null
+2025-06-26 00:27:14.646 +05:30 [INF] CORS policy execution successful.
+2025-06-26 00:27:14.647 +05:30 [INF] Executing endpoint 'BookingSystem.Controllers.EventsController.GetEventByEmail (booking_system)'
+2025-06-26 00:27:14.672 +05:30 [INF] Route matched with {action = "GetEventByEmail", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BookingSystem.Models.Event]]] GetEventByEmail(System.String) on controller BookingSystem.Controllers.EventsController (booking_system).
+2025-06-26 00:27:15.049 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."Id", e."Address", e."CategoryId", e."City", e."Context", e."CreatorEmail", e."Date", e."Description", e."Imageurl", e."IsCancelled", e."Price", e."Ticketcount", e."Title", c."Id", c."Name"
+FROM "Events" AS e
+INNER JOIN "Categories" AS c ON e."CategoryId" = c."Id"
+2025-06-26 00:27:15.051 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[BookingSystem.Models.Event, booking_system, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-26 00:27:15.053 +05:30 [INF] Executed action BookingSystem.Controllers.EventsController.GetEventByEmail (booking_system) in 380.6723ms
+2025-06-26 00:27:15.053 +05:30 [INF] Executed endpoint 'BookingSystem.Controllers.EventsController.GetEventByEmail (booking_system)'
+2025-06-26 00:27:15.053 +05:30 [INF] HTTP GET /api/events/admin/admin1@gmail.com responded 200 in 405.8273 ms
+2025-06-26 00:27:15.053 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/api/events/admin/admin1@gmail.com - 200 null application/json; charset=utf-8 422.5446ms
+2025-06-26 00:49:36.142 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-26 00:49:36.144 +05:30 [INF] HTTP GET /eventhub responded 101 in 513493.4833 ms
+2025-06-26 00:49:36.145 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=a0iMxCL2WwXxyYKk1Hd3xA - 101 null null 513497.0976ms
+2025-06-26 01:15:43.811 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-26 01:15:43.815 +05:30 [INF] CORS policy execution successful.
+2025-06-26 01:15:43.817 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 204 null null 5.9506ms
+2025-06-26 01:15:43.823 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - null 0
+2025-06-26 01:15:43.824 +05:30 [INF] CORS policy execution successful.
+2025-06-26 01:15:43.825 +05:30 [INF] Executing endpoint '/eventhub/negotiate'
+2025-06-26 01:15:43.826 +05:30 [INF] Executed endpoint '/eventhub/negotiate'
+2025-06-26 01:15:43.826 +05:30 [INF] HTTP POST /eventhub/negotiate responded 200 in 1.6311 ms
+2025-06-26 01:15:43.827 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5136/eventhub/negotiate?negotiateVersion=1 - 200 316 application/json 3.316ms
+2025-06-26 01:15:43.835 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5136/eventhub?id=0V7MHNS6J_btMa2hBh0jKg - null null
+2025-06-26 01:15:43.836 +05:30 [INF] CORS policy execution successful.
+2025-06-26 01:15:43.836 +05:30 [INF] Executing endpoint '/eventhub'
+2025-06-26 01:15:46.165 +05:30 [INF] Application is shutting down...
+2025-06-26 01:15:46.166 +05:30 [INF] Connection id "0HNDK1SP873CN", Request id "0HNDK1SP873CN:00000003": the application aborted the connection.
+2025-06-26 01:15:46.168 +05:30 [INF] Executed endpoint '/eventhub'
+2025-06-26 01:15:46.168 +05:30 [INF] HTTP GET /eventhub responded 101 in 2331.8381 ms
+2025-06-26 01:15:46.169 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5136/eventhub?id=0V7MHNS6J_btMa2hBh0jKg - 101 null null 2333.4107ms
+2025-06-26 10:49:15.597 +05:30 [INF] User profile is available. Using '/Users/subramaniyans/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 10:49:15.799 +05:30 [INF] Now listening on: http://localhost:5136
+2025-06-26 10:49:15.801 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 10:49:15.802 +05:30 [INF] Hosting environment: Development
+2025-06-26 10:49:15.802 +05:30 [INF] Content root path: /Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system
