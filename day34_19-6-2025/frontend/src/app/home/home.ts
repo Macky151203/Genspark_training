@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomepageService } from '../services/homepage-service';
+import { EventService } from '../services/event-service';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
@@ -40,11 +40,11 @@ export class Home implements OnInit {
 
   allEvents : any=[]
 
-  constructor(private homepageService: HomepageService,private router: Router,private notificationservice:NotificationService){}
+  constructor(private eventservice: EventService,private router: Router,private notificationservice:NotificationService){}
 
   ngOnInit(){
     this.notificationservice.startConnection();
-    this.homepageService.getallevents().subscribe(
+    this.eventservice.getallevents().subscribe(
       {
         next:(data)=>{
           this.allEvents = data as any;

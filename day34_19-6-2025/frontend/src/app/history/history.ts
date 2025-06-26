@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HistoryService } from '../services/history-service';
 import { CommonModule } from '@angular/common';
 import { NgIf, NgFor } from '@angular/common';
 //@ts-ignore
 import * as bootstrap from 'bootstrap';
 import { FormsModule } from '@angular/forms';
+import { TicketService } from '../services/ticket-service';
 
 @Component({
   selector: 'app-history',
@@ -30,12 +30,12 @@ export class History implements OnInit {
   categories: string[] = [];
   cities: string[] = [];
 
-  constructor(private historyService: HistoryService) {}
+  constructor(private ticketservice:TicketService) {}
 
   ngOnInit(): void {
     const email = localStorage.getItem('username');
     if (email) {
-      this.historyService.gettickets(email).subscribe({
+      this.ticketservice.gettickets(email).subscribe({
         next: (data) => {
           const now = new Date();
           this.tickets = data.map((ticket:any) => {
@@ -99,7 +99,7 @@ export class History implements OnInit {
 
   confirmCancel() {
     if (this.selectedTicketId !== null) {
-      this.historyService.cancelTicket(this.selectedTicketId).subscribe({
+      this.ticketservice.cancelTicket(this.selectedTicketId).subscribe({
         next: () => {
           const ticket = this.tickets.find(t => t.id === this.selectedTicketId);
           if (ticket) ticket.isCancelled = true;

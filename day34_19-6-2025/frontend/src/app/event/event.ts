@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EventpageService } from '../services/eventpage-service';
 import { CommonModule } from '@angular/common';
 import { ConfirmationService } from '../services/confirmation-service';
-import { HomepageService } from '../services/homepage-service';
+import { EventService } from '../services/event-service';
 
 @Component({
   selector: 'app-event',
@@ -12,7 +11,7 @@ import { HomepageService } from '../services/homepage-service';
   styleUrl: './event.css'
 })
 export class Event implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router, private eventservice: EventpageService,private confirmationService: ConfirmationService,private homepageservice: HomepageService) { }
+  constructor(private route: ActivatedRoute, private router: Router,private confirmationService: ConfirmationService,private eventservice: EventService) { }
   id: string = "";
   event: any = {}
   similarEvents: any[] = [];
@@ -29,7 +28,7 @@ export class Event implements OnInit {
   count = 1;
 
   fetchSimilarEvents() {
-    this.homepageservice.getallevents().subscribe((allEvents:any) => {
+    this.eventservice.getallevents().subscribe((allEvents:any) => {
       console.log(allEvents)
       this.similarEvents = allEvents.filter(
         (e: any) => e.categoryId === this.event.categoryId && e.id !== this.event.id

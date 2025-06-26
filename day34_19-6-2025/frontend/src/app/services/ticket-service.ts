@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class HistoryService {
+export class TicketService {
 
   constructor(private httpclient:HttpClient) { }
 
@@ -24,5 +24,24 @@ export class HistoryService {
       'Authorization': `Bearer ${token}`
     });
     return this.httpclient.delete(`http://localhost:5136/api/v1/ticket/${id}/cancel`,{headers:headers})
+  }
+
+  bookticket(eventname: string, qty: number): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.httpclient.post(
+      `http://localhost:5136/api/v1/ticket/book`,
+      {
+        "eventName": eventname,
+        "quantity": qty
+      },
+      {
+        headers: headers,
+        responseType: 'blob'
+      }
+    );
   }
 }

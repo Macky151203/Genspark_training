@@ -32,7 +32,7 @@ export class Login {
         localStorage.setItem("role", data.role);
         
 
-        this.loginservice.isloggedin.update(value => true);
+        this.loginservice.setlogintrue();
         
         this.showToast = true;
         
