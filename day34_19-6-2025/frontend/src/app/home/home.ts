@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { NgOptimizedImage } from '@angular/common'
+import { NotificationService } from '../services/notification-service';
 
 @Component({
   selector: 'app-home',
@@ -39,9 +40,10 @@ export class Home implements OnInit {
 
   allEvents : any=[]
 
-  constructor(private homepageService: HomepageService,private router: Router){}
+  constructor(private homepageService: HomepageService,private router: Router,private notificationservice:NotificationService){}
 
   ngOnInit(){
+    this.notificationservice.startConnection();
     this.homepageService.getallevents().subscribe(
       {
         next:(data)=>{

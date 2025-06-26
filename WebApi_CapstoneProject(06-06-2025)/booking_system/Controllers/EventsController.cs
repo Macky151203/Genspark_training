@@ -111,7 +111,7 @@ public class EventsController : ControllerBase
         {
             var createdEvent = await _eventService.CreateEvent(eventDto);
             _logger.LogInformation("Event {EventName} created successfully", createdEvent.Title);
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $"{createdEvent.Title}", $"{createdEvent.Description}", $"{eventDto.CategoryName}");
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "New event added", $"{createdEvent.Title}", $"{createdEvent.Description}", $"{eventDto.CategoryName}",$"{createdEvent.Imageurl}");
             return CreatedAtAction(nameof(GetEventByName), new { eventName = createdEvent.Title }, createdEvent);
         }
         catch (Exception ex)
