@@ -18,10 +18,10 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/history">Booking History</a>
         </li>
-        <li class="nav-item" *ngIf="!loginservice.isloggedin()">
+        <li class="nav-item" *ngIf="!islogged">
           <button class="btn btn-outline-primary" routerLink="/login">Login</button>
         </li>
-        <li class="nav-item dropdown" *ngIf="loginservice.isloggedin()">
+        <li class="nav-item dropdown" *ngIf="islogged">
           <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button"
             id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 

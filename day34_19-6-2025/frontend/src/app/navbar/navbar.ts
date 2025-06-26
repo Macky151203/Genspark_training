@@ -14,10 +14,13 @@ import { ProfileService } from '../services/profile-service';
 export class Navbar implements OnInit {
 
   showToast: boolean = false;
+  islogged:boolean=false;
 
   constructor(
     public loginservice: Loginservice
   ) {
+    this.loginservice.islogged$.subscribe((data)=>this.islogged=data);
+
   }
 
   ngOnInit(): void {

@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class EventpageService {
+export class EventService {
 
   constructor(private httpclient:HttpClient) { }
 
@@ -15,5 +15,7 @@ export class EventpageService {
     return this.httpclient.get(`http://localhost:5136/api/events/${id}`);
   }
 
-
+  getallevents(): Observable<any> {
+    return this.httpclient.get<any>('http://localhost:5136/api/events');
+  }
 }

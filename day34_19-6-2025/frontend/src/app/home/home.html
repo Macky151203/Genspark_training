@@ -158,7 +158,8 @@
     </section>
 
     <!-- Tech Section -->
-    <section class="mt-5">
+    @if(techevents.length>0){
+        <section class="mt-5">
         <h4 class="mb-3">Tech Events</h4>
         <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto">
             <div class="me-3" style="width: 300px;" *ngFor="let event of techevents">
@@ -181,6 +182,7 @@
             </div>
         </div>
     </section>
+    }
 
     <section class="mt-5">
         <h4 class="mb-3">Concerts</h4>
