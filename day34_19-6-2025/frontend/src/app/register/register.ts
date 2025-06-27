@@ -13,6 +13,7 @@ import { CustomValidators } from '../validators/custom-validators';
 })
 export class Register {
   registerForm: FormGroup;
+  showToast: boolean = false;
 
   constructor(private fb: FormBuilder,private loginservice:Loginservice,private router:Router) {
     this.registerForm = this.fb.group({
@@ -29,7 +30,7 @@ export class Register {
           'confirmPassword'
         ),
       
-        
+
     });
   }
 
@@ -40,10 +41,22 @@ export class Register {
       this.loginservice.register(obj,this.registerForm.value.role).subscribe({
         next:(data:any)=>{
           console.log(data);
+          this.showToast=true;
           //route here
-          this.router.navigate(['/login']);
+          setTimeout(() => {
+            this.showToast=false;
+            this.router.navigate(['/login']);
+          }, 2000);
+        },
+        error:(err:any)=>{
+          alert(err.error);
+
         }
       })
     }
+  }
+
+  closeToast(){
+    this.showToast=false;
   }
 }

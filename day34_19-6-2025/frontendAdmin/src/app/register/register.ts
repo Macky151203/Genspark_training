@@ -42,6 +42,9 @@ export class Register {
           console.log(data);
           //route here
           this.router.navigate(['/login']);
+        },
+        error:(err:any)=>{
+          alert(err.error);
         }
       })
     }

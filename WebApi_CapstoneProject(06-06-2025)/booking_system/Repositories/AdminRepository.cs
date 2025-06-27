@@ -16,7 +16,7 @@ public class AdminRepository : Repository<string, Admin>
     {
         var admin = await _bookingdbcontext.Admins.SingleOrDefaultAsync(a => a.Email == key);
 
-        return admin ?? throw new Exception("No Admin with the given ID");
+        return admin ?? null;
     }
 
     public override async Task<IEnumerable<Admin>> GetAll()

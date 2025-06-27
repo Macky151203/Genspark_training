@@ -33,7 +33,7 @@ export class Login {
         
 
         this.loginservice.setlogintrue();
-        
+        this.loginservice.getuserdetails();
         this.showToast = true;
         
         setTimeout(() => {

@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav ms-auto align-items-center gap-2">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
@@ -16,12 +16,13 @@
           <a class="nav-link" routerLink="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/history">Booking History</a>
+          <a class="nav-link" routerLink="/history">My Bookings</a>
         </li>
         <li class="nav-item" *ngIf="!islogged">
           <button class="btn btn-outline-primary" routerLink="/login">Login</button>
         </li>
-        <li class="nav-item dropdown" *ngIf="islogged">
+        <li class="nav-item dropdown d-flex flex-row align-items-center" *ngIf="islogged">
+            <span>Hi👋, {{name}}!</span>
           <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button"
             id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 

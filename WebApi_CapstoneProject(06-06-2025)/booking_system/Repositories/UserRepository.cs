@@ -15,7 +15,7 @@ public class UserRepository : Repository<string, User>
     public override async Task<User> Get(string key)
     {
         var user = await _bookingdbcontext.Users.SingleOrDefaultAsync(u => u.Email == key);
-        return user ?? throw new Exception("No User with the given ID");
+        return user ?? null;
     }
 
     public override async Task<IEnumerable<User>> GetAll()

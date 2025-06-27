@@ -15,12 +15,13 @@ export class Navbar implements OnInit {
 
   showToast: boolean = false;
   islogged:boolean=false;
+  name:string="";
 
   constructor(
     public loginservice: Loginservice
   ) {
-    this.loginservice.islogged$.subscribe((data)=>this.islogged=data);
-
+    this.loginservice.islogged$.subscribe((data:any)=>this.islogged=data);
+    this.loginservice.name$.subscribe((data:any)=>this.name=data);
   }
 
   ngOnInit(): void {
