@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,9 @@ export class Loginservice {
 
   private loginsubject = new BehaviorSubject<boolean>(false);
   islogged$ = this.loginsubject.asObservable();
+
+  private namesubject=new BehaviorSubject<string>("");
+  name$=this.namesubject.asObservable();
 
 
   constructor(private httpclient: HttpClient) {
@@ -41,7 +44,23 @@ export class Loginservice {
 
   setlogintrue() {
     this.loginsubject.next(true);
+  }
 
+  getuserdetails(){
+    const token = localStorage.getItem('token');
+    const email= localStorage.getItem('username');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    const resp= this.httpclient.get(`http://localhost:5136/api/v1/customer/${email}`, {headers:headers});
+    resp.subscribe((data:any)=>{
+      console.log(data)
+      this.namesubject.next(data.name);
+    });
+  }
+
+  checkUserExists(email:string):Observable<any>{
+    return this.httpclient.get(`http://localhost:5136/api/v1/customer/${email}`);
   }
 
 

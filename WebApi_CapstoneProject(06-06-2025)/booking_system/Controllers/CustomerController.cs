@@ -23,14 +23,20 @@ namespace BookingSystem.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<Customer>> RegisterCustomer(CustomerDto customerDto)
         {
-            var customer = await _customerService.RegisterCustomer(customerDto);
+            try{
+                var customer = await _customerService.RegisterCustomer(customerDto);
             if (customer == null)
             {
                 _logger.LogError("Failed to register customer with email {Email}", customerDto.Email);
-                return BadRequest("Failed to register customer.");
+                return BadRequest("Customer with email already exists.");
             }
             _logger.LogInformation("Customer {Email} registered successfully", customer.Email);
             return CreatedAtAction(nameof(GetCustomerByName), new { name = customer.Name }, customer);
+            }
+            catch(Exception e){
+            _logger.LogError(e, "Error occurred while registering customer with email {Email}", customerDto.Email);  
+              return BadRequest(e.Message);
+            }
         }
 
         [HttpGet("{name}")]

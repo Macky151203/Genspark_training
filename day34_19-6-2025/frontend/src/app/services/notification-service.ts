@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ export class NotificationService {
 
   private hubConnection!: signalR.HubConnection;
 
-  public messages: { a: string; b: string ,c:string,d:string,e:string}[] = [];
+  public eventRecieved$= new Subject<void>();
+
+  // public messages: { a: string; b: string ,c:string,d:string,e:string}[] = [];
 
   constructor() { }
   startConnection(): void {
@@ -23,19 +26,10 @@ export class NotificationService {
       .catch(err => console.log('SignalR error:', err));
 
     this.hubConnection.on('ReceiveMessage', (a: string, b: string,c:string,d:string,e:string) => {
-      console.log(a);
-      console.log(b);
-      console.log(c);
-      console.log(d);
-      console.log(e);
-      this.messages.push({ a,b,c,d,e });
+      
+      this.eventRecieved$.next();
     });
   }
-
-  //trigger an event from here and get by recent event by adding created at attribute
-
-
-  //
 
 
 }

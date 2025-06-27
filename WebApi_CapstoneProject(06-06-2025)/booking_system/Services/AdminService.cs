@@ -21,8 +21,12 @@ public class AdminService : IAdminService
 
     public async Task<Admin> RegisterAdmin(AdminDto adminDto)
     {
-        try
+        
+            var existingUser = await _userRepository.Get(adminDto.Email);
+            if (existingUser != null)
         {
+            throw new Exception("A user with this email already exists.");
+        }
             var encrypteddata = await _encryptionService.EncryptData(new EncryptModel
             {
                 Data = adminDto.Password
@@ -48,12 +52,7 @@ public class AdminService : IAdminService
         
 
             return newadmin;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("error-",e);
-            return null;
-        }
+        
     }
 
     public async Task<Admin> GetAdminByName(string name)

@@ -103,15 +103,16 @@
     <div class="w-100 d-flex justify-content-center align-items-center mt-5">
         <div
             class="bg-transparent w-75 rounded py-3 px-4 text-white d-flex flex-column flex-md-row justify-content-between align-items-center position-relative">
-            <img class="z-n1 rounded" ngSrc="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
+            <img class="z-n1 rounded"
+                ngSrc="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
                 fill>
             <!-- Left Section -->
             <div class="d-flex justify-content-center align-items-center mb-3 mb-md-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                class="bi bi-film mx-2" viewBox="0 0 16 16">
-                <path
-                d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z" />
-            </svg>
+                    class="bi bi-film mx-2" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z" />
+                </svg>
                 <div class="fs-1 fs-md-1 text-center text-md-start">Book<span
                         class="text-danger fst-italic">Your</span>Show</div>
             </div>
@@ -133,6 +134,7 @@
 
 
     <!-- Movies Section -->
+    @if(Movies.length>0){
     <section class="mt-5">
         <h4 class="mb-3">Movies</h4>
         <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto">
@@ -156,10 +158,11 @@
             </div>
         </div>
     </section>
+    }
 
     <!-- Tech Section -->
     @if(techevents.length>0){
-        <section class="mt-5">
+    <section class="mt-5">
         <h4 class="mb-3">Tech Events</h4>
         <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto">
             <div class="me-3" style="width: 300px;" *ngFor="let event of techevents">
@@ -184,6 +187,7 @@
     </section>
     }
 
+    @if(concerts.length>0){
     <section class="mt-5">
         <h4 class="mb-3">Concerts</h4>
         <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto">
@@ -207,6 +211,7 @@
             </div>
         </div>
     </section>
+    }
 
 
 

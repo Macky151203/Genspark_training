@@ -20,8 +20,12 @@ public class CustomerService : ICustomerService
 
     public async Task<Customer> RegisterCustomer(CustomerDto customerDto)
     {
-        try
+        
+            var existingUser = await _userRepository.Get(customerDto.Email);
+            if (existingUser != null)
         {
+            throw new Exception("A user with this email already exists.");
+        }
             var encrypteddata = await _encryptionService.EncryptData(new EncryptModel
             {
                 Data = customerDto.Password
@@ -48,12 +52,7 @@ public class CustomerService : ICustomerService
 
             var newCustomer = await _customerRepository.Add(customer);
             return newCustomer;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error - " + ex.Message);
-            return null;
-        }
+        
     }
 
     public async Task<Customer> GetCustomerByName(string name)

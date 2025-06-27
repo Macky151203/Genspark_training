@@ -24,6 +24,7 @@ namespace BookingSystem.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<Admin>> RegisterAdmin(AdminDto adminDto)
         {
+            try{
             var admin = await _adminService.RegisterAdmin(adminDto);
             if (admin == null)
             {
@@ -31,6 +32,12 @@ namespace BookingSystem.Controllers
                 return BadRequest("Failed to register admin.");
             }
             return CreatedAtAction(nameof(GetAdminByName), new { name = admin.Name }, admin);
+
+            }
+            catch(Exception e){
+            _logger.LogError(e, "Error occurred while registering admin with email {Email}", adminDto.Email);  
+              return BadRequest(e.Message);
+            }
         }
 
 

@@ -11,24 +11,24 @@ import { EventService } from '../services/event-service';
   styleUrl: './event.css'
 })
 export class Event implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router,private confirmationService: ConfirmationService,private eventservice: EventService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private confirmationService: ConfirmationService, private eventservice: EventService) { }
   id: string = "";
   event: any = {}
   similarEvents: any[] = [];
   ngOnInit(): void {
-  this.route.params.subscribe(params => {
-    this.id = params['id'];
-    this.eventservice.geteventbyid(Number(this.id)).subscribe((data) => {
-      this.event = data;
-      this.fetchSimilarEvents();
-      console.log(data);
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.eventservice.geteventbyid(Number(this.id)).subscribe((data) => {
+        this.event = data;
+        this.fetchSimilarEvents();
+        console.log(data);
+      });
     });
-  });
-}
+  }
   count = 1;
 
   fetchSimilarEvents() {
-    this.eventservice.getallevents().subscribe((allEvents:any) => {
+    this.eventservice.getallevents().subscribe((allEvents: any) => {
       console.log(allEvents)
       this.similarEvents = allEvents.filter(
         (e: any) => e.categoryId === this.event.categoryId && e.id !== this.event.id
@@ -68,11 +68,17 @@ export class Event implements OnInit {
     // });
 
     //add qty and detail to confirmation service
-    this.confirmationService.setBookingData(this.event, this.count);
-    this.router.navigate([`/confirmbooking/${this.id}`])
+    const username = localStorage.getItem('username');
+    if (username == null) {
+      this.router.navigate(['/login']);
+    }
+    else {
+      this.confirmationService.setBookingData(this.event, this.count);
+      this.router.navigate([`/confirmbooking/${this.id}`])
+    }
   }
 
-  gotohome(){
+  gotohome() {
     this.router.navigate(['/'])
   }
 
