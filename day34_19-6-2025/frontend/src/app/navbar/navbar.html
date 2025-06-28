@@ -12,9 +12,21 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
+        <li class="nav-item position-relative">
+          <a class="nav-link " (click)="toggleNotifications()">Notifications <span class="bg-danger px-1 rounded-pill text-white">{{notifications.length}}</span></a>
+
+          <div class="notification-dropdown position-absolute end-0 mt-2 bg-white border shadow rounded p-3"
+            *ngIf="showNotifications">
+            <div *ngIf="notifications.length === 0" class="text-muted text-center">No new notifications</div>
+            <ul class="list-unstyled mb-0">
+              <li *ngFor="let n of notifications" class="mb-2">
+                <div class="small fw-semibold">{{ n.a }}</div>
+                <div class="text-muted small">{{ n.b }}</div>
+              </li>
+            </ul>
+          </div>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/history">My Bookings</a>
         </li>
@@ -22,11 +34,11 @@
           <button class="btn btn-outline-primary" routerLink="/login">Login</button>
         </li>
         <li class="nav-item dropdown d-flex flex-row align-items-center" *ngIf="islogged">
-            <span>Hi👋, {{name}}!</span>
+          <span>Hi👋, {{name}}!</span>
           <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button"
             id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 
-         
+
 
             <!-- Profile Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"

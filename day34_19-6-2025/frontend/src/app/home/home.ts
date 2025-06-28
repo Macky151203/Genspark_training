@@ -24,6 +24,7 @@ export class Home implements OnInit {
     city: ''
   };
 
+  trendingCategories: any[] = [];
   categories : string[] = [];
   cities : string[] = [];
   concerts: any[] = [];
@@ -61,32 +62,42 @@ export class Home implements OnInit {
 
       const now = new Date();
 
-      // Only include upcoming events
-      this.concerts = this.allEvents.filter(
-        (e: any) =>
-          e.category.name.toLowerCase() === 'concert' &&
-          new Date(e.date) > now
-      );
-      this.Movies = this.allEvents.filter(
-        (e: any) =>
-          e.category.name.toLowerCase() === 'movie' &&
-          new Date(e.date) > now
-      );
-      this.techevents = this.allEvents.filter(
-        (e: any) =>
-          e.category.name.toLowerCase() === 'tech' &&
-          new Date(e.date) > now
-      );
+      // Group by category
+      const categoryCounts: Record<string, { name: string, count: number, image: string }> = {};
 
-      console.log(this.categories);
-      console.log(this.allEvents);
+      for (const event of this.allEvents) {
+        const cat = event.category.name;
+        if (!categoryCounts[cat]) {
+          categoryCounts[cat] = {
+            name: cat,
+            count: 0,
+            image: event.imageurl || ''
+          };
+        }
+        categoryCounts[cat].count += 1;
+      }
+
+      this.trendingCategories = Object.values(categoryCounts)
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 3)
+        .map((cat, index) => ({
+          ...cat,
+          label: `#${index + 1} Trending – ${cat.name}`
+        }));
+
+      // Category-specific event filtering
+      this.concerts = this.allEvents.filter((e: any) =>
+        e.category.name.toLowerCase() === 'concert' && new Date(e.date) > now
+      );
+      this.Movies = this.allEvents.filter((e: any) =>
+        e.category.name.toLowerCase() === 'movie' && new Date(e.date) > now
+      );
+      this.techevents = this.allEvents.filter((e: any) =>
+        e.category.name.toLowerCase() === 'tech' && new Date(e.date) > now
+      );
     },
-    error: (err) => {
-      console.log(err);
-    },
-    complete: () => {
-      console.log("All done");
-    }
+    error: (err) => console.log(err),
+    complete: () => console.log("All done")
   });
 }
 

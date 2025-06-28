@@ -16,4 +16,13 @@
 
 .nav-link:hover{
   color: red;
+  cursor: pointer;
 }
+
+.notification-dropdown {
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1050;
+}
+

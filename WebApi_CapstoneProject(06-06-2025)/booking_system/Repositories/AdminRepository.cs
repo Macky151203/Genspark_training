@@ -14,7 +14,7 @@ public class AdminRepository : Repository<string, Admin>
 
     public override async Task<Admin> Get(string key)
     {
-        var admin = await _bookingdbcontext.Admins.SingleOrDefaultAsync(a => a.Email == key);
+        var admin = await _bookingdbcontext.Admins.Include(a=>a.CreatedEvents).ThenInclude(e=>e.Tickets).SingleOrDefaultAsync(a => a.Email == key);
 
         return admin ?? null;
     }
