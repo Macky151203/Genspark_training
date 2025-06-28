@@ -133,6 +133,9 @@ public class EventsController : ControllerBase
                 _logger.LogWarning("Event with name {EventName} not found for update", eventName);
                 return NotFound();
             }
+            _logger.LogInformation("Event {EventName} Updated successfully", updatedEvent.Title);
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Event Updated(check your ticket)", $"{updatedEvent.Title}", $"{updatedEvent.Description}", $"{eventDto.CategoryName}",$"{updatedEvent.Imageurl}");
+
             return Ok(updatedEvent);
         }
         catch (Exception ex)

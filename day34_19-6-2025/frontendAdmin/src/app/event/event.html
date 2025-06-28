@@ -55,7 +55,7 @@
       <!-- City -->
       <div class="col-md-6">
         <label class="form-label">City</label>
-        <input type="text" class="form-control" name="city" required [(ngModel)]="event.city" #city="ngModel" />
+        <input type="text" class="form-control" name="city" required [(ngModel)]="event.city" #city="ngModel" disabled />
         <div *ngIf="city.invalid && city.touched" class="text-danger small">
           City is required
         </div>
@@ -71,7 +71,7 @@
       <div class="col-md-3">
         <label class="form-label">Price</label>
         <input type="number" class="form-control" name="price" required min="1" [(ngModel)]="event.price"
-          #price="ngModel" />
+          #price="ngModel" disabled />
         <div *ngIf="price.invalid && price.touched" class="text-danger small">
           Enter valid price
         </div>
@@ -87,15 +87,7 @@
         </div>
       </div>
 
-      <!-- Date -->
-      <div class="col-md-6">
-        <label class="form-label">Date & Time</label>
-        <input type="datetime-local" class="form-control" name="date" required [(ngModel)]="event.date"
-          #date="ngModel" />
-        <div *ngIf="date.invalid && date.touched" class="text-danger small">
-          Date is required
-        </div>
-      </div>
+
 
       <!-- Creator Email -->
       <div class="col-md-6">
