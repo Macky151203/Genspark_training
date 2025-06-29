@@ -13,15 +13,24 @@
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
         <li class="nav-item position-relative">
-          <a class="nav-link " (click)="toggleNotifications()">Notifications <span class="bg-danger px-1 rounded-pill text-white">{{notifications.length}}</span></a>
+          <a class="nav-link " (click)="toggleNotifications()">Notifications <span
+              class="bg-danger px-1 rounded-pill text-white">{{notifications.length}}</span></a>
 
           <div class="notification-dropdown position-absolute end-0 mt-2 bg-white border shadow rounded p-3"
             *ngIf="showNotifications">
             <div *ngIf="notifications.length === 0" class="text-muted text-center">No new notifications</div>
             <ul class="list-unstyled mb-0">
-              <li *ngFor="let n of notifications" class="mb-2">
-                <div class="small fw-semibold">{{ n.a }}</div>
-                <div class="text-muted small">{{ n.b }}</div>
+              <li *ngFor="let n of notifications " class="mb-2 d-flex flex-row justify-content-between">
+                <div>
+                  <div class="small fw-semibold">{{ n.a }}</div>
+                  <div class="text-muted small">{{ n.b }}</div>
+                  <div class="text-secondary small">
+                    {{ n.id | date:'short' }}
+                  </div>
+                </div>
+                <div (click)="removenotification(n.id)" class="text-danger cross">
+                  x
+                </div>
               </li>
             </ul>
           </div>

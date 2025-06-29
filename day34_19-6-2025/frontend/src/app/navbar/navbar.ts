@@ -62,6 +62,10 @@ export class Navbar implements OnInit {
     this.showNotifications = false;
   }
 
+  removenotification(id:string){
+    this.notificationservice.removeNotification(id);
+  }
+
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event) {
     const target = event.target as HTMLElement;
@@ -69,5 +73,7 @@ export class Navbar implements OnInit {
       this.showNotifications = false;
     }
   }
+
+
 
 }
