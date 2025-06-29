@@ -1,12 +1,13 @@
 <div class="container my-4">
-    <div *ngIf="adminInfo" class="mb-4 p-3 border bg-light rounded shadow-sm top-card d-flex flex-row justify-content-between align-items-center">
+    <div *ngIf="adminInfo"
+        class="mb-4 p-3 border bg-light rounded shadow-sm top-card d-flex flex-row justify-content-between align-items-center">
         <div>
             <p class="fs-1"><span class="text-danger">Welcome</span> {{ adminInfo.name }}! </p>
             <div>View all your events summary here in the Dashboard</div>
         </div>
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person text-danger"
-                viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                class="bi bi-person text-danger" viewBox="0 0 16 16">
                 <path
                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
             </svg>
@@ -70,6 +71,7 @@
 
         <!-- Filtered Events Table -->
         <div class="table-responsive">
+            @if(filteredUpcomingEvents().length>0){
             <table class="table table-striped table-bordered align-middle">
                 <thead class="table-primary">
                     <tr>
@@ -92,16 +94,28 @@
                     </tr>
                 </tbody>
             </table>
+            }
+            @else{
+            <div class="alert alert-warning text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-exclamation-triangle me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M7.938 2.016a.13.13 0 0 1 .125 0l6.857 11.856c.042.072.068.157.068.249a.416.416 0 0 1-.416.416H1.428a.416.416 0 0 1-.416-.416.417.417 0 0 1 .068-.249L7.938 2.016zM8 4.8c-.255 0-.464.21-.464.466v3.872c0 .257.209.467.464.467.256 0 .466-.21.466-.467V5.266A.466.466 0 0 0 8 4.8zm.002 6.293a.592.592 0 1 0-.001 1.184.592.592 0 0 0 0-1.184z" />
+                </svg>
+                No Events found.
+            </div>
+            }
         </div>
     </div>
 
 
 
-    <!-- Cancelled Events -->
+
     <!-- Cancelled Events -->
     <div>
         <h5 class="mb-3 text-danger">Cancelled Events</h5>
-        <div class="table-responsive">
+        @if(cancelledEvents.length>0){
+            <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-danger">
                     <tr>
@@ -125,4 +139,15 @@
                 </tbody>
             </table>
         </div>
+        }
+        @else{
+            <div class="alert alert-warning text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-exclamation-triangle me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M7.938 2.016a.13.13 0 0 1 .125 0l6.857 11.856c.042.072.068.157.068.249a.416.416 0 0 1-.416.416H1.428a.416.416 0 0 1-.416-.416.417.417 0 0 1 .068-.249L7.938 2.016zM8 4.8c-.255 0-.464.21-.464.466v3.872c0 .257.209.467.464.467.256 0 .466-.21.466-.467V5.266A.466.466 0 0 0 8 4.8zm.002 6.293a.592.592 0 1 0-.001 1.184.592.592 0 0 0 0-1.184z" />
+                </svg>
+                No Cancelled Events found.
+            </div>
+        }
     </div>
