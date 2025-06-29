@@ -30,7 +30,7 @@
           </svg>
         </h5>
 
-       
+
 
         <!-- Category Filter -->
         <div class="mb-3">
@@ -63,6 +63,7 @@
 
     <!-- Event Cards  -->
     <div class="col-md-9">
+      @if(filteredEvents().length>0){
       <div class="event-scroll-container row g-3">
         <div class="col-md-4" *ngFor="let event of filteredEvents()">
           <div class="card h-100">
@@ -86,6 +87,17 @@
           </div>
         </div>
       </div>
+      }
+      @else{
+      <div class="alert alert-warning text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+          class="bi bi-exclamation-triangle me-2" viewBox="0 0 16 16">
+          <path
+            d="M7.938 2.016a.13.13 0 0 1 .125 0l6.857 11.856c.042.072.068.157.068.249a.416.416 0 0 1-.416.416H1.428a.416.416 0 0 1-.416-.416.417.417 0 0 1 .068-.249L7.938 2.016zM8 4.8c-.255 0-.464.21-.464.466v3.872c0 .257.209.467.464.467.256 0 .466-.21.466-.467V5.266A.466.466 0 0 0 8 4.8zm.002 6.293a.592.592 0 1 0-.001 1.184.592.592 0 0 0 0-1.184z" />
+        </svg>
+        No Events found.
+      </div>
+      }
     </div>
   </section>
 </div>
