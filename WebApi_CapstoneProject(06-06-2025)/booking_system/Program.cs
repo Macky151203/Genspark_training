@@ -81,7 +81,7 @@ builder.Services.AddSignalR();
 #region CORS
 builder.Services.AddCors(options=>{
     options.AddDefaultPolicy(policy=>{
-        policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:4200","http://localhost:59184","http://localhost:58548")
+        policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:4200","http://localhost:57957")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
