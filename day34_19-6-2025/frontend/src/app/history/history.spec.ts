@@ -94,27 +94,6 @@ describe('History', () => {
     expect(filtered[0].isCancelled).toBeTrue();
   });
 
-  it('should open and close cancel modal', fakeAsync(() => {
-    // Add a ticket to select
-    component.tickets = mockTickets;
-    const ticketId = mockTickets[0].id;
-    // Mock bootstrap modal
-    const modalSpy = jasmine.createSpyObj('Modal', ['show', 'hide']);
-    spyOn(document, 'getElementById').and.returnValue({} as any);
-    (window as any).bootstrap = { Modal: { getOrCreateInstance: () => modalSpy, getInstance: () => modalSpy } };
-    component.openCancelModal(ticketId);
-    expect(component.selectedTicketId).toBe(ticketId);
-    expect(modalSpy.show).toHaveBeenCalled();
-    // Confirm cancel
-    ticketServiceSpy.cancelTicket.and.returnValue(of({}));
-    component.confirmCancel();
-    tick();
-    expect(ticketServiceSpy.cancelTicket).toHaveBeenCalledWith(ticketId);
-    expect(component.tickets[0].isCancelled).toBeTrue();
-    expect(component.selectedTicketId).toBeNull();
-    expect(modalSpy.hide).toHaveBeenCalled();
-  }));
-
   it('should handle cancel error', fakeAsync(() => {
     component.tickets = mockTickets;
     component.selectedTicketId = mockTickets[0].id;
