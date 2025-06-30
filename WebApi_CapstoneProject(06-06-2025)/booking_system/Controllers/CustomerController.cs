@@ -74,5 +74,23 @@ namespace BookingSystem.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut("update")]
+        [Authorize(Roles = "Customer")]
+        public async Task<ActionResult<Customer>> UpdateCustomer(CustomerDto customerDto)
+        {
+            try
+            {
+                var updatedCustomer = await _customerService.UpdateCustomer(customerDto);
+                return Ok(updatedCustomer);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to update customer with email {Email}", customerDto.Email);
+                return BadRequest(ex.Message);
+            }
+        }
+
+
     }
 }
