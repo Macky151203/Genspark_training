@@ -11,7 +11,7 @@ export class ProfileService {
 
   public customername=signal<any>(null)
 
-  setcustomername(name:""){
+  setcustomername(name:string){
     this.customername.set(name);
   }
 

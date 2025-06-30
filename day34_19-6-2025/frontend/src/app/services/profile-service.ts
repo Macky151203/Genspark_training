@@ -25,4 +25,13 @@ export class ProfileService {
     });
     return this.httpclient.get(`http://localhost:5136/api/v1/customer/${email}`,{headers:headers})
   }
+
+  updateUserProfile(updatedData:any):Observable<any>{
+    const email=localStorage.getItem('username');
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.httpclient.put(`http://localhost:5136/api/v1/customer/update`,updatedData,{headers:headers})
+  }
 }

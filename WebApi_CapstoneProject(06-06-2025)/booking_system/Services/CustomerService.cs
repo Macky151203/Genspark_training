@@ -55,6 +55,26 @@ public class CustomerService : ICustomerService
         
     }
 
+    public async Task<Customer> UpdateCustomer(CustomerDto customerDto)
+{
+    
+    var existingCustomer = await _customerRepository.Get(customerDto.Email);
+    if (existingCustomer == null)
+    {
+        throw new Exception("Customer not found.");
+    }
+
+    
+    existingCustomer.Name = customerDto.Name;
+    existingCustomer.PhoneNumber = customerDto.PhoneNumber;
+    existingCustomer.Address = customerDto.Address;
+
+  
+    await _customerRepository.Update(customerDto.Email, existingCustomer);
+
+    return existingCustomer;
+}
+
     public async Task<Customer> GetCustomerByName(string name)
     {
         return await _customerRepository.Get(name);
