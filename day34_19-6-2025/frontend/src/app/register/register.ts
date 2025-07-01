@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Loginservice } from '../services/loginservice';
 import { Router } from '@angular/router';
 import { CustomValidators } from '../validators/custom-validators';
+import { RegisterInput } from '../models/RegisterInput';
 
 @Component({
   selector: 'app-register',
@@ -62,7 +63,7 @@ export class Register {
   // Step 2: Final registration
   onRegisterClick() {
     if (this.registerForm.valid) {
-      const obj = {
+      const obj:RegisterInput = {
         name: this.registerForm.value.name,
         email: this.registerForm.value.email,
         password: this.registerForm.value.password,

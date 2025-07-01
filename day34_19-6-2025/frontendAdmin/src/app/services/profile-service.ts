@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UpdateUserProfileInput } from '../models/UpdateUserProfileInput';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,13 @@ export class ProfileService {
       'Authorization': `Bearer ${token}`
     });
     return this.httpclient.get(`http://localhost:5136/api/v1/admin/${email}`,{headers:headers})
+  }
+  updateUserProfile(updatedData:UpdateUserProfileInput):Observable<any>{
+    const email=localStorage.getItem('username');
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.httpclient.put(`http://localhost:5136/api/v1/admin/update`,updatedData,{headers:headers})
   }
 }

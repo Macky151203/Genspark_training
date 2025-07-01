@@ -1,6 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { RegisterInput } from '../models/RegisterInput';
+import { LoginInput } from '../models/LoginInput';
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +32,12 @@ export class Loginservice {
     this.loginsubject.next(false);
   }
 
-  login(username: string, password: string): Observable<any> {
-    const body = { username, password };
+  login(logindata:LoginInput): Observable<any> {
+    const body = logindata;
     return this.httpclient.post(this.apiUrl, body);
   }
 
-  register(obj: any, role: string): Observable<any> {
+  register(obj: RegisterInput, role: string): Observable<any> {
     if (role == "user") {
       return this.httpclient.post('http://localhost:5136/api/v1/customer/register', obj);
     }

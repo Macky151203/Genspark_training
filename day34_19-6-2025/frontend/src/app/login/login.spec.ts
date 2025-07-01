@@ -38,7 +38,7 @@ describe('Login', () => {
     spyOn(localStorage, 'setItem');
     component.loginForm.setValue({ username: 'user', password: 'pass' });
     component.onLoginClick();
-    expect(loginServiceSpy.login).toHaveBeenCalledWith('user', 'pass');
+    expect(loginServiceSpy.login).toHaveBeenCalledWith({username:'user',password: 'pass'});
     expect(loginServiceSpy.setlogintrue).toHaveBeenCalled();
     expect(loginServiceSpy.getuserdetails).toHaveBeenCalled();
     expect(component.showToast).toBeTrue();

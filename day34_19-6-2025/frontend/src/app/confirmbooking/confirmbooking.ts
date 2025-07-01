@@ -31,7 +31,7 @@ export class Confirmbooking implements OnInit {
   }
 
   confirmBooking() {
-     this.ticketservice.bookticket(this.event().title, this.count()).subscribe({
+     this.ticketservice.bookticket({eventName:this.event().title, quantity:this.count()}).subscribe({
       next: (response: Blob) => {
         const blob = new Blob([response], { type: 'application/pdf' });
         const url = window.URL.createObjectURL(blob);

@@ -61,6 +61,22 @@ namespace BookingSystem.Controllers
             }
         }
 
+        [HttpPut("update")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<Admin>> UpdateAdmin(AdminDto adminDto)
+        {
+            try
+            {
+                var updatedadmin = await _adminService.UpdateAdmin(adminDto);
+                return Ok(updatedadmin);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to update admin with email {Email}", adminDto.Email);
+                return BadRequest(ex.Message);
+            }
+        }
+
 
         [HttpGet]
         [Authorize(Roles = "Admin")]

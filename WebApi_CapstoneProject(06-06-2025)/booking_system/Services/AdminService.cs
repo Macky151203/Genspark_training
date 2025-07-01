@@ -55,6 +55,25 @@ public class AdminService : IAdminService
         
     }
 
+        public async Task<Admin> UpdateAdmin(AdminDto adminDto)
+{
+    
+    var existingadmin = await _adminRepository.Get(adminDto.Email);
+    if (existingadmin == null)
+    {
+        throw new Exception("admin not found.");
+    }
+
+    
+    existingadmin.Name = adminDto.Name;
+    existingadmin.PhoneNumber = adminDto.PhoneNumber;
+
+  
+    await _adminRepository.Update(adminDto.Email, existingadmin);
+
+    return existingadmin;
+}
+
     public async Task<Admin> GetAdminByName(string name)
     {
         return await _adminRepository.Get(name);

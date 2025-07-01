@@ -24,7 +24,7 @@ export class Login {
 
   onLoginClick() {
     console.log("Data-", this.loginForm.value);
-    this.loginservice.login(this.loginForm.value.username, this.loginForm.value.password).subscribe({
+    this.loginservice.login({username:this.loginForm.value.username, password:this.loginForm.value.password}).subscribe({
       next: (data) => {
         console.log(data);
         localStorage.setItem("token", data.token);

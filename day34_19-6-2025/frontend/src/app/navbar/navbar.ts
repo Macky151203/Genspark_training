@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Loginservice } from '../services/loginservice';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../services/profile-service';
@@ -28,7 +28,8 @@ export class Navbar implements OnInit {
 
   constructor(
     public loginservice: Loginservice,
-    private notificationservice: NotificationService
+    private notificationservice: NotificationService,
+    private router:Router
   ) {
     this.loginservice.islogged$.subscribe((data: any) => this.islogged = data);
     this.loginservice.name$.subscribe((data: any) => this.name = data);
@@ -48,6 +49,7 @@ export class Navbar implements OnInit {
 
     setTimeout(() => {
       this.showToast = false;
+      this.router.navigate(['/'])
     }, 2000);
   }
 
