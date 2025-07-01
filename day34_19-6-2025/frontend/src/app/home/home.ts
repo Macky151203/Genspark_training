@@ -65,7 +65,7 @@ export class Home implements OnInit {
 
         const now = new Date();
 
-        // Group by category
+        
         const categoryCounts: Record<string, { name: string, count: number, image: string }> = {};
 
         for (const event of this.allEvents) {
@@ -88,7 +88,7 @@ export class Home implements OnInit {
             label: `#${index + 1} Trending – ${cat.name}`
           }));
 
-        // Category-specific event filtering
+       
         this.concerts = this.allEvents.filter((e: any) =>
           e.category.name.toLowerCase() === 'concert' && new Date(e.date) > now
         );

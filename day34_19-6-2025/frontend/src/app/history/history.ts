@@ -17,7 +17,6 @@ export class History implements OnInit {
   tickets: any[] = [];
   selectedTicketId: number | null = null;
 
-  // Filters
   filters = {
     search: '',
     minPrice: null,
@@ -37,6 +36,7 @@ export class History implements OnInit {
     if (email) {
       this.ticketservice.gettickets(email).subscribe({
         next: (data) => {
+          console.log(data)
           const now = new Date();
           this.tickets = data.map((ticket:any) => {
             const eventDate = new Date(ticket.event?.date);
@@ -46,7 +46,7 @@ export class History implements OnInit {
             return ticket;
           }).sort((a:any, b:any) => a.eventDate.getTime() - b.eventDate.getTime());
 
-          // Extract unique categories and cities
+          // Extracting unique categories and cities
           this.categories = [...new Set(this.tickets.map(t => t.event?.category?.name).filter(Boolean))];
           this.cities = [...new Set(this.tickets.map(t => t.event?.city).filter(Boolean))];
         },

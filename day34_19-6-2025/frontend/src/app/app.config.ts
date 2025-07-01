@@ -1,6 +1,7 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
+import { HTTP_INTERCEPTORS, withInterceptorsFromDi } from '@angular/common/http';
+import { AuthInterceptor } from './auth-interceptor';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { AuthGuard } from './auth-guard';
@@ -13,13 +14,20 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(
+      withInterceptorsFromDi()
+    ),
     AuthGuard,
     provideAnimationsAsync(),
-        providePrimeNG({
-            theme: {
-                preset: Aura
-            }
-        })
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    }),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ]
 };

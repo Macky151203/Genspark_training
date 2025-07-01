@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Loginservice } from '../services/loginservice';
 import { CommonModule } from '@angular/common';
-import { ProfileService } from '../services/profile-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +16,7 @@ export class Navbar implements OnInit {
   showToast: boolean = false;
 
   constructor(
-    public loginservice: Loginservice
+    public loginservice: Loginservice,private router:Router
   ) {
   }
 
@@ -30,6 +30,7 @@ export class Navbar implements OnInit {
 
     setTimeout(() => {
       this.showToast = false;
+      this.router.navigate(['/login']);
     }, 2000);
   }
 
