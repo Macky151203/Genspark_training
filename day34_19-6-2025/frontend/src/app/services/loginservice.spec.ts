@@ -24,7 +24,7 @@ describe('Loginservice', () => {
 
   it('should call login API and return data', () => {
     const mockResponse = { token: 'abc', username: 'user', role: 'user' };
-    service.login('user', 'pass').subscribe(data => {
+    service.login({username:'user', password:'pass'}).subscribe(data => {
       expect(data).toEqual(mockResponse);
     });
     const req = httpMock.expectOne('http://localhost:5136/api/v1/authentication');
@@ -44,7 +44,12 @@ describe('Loginservice', () => {
   });
 
   it('should call register for user', () => {
-    const mockObj = { email: 'test@mail.com', password: 'pass' };
+    const mockObj = { 
+      email: 'test@mail.com', 
+      password: 'pass', 
+      name: 'Test User', 
+      phoneNumber: '1234567890' 
+    };
     const mockResponse = { success: true };
     service.register(mockObj, 'user').subscribe(data => {
       expect(data).toEqual(mockResponse);

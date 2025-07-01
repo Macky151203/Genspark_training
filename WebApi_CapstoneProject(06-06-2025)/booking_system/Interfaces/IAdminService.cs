@@ -7,4 +7,5 @@ public interface IAdminService
     Task<Admin> RegisterAdmin(AdminDto adminDto);
     Task<Admin> GetAdminByName(string name);
     Task<IEnumerable<Admin>> GetAllAdmins();
+    Task<Admin> UpdateAdmin(AdminDto adminDto);
 }

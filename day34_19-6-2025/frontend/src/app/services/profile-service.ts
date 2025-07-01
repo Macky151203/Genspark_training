@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UpdateUserProfileInput } from '../models/UpdateUserProfileInput';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class ProfileService {
     return this.httpclient.get(`http://localhost:5136/api/v1/customer/${email}`,{headers:headers})
   }
 
-  updateUserProfile(updatedData:any):Observable<any>{
+  updateUserProfile(updatedData:UpdateUserProfileInput):Observable<any>{
     const email=localStorage.getItem('username');
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
