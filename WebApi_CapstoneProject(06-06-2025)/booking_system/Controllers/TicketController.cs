@@ -18,11 +18,13 @@ using System.IO;
 public class TicketController : ControllerBase
 {
     private readonly ITicketService _ticketService;
+    private readonly IEventService _eventService;
     private readonly ILogger<AuthenticationController> _logger;
 
-    public TicketController(ITicketService ticketService, ILogger<AuthenticationController> logger)
+    public TicketController(ITicketService ticketService,IEventService eventService, ILogger<AuthenticationController> logger)
     {
         _ticketService = ticketService;
+        _eventService=eventService;
         _logger = logger;
     }
 
@@ -33,6 +35,7 @@ public class TicketController : ControllerBase
         try
         {
             var ticket = await _ticketService.BookTicket(ticketDto);
+            var currentEvent= await _eventService.GetEventByName(ticketDto.EventName);
 
             // 1. Create a PDF document
             using var stream = new MemoryStream();
@@ -61,7 +64,8 @@ public class TicketController : ControllerBase
             }
 
             DrawRow("Ticket ID:", ticket.Id.ToString());
-            DrawRow("Event ID:", ticket.EventId.ToString());
+            DrawRow("Event name:", ticketDto.EventName.ToString());
+            DrawRow("Location:", currentEvent.Address.ToString()+","+currentEvent.City.ToString());
             DrawRow("Quantity:", ticket.Quantity.ToString());
             DrawRow("Total Price:", $"₹ {ticket.Total}");
             DrawRow("Customer Email:", ticket.CustomerEmail);

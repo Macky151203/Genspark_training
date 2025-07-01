@@ -44,6 +44,9 @@ describe('TicketService', () => {
 
   it('should book ticket and return blob', () => {
     const mockBlob = new Blob(['test'], { type: 'application/pdf' });
+    service.bookticket({ eventName: 'EventName', quantity: 2 }).subscribe(data => {
+    expect(data).toBeTruthy();
+  });
     const req = httpMock.expectOne('http://localhost:5136/api/v1/ticket/book');
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual({ eventName: 'EventName', quantity: 2 });

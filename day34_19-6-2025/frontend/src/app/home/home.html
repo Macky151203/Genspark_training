@@ -1,7 +1,6 @@
 <div class="container py-4">
 
-    <!-- Latest Events -->
-    <!-- Trending Categories Carousel -->
+    
     <section class="mb-4 z-10">
         <h4 class="text-center mb-3">🔥 Top Trending Categories</h4>
         <p-carousel [value]="trendingCategories" [numVisible]="1" [numScroll]="1" [circular]="false">
@@ -17,12 +16,12 @@
 
     <!-- Search Bar -->
     <section class="d-flex justify-content-center mb-4">
-        <input type="text" class="form-control w-50" placeholder="Search events..." [(ngModel)]="searchText" />
+        <input type="text" class="form-control w-100 w-md-50" placeholder="Search events..." [(ngModel)]="searchText" />
     </section>
 
-    <!-- Filters and Events -->
+    
     <section class="row g-4">
-        <!-- Filters -->
+        
         <div class="col-md-3">
             <div class="p-3 border rounded shadow-sm bg-light">
                 <h5>Filters<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -31,7 +30,7 @@
                             d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                     </svg></h5>
 
-                <!-- Price Filter -->
+                
                 <div class="mb-3">
                     <label class="form-label">Min Price</label>
                     <input type="number" class="form-control" [(ngModel)]="filters.minPrice" placeholder="e.g. 100" />

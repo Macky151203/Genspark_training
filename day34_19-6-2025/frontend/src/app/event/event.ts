@@ -49,23 +49,7 @@ export class Event implements OnInit {
   }
 
   bookNow() {
-    // this.eventservice.bookticket(this.event.title, this.count).subscribe({
-    //   next: (response: Blob) => {
-    //     const blob = new Blob([response], { type: 'application/pdf' });
-    //     const url = window.URL.createObjectURL(blob);
-    //     const a = document.createElement('a');
-    //     a.href = url;
-    //     a.download = `Ticket_${this.event.title}.pdf`;
-    //     document.body.appendChild(a);
-    //     a.click();
-    //     a.remove();
-    //     window.URL.revokeObjectURL(url); // Clean up
-    //   },
-    //   error: (err) => {
-    //     console.error("Error downloading ticket:", err);
-    //     alert("Ticket booking failed. Please try again.");
-    //   }
-    // });
+    
 
     //add qty and detail to confirmation service
     const username = localStorage.getItem('username');
