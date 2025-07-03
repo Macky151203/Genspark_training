@@ -30,9 +30,9 @@ export class Add implements OnInit {
     this.creatorEmail=localStorage.getItem('username')??"";
     this.eventForm = this.fb.group({
           title: ["", Validators.required],
-          description: ["", Validators.required],
-          context: [""],
-          address: ["", Validators.required],
+          description: ["", [Validators.required,Validators.minLength(10)]],
+          context: ["",[Validators.required,Validators.minLength(10)]],
+          address: ["", [Validators.required,Validators.minLength(10)]],
           city: ["", Validators.required],
           categoryName: ["", Validators.required],
           imageurl: ["", Validators.required],

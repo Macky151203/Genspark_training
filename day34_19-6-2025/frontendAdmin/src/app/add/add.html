@@ -12,7 +12,7 @@
             </div>
         </button>
     </div>
-    <h3 class="mb-4 text-center">Edit Event</h3>
+    <h3 class="mb-4 text-center">Add Event</h3>
 
     <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
         <div class="row g-3">
@@ -31,9 +31,11 @@
             <div class="col-md-6">
                 <label class="form-label">Description</label>
                 <input type="text" class="form-control" formControlName="description" />
-                <div *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched"
+                <div *ngIf="eventForm.get('description')?.touched && eventForm.get('description')?.invalid"
                     class="text-danger small">
-                    Description is required
+                    <div *ngIf="eventForm.get('description')?.errors?.['required']">Description is required.</div>
+                    <div *ngIf="eventForm.get('description')?.errors?.['minlength']">Description must be at least 10
+                        characters.</div>
                 </div>
             </div>
 
@@ -41,15 +43,23 @@
             <div class="col-12">
                 <label class="form-label">Context</label>
                 <textarea class="form-control" formControlName="context" rows="3"></textarea>
+                <div *ngIf="eventForm.get('context')?.touched && eventForm.get('context')?.invalid"
+                    class="text-danger small">
+                    <div *ngIf="eventForm.get('context')?.errors?.['required']">Context is required.</div>
+                    <div *ngIf="eventForm.get('context')?.errors?.['minlength']">Context must be at least 10 characters.
+                    </div>
+                </div>
             </div>
 
             <!-- Address -->
             <div class="col-md-6">
                 <label class="form-label">Address</label>
                 <input type="text" class="form-control" formControlName="address" />
-                <div *ngIf="eventForm.get('address')?.invalid && eventForm.get('address')?.touched"
+                <div *ngIf="eventForm.get('address')?.touched && eventForm.get('address')?.invalid"
                     class="text-danger small">
-                    Address is required
+                    <div *ngIf="eventForm.get('address')?.errors?.['required']">Address is required.</div>
+                    <div *ngIf="eventForm.get('address')?.errors?.['minlength']">Address must be at least 10 characters.
+                    </div>
                 </div>
             </div>
 
