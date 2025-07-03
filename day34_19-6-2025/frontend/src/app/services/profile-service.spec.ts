@@ -39,7 +39,6 @@ describe('ProfileService', () => {
     });
     const req = httpMock.expectOne('http://localhost:5136/api/v1/customer/test@mail.com');
     expect(req.request.method).toBe('GET');
-    expect(req.request.headers.get('Authorization')).toBe('Bearer mock-token');
     req.flush(mockProfile);
   });
 

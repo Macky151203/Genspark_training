@@ -43,33 +43,34 @@ public class TicketController : ControllerBase
             var page = document.AddPage();
             var gfx = XGraphics.FromPdfPage(page);
 
-            // Fonts
-            var titleFont = new XFont("Verdana", 16, XFontStyle.Bold);
-            var labelFont = new XFont("Verdana", 12, XFontStyle.Bold);
-            var valueFont = new XFont("Verdana", 12, XFontStyle.Regular);
+            // Use a built-in PDF font that works in Docker (no system dependency)
+            var font = new XFont("DejaVu Sans", 12, XFontStyle.Regular);
+            var boldFont = new XFont("DejaVu Sans", 12, XFontStyle.Bold);
 
             // 2. Draw border and title
             gfx.DrawRectangle(XPens.SteelBlue, 30, 30, page.Width - 60, page.Height - 60);
-            gfx.DrawString("Event Ticket", titleFont, XBrushes.DarkBlue, new XPoint(40, 50));
+            gfx.DrawString("Event Ticket", boldFont, XBrushes.DarkBlue, new XPoint(40, 50));
 
             // 3. Structured layout
             int y = 90;
             int lineHeight = 25;
 
             void DrawRow(string label, string value)
-            {
-                gfx.DrawString(label, labelFont, XBrushes.Black, new XPoint(50, y));
-                gfx.DrawString(value, valueFont, XBrushes.DarkSlateGray, new XPoint(200, y));
+{
+                gfx.DrawString(label, boldFont, XBrushes.Black, new XPoint(50, y));
+                gfx.DrawString(value, font, XBrushes.DarkSlateGray, new XPoint(200, y));
                 y += lineHeight;
             }
 
             DrawRow("Ticket ID:", ticket.Id.ToString());
-            DrawRow("Event name:", ticketDto.EventName.ToString());
-            DrawRow("Location:", currentEvent.Address.ToString()+","+currentEvent.City.ToString());
+            DrawRow("Event name:", ticketDto.EventName);
+            DrawRow("Location:", $"{currentEvent.Address}, {currentEvent.City}");
             DrawRow("Quantity:", ticket.Quantity.ToString());
             DrawRow("Total Price:", $"₹ {ticket.Total}");
             DrawRow("Customer Email:", ticket.CustomerEmail);
             DrawRow("Booked At:", ticket.BookingDate.ToString("f"));
+
+            
 
             // 4. Save and return
             document.Save(stream, false);
@@ -78,9 +79,9 @@ public class TicketController : ControllerBase
             var fileName = $"Ticket_{ticket.Id}.pdf";
 
             // Optional: Save to Desktop
-            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var desktopFilePath = Path.Combine(desktopPath, fileName);
-            await System.IO.File.WriteAllBytesAsync(desktopFilePath, stream.ToArray());
+            // var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            // var desktopFilePath = Path.Combine(desktopPath, fileName);
+            // await System.IO.File.WriteAllBytesAsync(desktopFilePath, stream.ToArray());
 
             // Return file as download
             return File(stream.ToArray(), "application/pdf", fileName);

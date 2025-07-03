@@ -51,15 +51,15 @@ export class Event implements OnInit {
     const payload = {
       title: this.event.title,
       description: this.event.description,
-      date: new Date(this.event.date).toISOString(), // ISO 8601
+      date: new Date(this.event.date).toISOString(), 
       price: this.event.price,
       address: this.event.address,
       city: this.event.city,
-      tags: this.event.tags || [], // Provide empty array if undefined
+      tags: this.event.tags || [], 
       context: this.event.context,
       ticketcount: this.event.ticketcount,
       imageurl: this.event.imageurl,
-      categoryName: this.event.category?.name || '' // from nested object
+      categoryName: this.event.category?.name || '' 
     };
 
     // console.log("Sending updated payload to backend:", payload);

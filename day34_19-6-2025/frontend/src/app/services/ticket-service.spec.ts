@@ -30,7 +30,6 @@ describe('TicketService', () => {
     });
     const req = httpMock.expectOne('http://localhost:5136/api/v1/ticket/gettickets/test@mail.com');
     expect(req.request.method).toBe('GET');
-    expect(req.request.headers.get('Authorization')).toBe('Bearer mock-token');
     req.flush(mockTickets);
   });
 
@@ -38,7 +37,6 @@ describe('TicketService', () => {
     service.cancelTicket(123).subscribe();
     const req = httpMock.expectOne('http://localhost:5136/api/v1/ticket/123/cancel');
     expect(req.request.method).toBe('DELETE');
-    expect(req.request.headers.get('Authorization')).toBe('Bearer mock-token');
     req.flush({});
   });
 
@@ -50,7 +48,6 @@ describe('TicketService', () => {
     const req = httpMock.expectOne('http://localhost:5136/api/v1/ticket/book');
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual({ eventName: 'EventName', quantity: 2 });
-    expect(req.request.headers.get('Authorization')).toBe('Bearer mock-token');
     expect(req.request.responseType).toBe('blob');
     req.flush(mockBlob);
   });

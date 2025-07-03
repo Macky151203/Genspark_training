@@ -81,7 +81,7 @@ builder.Services.AddSignalR();
 #region CORS
 builder.Services.AddCors(options=>{
     options.AddDefaultPolicy(policy=>{
-        policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:4200","http://localhost:63532")
+        policy.WithOrigins("http://localhost:8080", "http://localhost:4200","http://localhost:54999","http://127.0.0.1:4200","http://127.0.0.1:4201")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
@@ -143,16 +143,16 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 
 }
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors();
 app.UseRateLimiter();
 
 //middleware
