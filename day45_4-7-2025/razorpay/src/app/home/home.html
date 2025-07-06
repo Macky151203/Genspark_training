@@ -1,0 +1,46 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="w-100" style="max-width: 500px;">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Pay with Razorpay</h3>
+        <form [formGroup]="paymentForm" (ngSubmit)="pay()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="paymentForm.get('name')?.invalid && paymentForm.get('name')?.touched" class="text-danger">
+              Name is required
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div *ngIf="paymentForm.get('email')?.invalid && paymentForm.get('email')?.touched" class="text-danger">
+              Enter a valid email
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Contact Number</label>
+            <input type="text" class="form-control" formControlName="contact">
+            <div *ngIf="paymentForm.get('contact')?.invalid && paymentForm.get('contact')?.touched" class="text-danger">
+              Enter a valid 10-digit contact number
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Amount (in ₹)</label>
+            <input type="number" class="form-control" formControlName="amount">
+            <div *ngIf="paymentForm.get('amount')?.invalid && paymentForm.get('amount')?.touched" class="text-danger">
+              Enter a valid amount greater than 0
+            </div>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
