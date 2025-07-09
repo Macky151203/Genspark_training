@@ -40,7 +40,6 @@ export class Home implements OnInit {
     { title: 'Marathon C', description: 'Sports event', category: 'Sports', price: 100 },
   ];
 
-  // allEvents = [...this.latestEvents, /* more dummy data here */];
 
   allEvents: any = []
 
