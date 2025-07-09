@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Home } from './home';
 import { EventService } from '../services/event-service';
 import { NotificationService } from '../services/notification-service';
@@ -71,7 +71,7 @@ describe('Home', () => {
 
   it('should filter events by upcoming date', () => {
     const filtered = component.filteredEvents();
-    expect(filtered.length).toBe(2); // Both mock events are in the future
+    expect(filtered.length).toBe(2); 
   });
 
   it('should navigate to event page on handleBookNow', () => {

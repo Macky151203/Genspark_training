@@ -20,10 +20,8 @@ export class Add implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    private eventService: EventpageService,
-    private homepageService: HomepageService
+    private eventService: EventpageService
   ) {}
 
   ngOnInit(): void {
