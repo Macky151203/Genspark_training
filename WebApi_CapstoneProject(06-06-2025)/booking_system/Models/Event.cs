@@ -24,7 +24,7 @@ public class Event
     public int CategoryId { get; set; }
     public bool IsCancelled { get; set; }
 
-    public string CreatorEmail { get; set; } = string.Empty; // FK to Admin.Email
+    public string CreatorEmail { get; set; } = string.Empty; 
     public Admin? CreatedBy { get; set; }
 
     public Category? Category { get; set; }

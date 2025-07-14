@@ -51,5 +51,8 @@ export class Login {
   closeToast() {
     this.showToast = false;
   }
+  onRegisterClick() {
+    this.router.navigate(['/register']);
+  }
 }
 

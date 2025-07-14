@@ -624,3 +624,8 @@ C:/Users/Subra/OneDrive/Desktop/presidio/Genspark_training/WebApi_CapstoneProjec
 /Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/obj/Debug/net9.0/booking_system.pdb
 /Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/obj/Debug/net9.0/booking_system.genruntimeconfig.cache
 /Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/obj/Debug/net9.0/ref/booking_system.dll
+/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/bin/Debug/net9.0/Azure.Core.dll
+/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/bin/Debug/net9.0/Azure.Storage.Blobs.dll
+/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/bin/Debug/net9.0/Azure.Storage.Common.dll
+/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/bin/Debug/net9.0/Serilog.Sinks.AzureBlobStorage.dll
+/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/WebApi_CapstoneProject(06-06-2025)/booking_system/bin/Debug/net9.0/Serilog.Sinks.PeriodicBatching.dll
