@@ -59,6 +59,7 @@ export class Home implements OnInit {
     this.eventservice.getallevents().subscribe({
       next: (data) => {
         this.allEvents = data as any;
+        console.log("All events fetched:", this.allEvents);
         this.categories = Array.from(new Set(this.allEvents.map((e: any) => e.category.name)));
         this.cities = Array.from(new Set(this.allEvents.map((e: any) => e.city)));
 
@@ -104,6 +105,7 @@ export class Home implements OnInit {
   }
 
   filteredEvents() {
+    console.log("allevents in function-", this.allEvents);
     const now = new Date();
     return this.allEvents.filter((e: any) => {
       const eventDate = new Date(e.date);
