@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dkCJvuOupSQ=",
+  "dgSpecHash": "5DoK10OcYFM=",
   "success": true,
-  "projectFilePath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/fileproject/filestorage/filestorage.csproj",
+  "projectFilePath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/day56_21-7-2025/fileproject/filestorage/filestorage.csproj",
   "expectedPackageFiles": [
     "/Users/subramaniyans/.nuget/packages/azure.core/1.8.1/azure.core.1.8.1.nupkg.sha512",
     "/Users/subramaniyans/.nuget/packages/azure.storage.blobs/12.8.1/azure.storage.blobs.12.8.1.nupkg.sha512",

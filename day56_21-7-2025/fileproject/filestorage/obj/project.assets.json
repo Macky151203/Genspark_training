@@ -4982,11 +4982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/fileproject/filestorage/filestorage.csproj",
+      "projectUniqueName": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/day56_21-7-2025/fileproject/filestorage/filestorage.csproj",
       "projectName": "filestorage",
-      "projectPath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/fileproject/filestorage/filestorage.csproj",
+      "projectPath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/day56_21-7-2025/fileproject/filestorage/filestorage.csproj",
       "packagesPath": "/Users/subramaniyans/.nuget/packages/",
-      "outputPath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/fileproject/filestorage/obj/",
+      "outputPath": "/Users/subramaniyans/Desktop/Presidio/github/Genspark_training/day56_21-7-2025/fileproject/filestorage/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/subramaniyans/.nuget/NuGet/NuGet.Config"
