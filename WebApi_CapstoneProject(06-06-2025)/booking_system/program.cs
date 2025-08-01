@@ -169,6 +169,6 @@ app.MapControllers();
 app.MapHub<EventHub>("/eventhub");
 app.Run();
 
-//Host=74.235.137.12;Port=5432;Username=postgres;Password=mac151203;Database=bookingdb_az
+
 
 
